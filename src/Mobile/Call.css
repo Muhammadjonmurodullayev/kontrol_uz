@@ -1,0 +1,68 @@
+.call_centerr {
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+    font-family: Arial, sans-serif;
+    color: #000;
+  }
+  
+  .contact_info, .work_schedule, .address, .social_media {
+    margin-bottom: 20px;
+  }
+  
+  .contact_info p, .work_schedule p, .address p, .social_media p {
+    margin: 5px 0;
+  }
+  
+  .phone {
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .telegram {
+    color: #0088cc;
+  }
+  
+  .map img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .kontrol{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:2px solid black; */
+    box-sizing: border-box;
+  }
+  .FaTelegram_1{
+    color: #0088cc;
+    font-size:40px;
+  }
+  .FaYoutube_1{
+    color:red;
+    font-size:50px;
+
+  }
+  .instagram_1{
+    width:40px;
+    height:40px;
+    /* font-size:30px; */
+  }
+  .Facebook_1{
+    width:40px;
+    height:40px;
+    /* font-size:30px; */
+  }
+  #icons__1{
+    width:100%;
+    height:auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap:60px;
+  }

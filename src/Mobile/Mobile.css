@@ -1,0 +1,39 @@
+/* Acount.css */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.footer-nav-item {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav-item:hover {
+  color: #ffd700; /* Hover holati uchun rangni o'zgartirish */
+}
+
+.footer-nav-item span {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.footer-nav-item svg {
+  font-size: 20px;
+}
+

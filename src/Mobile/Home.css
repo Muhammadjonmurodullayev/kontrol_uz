@@ -1,0 +1,444 @@
+.home213_parent{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.parent_chaild_id{
+    background-color:rgb(3, 8, 101);
+    padding:10px;
+    width:100%;
+    height:auto;
+    display: flex;
+}
+.page21{
+    width:250px;
+    height:auto;
+    color:white;
+    margin-left:30px;
+}
+.IoMenu_item_id{
+    font-size:50px;
+    color:white;
+}
+.qiruv_page1{
+    width:100%;
+    height:64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qiruv_page12{
+    width:80%;
+    height:38px;
+    padding-left:5px;
+    border-radius:8px;
+    outline:none;
+    border:none;
+    box-shadow:0px 0px 10px rgb(218, 217, 217);
+}
+.card-list-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .filter-button {
+    font-size:45px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .filter-button:hover {
+    border:2px solid white;
+  }
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width:250px;
+    height: 100%;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+    transition: left 0.3s ease;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  .sidebar p {
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  .sidebar p:hover {
+    text-decoration: underline;
+  }
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .card_id {
+    padding:10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width:48%;
+    height:auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  .link_id_name21111{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    color:black;
+    font-weight:600;
+  }
+.shochik1-container1 {
+  margin-top: 20px;
+}
+.shochik1-button1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.shochik1-menu1 {
+  width:100%;
+  height:auto;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.shochik1-menu1.open {
+  max-height: 200px; 
+  opacity: 1;
+}
+.shochik1-menu1.open1 {
+  max-height: 200px;
+  opacity: 1;
+}
+.shochik1-menu1.open3 {
+  max-height: 200px; 
+  opacity: 1;
+}
+
+.shochik1-item1 {
+  padding: 10px; 
+  border-bottom: 1px solid #ccc;
+}
+.button_id_namr_item {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  width:100%;
+  height:34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 1px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.button_id_namr_item:hover {
+  background-color: #0056b3; 
+}
+.panellar_id_name_item{
+  font-size:15px;
+}
+.img_id_itemn_name{
+  width:100%;
+  height:auto;
+}
+.img_id_name54655{
+  width:100%;
+  height:auto;
+  object-fit: cover;
+}
+.img_card_button_id{
+  width:100%;
+  height:180px;
+}
+
+
+.carousel-container {
+  width:100%;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width:100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width:100%;
+  height: auto; /* Rasmlarni moslashtirish uchun */
+z-index:999;
+}
+#sidebar_id_item{
+  z-index:99999;
+}
+
+/* Mahsulotlar uchun asosiy quti */
+
+/* Har bir mahsulot kartasi */
+
+
+.Product_card:hover {
+  transform: scale(1.03);
+}
+
+/* Mahsulot nomi */
+.Product_card .product_name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #001aff;
+  margin-bottom: 8px;
+  width: 200px; /* Konteyner kengligi */
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+/* border: 1px solid #000; Hozircha ko'rinishi uchun qo'shildi */
+}
+
+/* Mahsulot tavsifi */
+.Product_card .product_desc {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Mahsulot narxi */
+
+
+/* Mahsulot tasviri */
+.Product_card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+
+.process_id{
+  width: 200px;
+  height:200px;
+}
+/* Mahsulotlar uchun asosiy quti */
+.Products_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px;
+  /* background-color: #f4f4f4; */
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Har bir mahsulot kartasi */
+.Product_card {
+  /* border: 2px solid black; */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: calc(50% - 15px); /* Ikki ustunli bo'lishi uchun */
+  box-sizing: border-box;
+  /* cursor: pointer; */
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Product_card:hover {
+  transform: scale(1.03);
+}
+
+/* Mahsulot tasviri */
+.Product_card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Mahsulot nomi */
+.Product_card .product_name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000ecb;
+  margin-bottom: 8px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Mahsulot tavsifi */
+.Product_card .product_desc {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mahsulot narxi */
+.Product_card .product_price {
+  font-size:17px;
+  color: #000000;
+  font-weight:900;
+  /* margin-bottom: 5px; */
+}
+
+/* Mahsulot narxi oyiga */
+.Product_card .product_priceMonth {
+  font-size:12px;
+  color: #7f7f7f;
+  font-weight:600;
+  /* margin-bottom: 5px; */
+}
+.del323{
+  color:red;
+}
+/* Mahsulot miqdori */
+.Product_card .product_count {
+  font-size: 14px;
+  color: #696868;
+  font-weight:600;
+}
+.process_id21{
+  width:100%;
+  height:auto;
+}
+.startr {
+  color: yellow;
+}
+.startrm{
+  display: flex;
+}
+del{
+  text-decoration: line-through;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* Maksimal kenglik */
+  height: 200px; /* Barqaror balandlik */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top:20px;
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rasmlarni container ichida o'zgartirish */
+  border-radius: 10px;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Category__all{
+  width:100%;
+  height:auto;
+  padding:5px;
+  font-weight:900;
+  font-size:20px;
+  color:#000ecb;
+  /* border:2px solid black; */
+}
+.category__name_uz{
+  font-weight:900;
+  font-size:17px;
+  padding:3px;
+}
+.category___name_uz{
+  width:100%;
+  height:auto;
+display: flex;
+justify-content: start;
+gap:5px;
+align-items: center;
+}
+.konrol___img{
+  background-color:#000ecb;
+  color:blue;
+ width:150px;
+ height:auto;
+ padding:2px;
+}
+.contact_1{
+  display: flex;
+  flex-direction: column;
+}
