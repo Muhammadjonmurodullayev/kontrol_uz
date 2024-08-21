@@ -296,7 +296,7 @@ const Chaild = ({ cards, addCard }) => {
 
   return (
     <div className='Chaild'>
-      <p>yangilanyabdi</p>
+      {/* <p>yangilanyabdi</p> */}
       <div onClick={chathandleBlur} className="telegram-icon-container">
         <div className="telegram-icon">
           <IoChatbubbleEllipsesSharp className='IoChatbubbles' />
