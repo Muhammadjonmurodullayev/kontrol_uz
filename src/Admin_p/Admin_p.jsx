@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./Admin_p.css"
+import BarChart from './Bar';
+import CustomBarChart from './Bar';
 
-
-
-
-
-
-
- const Homeadmin = () => {
+const Homeadmin = () => {
   let [category, setcategory] = useState([]);
+  let [filteredCategory, setFilteredCategory] = useState([]);
   let [getads, setads] = useState([]);
   let [showForm, setShowForm] = useState(false);
   let [formType, setFormType] = useState(""); // "category" or "ads"
@@ -22,12 +19,16 @@ import "./Admin_p.css"
   });
   let [editMode, setEditMode] = useState(false);
   let [editId, setEditId] = useState(null);
+  let [searchTerm, setSearchTerm] = useState(""); // State for search input
 
   const navigator = useNavigate();
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/category/all`)
-      .then((response) => setcategory(response.data["data"]))
+      .then((response) => {
+        setcategory(response.data["data"]);
+        setFilteredCategory(response.data["data"]); // Initialize the filtered category list
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -36,6 +37,17 @@ import "./Admin_p.css"
       .then((response) => setads(response.data["data"]))
       .catch((error) => console.log(error));
   }, []);
+
+  const handleSearchChange = (e) => {
+    const searchValue = e.target.value.toLowerCase();
+    setSearchTerm(searchValue);
+
+    // Filter the categories based on the search term
+    const filtered = category.filter(item =>
+      item.name_uz.toLowerCase().includes(searchValue)
+    );
+    setFilteredCategory(filtered);
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -96,8 +108,10 @@ import "./Admin_p.css"
         if (formType === "category") {
           if (editMode) {
             setcategory(category.map(item => item._id === editId ? response.data.data : item));
+            setFilteredCategory(category.map(item => item._id === editId ? response.data.data : item));
           } else {
             setcategory([...category, response.data.data]);
+            setFilteredCategory([...category, response.data.data]);
           }
         } else if (formType === "ads") {
           if (editMode) {
@@ -132,6 +146,7 @@ import "./Admin_p.css"
       .then(() => {
         if (type === "category") {
           setcategory(category.filter(item => item._id !== id));
+          setFilteredCategory(filteredCategory.filter(item => item._id !== id));
         } else {
           setads(getads.filter(item => item._id !== id));
         }
@@ -142,99 +157,86 @@ import "./Admin_p.css"
 
   return (
     <div className="container">
-    <button className="button" onClick={() => { setShowForm(true); setFormType("category"); setEditMode(false); }}>+ Add Category</button>
-    <button className="button" onClick={() => { setShowForm(true); setFormType("ads"); setEditMode(false); }}>+ Add Ads</button>
-  
-<div>
-  <input type="text" />
-</div>
+     <div className='container_id90'>
+     
+      <div className='sort_id'>
+        <input id='sort_id'
+          type="text"
+          placeholder="Search by Name UZ"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+      </div>
+      <div className='button_item_id9'>
+        <button className="button_id66" onClick={() => { setShowForm(true); setFormType("category"); setEditMode(false); }}>+ Add</button>
 
+      </div>
+     </div>
 
-    {showForm && (
-      <form className="form" onSubmit={handleFormSubmit}>
-        {formType === "category" && (
-          <>
-            <input
-              className="input"
-              type="text"
-              placeholder="Name UZ"
-              value={formData.name_uz}
-              onChange={(e) => setFormData({ ...formData, name_uz: e.target.value })}
-              required
-            />
-            <input
-              className="input"
-              type="text"
-              placeholder="Name RU"
-              value={formData.name_ru}
-              onChange={(e) => setFormData({ ...formData, name_ru: e.target.value })}
-              required
-            />
-          </>
-        )}
-        {formType === "ads" && (
+      {/* Search Input */}
+    
+
+      {showForm && (
+        <form className="form" onSubmit={handleFormSubmit}>
+          {formType === "category" && (
+            <>
+              <input
+                className="input"
+                type="text"
+                placeholder="Name UZ"
+                value={formData.name_uz}
+                onChange={(e) => setFormData({ ...formData, name_uz: e.target.value })}
+                required
+              />
+              <input
+                className="input"
+                type="text"
+                placeholder="Name RU"
+                value={formData.name_ru}
+                onChange={(e) => setFormData({ ...formData, name_ru: e.target.value })}
+                required
+              />
+            </>
+          )}
           <input
             className="input"
-            type="text"
-            placeholder="Title"
-            value={formData.title}
-            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            type="file"
+            onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })}
             required
           />
-        )}
-        <input
-          className="input"
-          type="file"
-          onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })}
-          required
-        />
-        <button className="submit-button" type="submit">Submit</button>
-        <button className="cancel-button" type="button" onClick={() => { setShowForm(false); setEditMode(false); setFormData({ name_uz: "", name_ru: "", image: null, title: "" }); }}>Cancel</button>
-      </form>
-    )}
-  
-    {category.map((item) => (
-      <div className="itemmm" key={item._id}>
-        <div className="item-info">
-          <div className='name___ru'>{item.name_uz}</div>
-          <div className="name-ruuu">{item.name_ru}</div>
-        </div>
-       <div className='img_button_id'>
-       <img
-       className='img_button_id_121'
-          src={process.env.REACT_APP_BASE_URL + item.image}
-          alt=""
-          width="50px"
-          height="50px"
+          <button className="submit-button" type="submit">Submit</button>
+          <button className="cancel-button" type="button" onClick={() => { setShowForm(false); setEditMode(false); setFormData({ name_uz: "", name_ru: "", image: null, title: "" }); }}>Cancel</button>
+        </form>
+      )}
+
+      {filteredCategory.map((item) => (
+        <div className="itemmm" key={item._id}
+          style={{ cursor: "pointer" }}
           onClick={() => { navigator("/admin/category/" + item._id); }}
-        />
-       </div>
-        <div className="item-buttons">
-          <button className="edit-button" onClick={() => handleEdit(item, "category")}>Edit</button>
-          <button className="delete-button" onClick={() => handleDelete(item._id, "category")}>Delete</button>
+        >
+          <div className="item-info">
+            <div className='name___ru'>{item.name_uz}</div>
+            <div className="name-ruuu">{item.name_ru}</div>
+          </div>
+          <div className='img_button_id'>
+            <img
+              className='img_button_id_121'
+              src={process.env.REACT_APP_BASE_URL + item.image}
+              alt=""
+              width="50px"
+              height="50px"
+            />
+          </div>
+          <div className="item-buttons">
+            <button className="edit-button" onClick={() => handleEdit(item, "category")}>Edit</button>
+            <button className="delete-button" onClick={() => handleDelete(item._id, "category")}>Delete</button>
+          </div>
         </div>
-      </div>
-    ))}
-    <hr />
-    {/* {getads.map((item1) => (
-      <div className="item" key={item1._id}>
-        <div className="item-info">{item1.title}</div>
-        <img
-          src={process.env.REACT_APP_BASE_URL + item1.image}
-          alt=""
-          width="50px"
-          height="50px"
-        />
-        <div className="item-buttons">
-          <button className="edit-button" onClick={() => handleEdit(item1, "ads")}>Edit</button>
-          <button className="delete-button" onClick={() => handleDelete(item1._id, "ads")}>Delete</button>
-        </div>
-      </div>
-    ))} */}
-  </div>
-  
+      ))}
+      <hr />
+      <CustomBarChart />
+    </div>
   );
 };
-
 
 export default Homeadmin;

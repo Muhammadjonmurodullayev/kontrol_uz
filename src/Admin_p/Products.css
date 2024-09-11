@@ -1,0 +1,94 @@
+/* Container for the products section */
+.products-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Title for the category */
+#category-title {
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+#add-product-btn, #submit-btn, #cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#add-product-btn {
+    background-color: #007bff;
+}
+
+#submit-btn {
+    background-color: #28a745;
+}
+
+#cancel-btn {
+    background-color: #dc3545;
+}
+
+/* Form styling */
+#product-form {
+    margin-bottom: 20px;
+}
+
+#product-form input, #product-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Product list styling */
+#product-list {
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img.product-image {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Button styles within product cards */
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #17a2b8;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+/* Message for no products */
+#no-products {
+    color: #888;
+}

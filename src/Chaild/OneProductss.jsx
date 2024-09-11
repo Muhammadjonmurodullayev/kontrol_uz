@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FaStar } from "react-icons/fa";
-import './Products.css';
+// import './Products.css';
 const items = [
   { id: 1, name: "Televizor", power: 300, icon: "📺" },
   { id: 2, name: "Printer", power: 200, icon: "🖨️" },
@@ -31,7 +31,7 @@ const items = [
   { id: 25, name: "Suv nasosi", power: 1000, icon: "💧" },
   { id: 26, name: "Elektromobil uchun zaryadka", power: 3000, icon: "⚡" },
 ];
-export const Products = () => {
+export const OneProductss = () => {
   let { id } = useParams();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState({});
@@ -75,30 +75,37 @@ export const Products = () => {
         // Fetch category info
         const categoryResponse = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/category/${id}`);
         console.log("Category Data:", categoryResponse.data); // Debugging line
-        setCategory(categoryResponse.data);
 
-        // Check if category name matches "panel"
-        if (categoryResponse.data.data.name_uz === 'Panellar') {
-          setShowSalom(true);
+        if (categoryResponse.data && categoryResponse.data.data) {
+          setCategory(categoryResponse.data);
+
+          // Check if category name matches "panel"
+          if (categoryResponse.data.data.name_uz === 'Panel') {
+            setShowSalom(true);
+          } else {
+            setShowSalom(false);
+          }
         } else {
-          setShowSalom(false);
+          setCategory(null);
         }
-
         // Fetch products
         const productsResponse = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/product/?category_id=${id}`);
         console.log("Products Data:", productsResponse.data); // Debugging line
-        setProducts(productsResponse.data["data"]);
-
+        if (productsResponse.data && productsResponse.data.data && Array.isArray(productsResponse.data.data)) {
+          setProducts(productsResponse.data.data);
+        } else {
+          setProducts([]);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
+        setCategory(null);
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
-
     fetchCategoryAndProducts();
   }, [id]);
-
   return (
     <div className="products-container">
       {showSalom && (
@@ -147,48 +154,40 @@ export const Products = () => {
         <h1 className="loading-text">Loading...</h1>
       ) : (
         <div className='product_katecory'>
-          {category ? (
-            <h2 className="category-name1">{category.data.name_uz}</h2>
-          ) : (
-            <h2 className="no-category">Category not found</h2>
-          )}
-         
-          <div className='product_katecory_p'>
-            {products.length ? (
-              products.map((product) => (
-                <div 
-                style={{
-                  width:"15%"
-                }}
-                key={product._id} className="product-card21" onClick={() => productClick(product._id)}>
-                  <div className='img_product_id'>
-                  <img 
-                   style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                  src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product-image" />
-                  </div>
-                  <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-
-                  {/* <div className="product-name-en">{product.name_ru}</div> */}
-                  {/* <div className="product-desc">{product.desc}</div> */}
-                  <div id='product-priceMonth1' className="product-priceMonth">Oldingi narxi:<del id='product-priceMonth'>{product.priceMonth}</del></div>
-                  <div id='product-price' className="product-price">Narxi:{product.price} so'm</div>
-                  <div id='product-count' className="product-count">Omborda:{product.count} ta </div>
+        {category ? (
+          <h2 className="category-name1">{category.data.name_uz}</h2>
+        ) : (
+          <h2 className="no-category">Category not found</h2>
+        )}
+        
+        <div className='product_katecory_p'>
+          {products.length ? (
+            products.map((product) => (
+              <div 
+              style={{ width:"15%" }}
+              key={product._id} className="product-card21" onClick={() => productClick(product._id)}>
+                <div className='img_product_id'>
+                <img 
+                 style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+                src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product-image" />
                 </div>
-              ))
-            ) : (
-              <h2 className="no-products">No products available</h2>
-            )}
-            
-          </div>
-          
+                <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
+                <FaStar className='star' />
+                <FaStar className='star' />
+                <FaStar className='star' />
+                <FaStar className='star' />
+                <FaStar className='star' />
+                <div id='product-priceMonth1' className="product-priceMonth">Oldingi narxi:<del id='product-priceMonth'>{product.priceMonth}</del></div>
+                <div id='product-price' className="product-price">Narxi:{product.price} so'm</div>
+                <div id='product-count' className="product-count">Omborda:{product.count} ta </div>
+              </div>
+            ))
+          ) : (
+            <h2 className="no-products">No products available</h2>
+          )}
         </div>
+      </div>
       )}
-
       <div className='Decription_id'>
         {category ? (
           <>
@@ -199,8 +198,6 @@ export const Products = () => {
           <h2 className="no-category">Category not found</h2>
         )}
       </div>
-
-      
     </div>
   );
 };

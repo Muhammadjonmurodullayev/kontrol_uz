@@ -16,6 +16,7 @@ import { AdminProducts } from '../Admin_p/Products.jsx'
 import Homeadmin from '../Admin_p/Admin_p.jsx'
 import { Productss } from '../Mobile/SelectedCardsPage1.jsx'
 import { OneProductt } from '../Mobile/Carddetal.jsx'
+import Yordam from '../Chaild/yordam.jsx'
 export const App = () => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <=800);
@@ -45,7 +46,6 @@ export const App = () => {
       <>
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/qidiruv" element={<h1>Qidiruv</h1>} />
 
       <Route path='/product/:id' element={<OneProductt />} />
       <Route path='/category/:id' element={<Productss />} />
@@ -65,6 +65,8 @@ export const App = () => {
       <div className='page65753'>
       <Routes>
           <Route path="/" element={<Chaild />} />
+      <Route path="/yordam" element={<Yordam/>} />
+
       <Route  path='/product/:id'   element={<OneProduct/>} />
 
       <Route  path='/category/:id'   element={<Products/>} />

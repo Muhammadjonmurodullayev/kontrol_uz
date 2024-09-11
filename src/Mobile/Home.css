@@ -338,7 +338,7 @@ text-overflow: ellipsis;
   height:auto;
 }
 .startr {
-  color: yellow;
+  color: rgb(0, 0, 0);
 }
 .startrm{
   display: flex;

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import "./AdminProducts.css"
+import "./Products.css";
+
 export const AdminProducts = () => {
     let { id } = useParams(); // Category ID from URL
     const navigate = useNavigate();
@@ -92,6 +93,12 @@ export const AdminProducts = () => {
     };
 
     const handleEdit = (product) => {
+        // Scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // This will make the scrolling smooth
+        });
+
         setShowForm(true);
         setEditMode(true);
         setEditId(product._id);
@@ -118,13 +125,12 @@ export const AdminProducts = () => {
     };
 
     return (
-        <div>
-            <h1>Products for Category 
-            </h1>
-            <button  onClick={() => setShowForm(true)}>Add Product</button>
+        <div className="products-container">
+            <h1 id="category-title">Products for Category</h1>
+            <button id="add-product-btn" onClick={() => setShowForm(true)}>Add Product</button>
 
             {showForm && (
-                <form onSubmit={handleSubmit}>
+                <form id="product-form" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         name="name_uz"
@@ -178,30 +184,33 @@ export const AdminProducts = () => {
                         onChange={handleFileChange}
                         required
                     />
-                    <button type="submit">Submit</button>
-                    <button type="button" onClick={() => { setShowForm(false); setEditMode(false); setFormData({ name_uz: '', name_en: '', desc: '', price: '', count: '', priceMonth: '', image: null }); }}>Cancel</button>
+                    <button type="submit" id="submit-btn">Submit</button>
+                    <button type="button" id="cancel-btn" onClick={() => {
+                        setShowForm(false);
+                        setEditMode(false);
+                        setFormData({ name_uz: '', name_en: '', desc: '', price: '', count: '', priceMonth: '', image: null });
+                    }}>Cancel</button>
                 </form>
             )}
 
-            <div>
+            <div id="product-list">
                 {products.length > 0 ? products.map(product => (
-                    <div key={product._id}>
-                        <div>{product.name_uz}</div>
-                        <div>{product.name_en}</div>
-                        <div>{product.desc}</div>
-                        <div>{product.price}</div>
-                        <div>{product.count}</div>
-                        <div>{product.priceMonth}</div>
+                    <div key={product._id} className="product-card">
+                        <div className="product-name-uz">{product.name_uz}</div>
+                        <div className="product-name-en">{product.name_en}</div>
+                        <div className="product-desc">{product.desc}</div>
+                        <div className="product-price">{product.price}</div>
+                        <div className="product-count">{product.count}</div>
+                        <div className="product-price-month">{product.priceMonth}</div>
                         <img
                             src={`${process.env.REACT_APP_BASE_URL}${product.image}`}
                             alt={product.name_uz}
-                            width="50px"
-                            height="50px"
+                            className="product-image"
                         />
-                        <button onClick={() => handleEdit(product)}>Edit</button>
-                        <button onClick={() => handleDelete(product._id)}>Delete</button>
+                        <button className="edit-btn" onClick={() => handleEdit(product)}>Edit</button>
+                        <button className="delete-btn" onClick={() => handleDelete(product._id)}>Delete</button>
                     </div>
-                )) : <h1>No products available</h1>}
+                )) : <h1 id="no-products">No products available</h1>}
             </div>
         </div>
     );

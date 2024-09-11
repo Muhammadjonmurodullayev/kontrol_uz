@@ -1,0 +1,29 @@
+#star{
+    color:rgb(87, 87, 221);
+}
+.products_vcatd{
+    width:100%;
+    height:auto;
+    padding:10px;
+    /* border:2px solid black; */
+}
+.categotr_name_uz{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+}
+.categoru_poroduct_card{
+    display: flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+/* CategoriesAndProducts.css */
+.card h3 {
+    white-space: nowrap;          /* Prevent text from wrapping */
+    overflow: hidden;             /* Hide the overflowed text */
+    text-overflow: ellipsis;      /* Display ellipses for the overflowed text */
+    width: 100%;                  /* Ensure it takes full width of its container */
+  }
+  .category_name_uz_id67{
+    font-size:500px;
+  }

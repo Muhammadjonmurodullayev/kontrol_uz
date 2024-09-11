@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import './OneProduct.css';
-
+import pechat from "./pechat.jpg"
 export const OneProduct = () => {
     let { id } = useParams();
     let [product, setProduct] = useState();
@@ -24,6 +26,43 @@ export const OneProduct = () => {
             });
     }, [id]);
 
+    const generatePDF = () => {
+        const doc = new jsPDF();
+        doc.setFont('Helvetica');  // To'g'ri shriftni tanlang
+        doc.text('Коммерческое предложение', 20, 30);  // Matnni to'g'ri joylashtiring
+        doc.save('document.pdf');
+        
+        
+
+    
+        // Set up the PDF content
+        doc.setFont('Arial', 'normal');
+        doc.setFontSize(16);
+        doc.text('Коммерческое предложение', 300, 40, { align: 'center' });
+    
+        // Adding table and content (as explained earlier)
+        doc.autoTable({
+            startY: 80,
+            head: [['№', 'Товар', 'Цена', 'Количество', 'Общая стоимость']],
+            body: [
+                ['1', 'Пример товара', '250000 сум', '1', '250000 сум']
+            ],
+            theme: 'grid',
+            styles: { halign: 'center' },
+            headStyles: { fillColor: [0, 128, 0], textColor: [255, 255, 255] }
+        });
+    
+        const vat = (250000 * 0.12).toFixed(3); // Example VAT calculation
+        const total = 250000 + parseFloat(vat);
+    
+        let finalY = doc.lastAutoTable.finalY + 20;
+        doc.text(`НДС 12%: ${vat} сум`, 40, finalY);
+        doc.text(`Общая сумма: 250000 сум`, 40, finalY + 20);
+    
+        // Saving the PDF
+        doc.save('commercial-offer.pdf');
+    };
+    
     return (
         <div className="product-page">
             {
@@ -63,13 +102,9 @@ export const OneProduct = () => {
                                 <p>В наличии</p>
                             </div>
                             <Link to="/">
-                            <button className="add-to-cart">Добавить в корзину</button>
+                                <button className="add-to-cart">Добавить в корзину</button>
                             </Link>
-                            {/* <div className="installment-info">
-                                <p>Рассрочка: 77 280 сум/месяц на 6 месяцев.</p>
-                                <p>Первоначальный взнос: 0 сум.</p>
-                                <p>Цена в рассрочку: 463 680 сум.</p>
-                            </div> */}
+                            <button className="add-to-cart" onClick={generatePDF}>Коммерческий</button>
                         </div>
                         <div className="delivery-section">
                             <h3>Доставка</h3>

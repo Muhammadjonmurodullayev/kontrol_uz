@@ -22,6 +22,8 @@ import banner315 from "./DALL·E 2024-08-21 12.52.11 - A website banner design f
 import kontrol_panel from "./Kontrol_panel.webp"
 import konrtol_panel_2 from "./Kontrol_panel_2.webp"
 import panel_3 from "./panel_3.webp"
+import { OneProductss } from './OneProductss';
+import CategoriesAndProducts from './CategoriesAndProducts';
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -106,11 +108,6 @@ const Chaild = ({ cards, addCard }) => {
   const chathandleBlur = () => {
     setchat(!getchat)
   }
-
-
-
-
-
   const [formData, setFormData] = useState({
     input1: '',
     input2: '',
@@ -127,7 +124,7 @@ const Chaild = ({ cards, addCard }) => {
   }; // bot uchun 
 
   const handleSubmit = async () => {
-    const botToken = 'Bazy_url';
+    const botToken = '7431288007:AAGJLfjZf2_mRVWszsouH5SVuRvz7slw2QA';
     const chatId = '789670134';
     const message = `Ism: ${formData.input1}\nFamiliya: ${formData.input2}\nTelfon raqam: ${formData.input3}\nSMS: ${formData.input4}`;
 
@@ -167,7 +164,7 @@ const Chaild = ({ cards, addCard }) => {
       imgSrc: panel_3 // Replace with your image path
     }
   ];// corusel 
-//panel_3
+  //panel_3
 
 
 
@@ -199,7 +196,7 @@ const Chaild = ({ cards, addCard }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-    },10000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);//corusel 
@@ -430,57 +427,57 @@ const Chaild = ({ cards, addCard }) => {
         <hr className='hr121243' />
       </div>
       {searchTerm ?
-         <div className='main-content'>
-         <h1>Mahsulotlar</h1>
-         <div className='card_container1'>
-           {loading ? (
-             <div className='Loading6'>
-               <div className="spinner">
-               </div>
-             </div>
-           ) : (
-             <div className='card_container'>
+        <div className='main-content'>
+          <h1>Mahsulotlar</h1>
+          <div className='card_container1'>
+            {loading ? (
+              <div className='Loading6'>
+                <div className="spinner">
+                </div>
+              </div>
+            ) : (
+              <div className='card_container'>
 
 
 
-               {
-                 filteredProducts.map((product) => (
-                   <div key={product._id} className='card'
-                     onClick={() => { navigator("/product/" + product._id) }}
-                   >
+                {
+                  filteredProducts.map((product) => (
+                    <div key={product._id} className='card'
+                      onClick={() => { navigator("/product/" + product._id) }}
+                    >
 
-                     {product.image && (
-                       <div className='card_input_card'>
-                         <img
-                           id='src_img11'
-                           src={`${process.env.REACT_APP_BASE_URL}${product.image}`} // Append base URL to image path
-                           alt={product.name_uz}
-                           style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                         />
-                       </div>
-                     )}
+                      {product.image && (
+                        <div className='card_input_card'>
+                          <img
+                            id='src_img11'
+                            src={`${process.env.REACT_APP_BASE_URL}${product.image}`} // Append base URL to image path
+                            alt={product.name_uz}
+                            style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+                          />
+                        </div>
+                      )}
 
-                     <p className='card_name3232'>{product.name_uz}</p>
-                     {/* <p>{product.name_ru}</p> */}
-                       <FaStar className='star' />
-                       <FaStar className='star' />
-                       <FaStar className='star' />
-                       <FaStar className='star' />
-                       <FaStar className='star' />
-                     <div>
-                     <p className='Oldingi_narx'>Oldingi narx: <del id='decoration'>{product.priceMonth}</del></p>
-                         <span className='span_price'>Narxi:{product.price} so'm</span>
-                       {/* <p>{product.desc}</p> */}
-                       <p className='Omborda_po'>Omborda: {product.count}ta qoldi</p>
-                     </div>
-                   </div>
-                 ))
-               }
+                      <p className='card_name3232'>{product.name_uz}</p>
+                      {/* <p>{product.name_ru}</p> */}
+                      <FaStar className='star' />
+                      <FaStar className='star' />
+                      <FaStar className='star' />
+                      <FaStar className='star' />
+                      <FaStar className='star' />
+                      <div>
+                        <p className='Oldingi_narx'>Oldingi narx: <del id='decoration'>{product.priceMonth}</del></p>
+                        <span className='span_price'>Narxi:{product.price} so'm</span>
+                        {/* <p>{product.desc}</p> */}
+                        <p className='Omborda_po'>Omborda: {product.count}ta qoldi</p>
+                      </div>
+                    </div>
+                  ))
+                }
 
-             </div>
-           )}
-         </div>
-       </div>
+              </div>
+            )}
+          </div>
+        </div>
         :
         <div className='card-list-container'>
           <div className="card-list-container">
@@ -530,7 +527,7 @@ const Chaild = ({ cards, addCard }) => {
                   </div>
                   <button className="carousel-button next" onClick={nextSlide}>&#10095;</button>
                 </div>
-                {/* <div className='kontainer_id_item'>
+                <div className='kontainer_id_item'>
                   <div className="kontainer_id_item1">
                     < IoWaterSharp className='IoWaterSharp' />
                     <p className='Suv_hisoblagichi'>Water meter</p>
@@ -558,15 +555,19 @@ const Chaild = ({ cards, addCard }) => {
                     <p className='solarpanel'>Solar panel</p>
                   </div>
 
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
-         
+
 
 
           <div className='main-content'>
-            <h1>Mahsulotlar</h1>
+            <CategoriesAndProducts />
+            <h1 style={{
+              color: "rgb(87, 87, 221)"
+
+            }}>Mahsulotlar</h1>
             <div className='card_container1'>
               {loading ? (
                 <div className='Loading6'>
@@ -597,14 +598,14 @@ const Chaild = ({ cards, addCard }) => {
 
                         <p className='card_name3232'>{product.name_uz}</p>
                         {/* <p>{product.name_ru}</p> */}
-                          <FaStar className='star' />
-                          <FaStar className='star' />
-                          <FaStar className='star' />
-                          <FaStar className='star' />
-                          <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
+                        <FaStar className='star' />
                         <div>
-                        <p className='Oldingi_narx'><del id='decoration'>{product.priceMonth} so'm</del></p>
-                            <span className='span_price'>{product.price} so'm</span>
+                          <p className='Oldingi_narx'><del id='decoration'>{product.priceMonth} so'm</del></p>
+                          <span className='span_price'>{product.price} so'm</span>
                           {/* <p>{product.desc}</p> */}
                           <p className='Omborda_po'>Omborda: {product.count}ta qoldi</p>
                         </div>

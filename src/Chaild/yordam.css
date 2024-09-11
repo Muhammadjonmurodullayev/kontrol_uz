@@ -1,0 +1,47 @@
+.faq-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ustunlar orasidagi masofa */
+  }
+  
+  .faq-item {
+    flex: 1 1 calc(50% - 20px); /* Har bir element 50% joyni egallaydi, lekin ustunlar orasidagi masofani hisobga oladi */
+    min-width: 300px;
+  }
+  
+  .faq-title {
+    cursor: pointer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-title:hover {
+    background-color: #ddd;
+  }
+  
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+  }
+  
+  .faq-content.expanded {
+    max-height: 200px; /* Bu yerda javoblar uzunligiga qarab max-height ni sozlang */
+    padding: 10px;
+  }
+  
+  .yordam55{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+  }
+.yordam56{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+    padding:20px;
+}
