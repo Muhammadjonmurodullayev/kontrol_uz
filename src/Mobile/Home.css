@@ -442,3 +442,9 @@ align-items: center;
   display: flex;
   flex-direction: column;
 }
+.CategoriesAndProducts_id534{
+  width:100%;
+  height:auto;
+  border:2px solid black;
+  margin-top:50px;
+}

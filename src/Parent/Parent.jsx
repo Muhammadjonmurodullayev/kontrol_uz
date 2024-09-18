@@ -66,26 +66,32 @@ const Parent = () => {
             </div>
           )}
         </div>
+
+        
         <div className="hamkor">
           <FaHandshake className='FaHandshake' />
           <span className='Hamkorlarimiz'>Hamkorlarimiz</span>
         </div>
+
+
         <div className="yuridik">
           <BiSolidShoppingBags className='BiSolidShoppingBags' />
           <span className='Yuridik'>Yuridik shaxs</span>
         </div>
+
+
         <Link to="/Yordam">
         <div className="yordam">
           <GrHelpBook className='GrHelpBook' />
           <span className='Yordam1'>Yordam</span>
         </div>  
         </Link>
-        {/* <div className="kontact">
-          <span className='kontact1'>Kontact</span>
-        </div> */}
+      
+
+
         <div className="tel">
         <BsFillTelephoneFill className='BsFillTelephoneFill' />
-          <span className='tel1'>+998 (71) 200 68 00</span>
+          <span className='tel1'>+998 (90) 329 12 84</span>
 
         </div>
       </div>

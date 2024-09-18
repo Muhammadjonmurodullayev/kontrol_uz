@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { IoHome } from "react-icons/io5";
+import { IoSettingsSharp } from "react-icons/io5";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { FaGlobe } from "react-icons/fa6";
+import { MdContactPage } from "react-icons/md";
+import { IoMdCopy } from "react-icons/io";
 import "./Admin_p.css"
 import BarChart from './Bar';
 import CustomBarChart from './Bar';
@@ -156,9 +163,128 @@ const Homeadmin = () => {
   };
 
   return (
-    <div className="container">
+    <div className='container_button2'>
+
+      <div className='container_button1'>
+        <div className='parent_chail'>
+          <div className='bukvaf'>
+            <p className='parent_id_f'>K</p>
+          </div>
+          <h3 className='kontrol_b'>Kontrol</h3>
+        </div>
+        <hr />
+       <Link to="home">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <IoHome className='IoHome1'/>
+          <p className='link_p2'>Home</p>
+        </div>
+        </div>
+       </Link>
+
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <IoSettingsSharp  className='IoHome1'/>
+          <p className='link_p2'>Sozlamalar</p>
+        </div>
+        </div>
+       </Link>
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <TfiMenuAlt  className='IoHome1'/>
+          <p className='link_p2'>Xarakteristika</p>
+        </div>
+        </div>
+       </Link>
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <TfiMenuAlt  className='IoHome1'/>
+          <p className='link_p2'>Kategoriya</p>
+        </div>
+        </div>
+       </Link>        
+        
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <FaGlobe  className='IoHome1'/>
+          <p className='link_p2'>Menyular</p>
+        </div>
+        </div>
+       </Link>
+       
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <FaGlobe  className='IoHome1'/>
+          <p className='link_p2'>Mahsulotlar</p>
+        </div>
+        </div>
+       </Link>
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <MdContactPage   className='IoHome1'/>
+          <p className='link_p2'>Sahifalar</p>
+        </div>
+        </div>
+       </Link>
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <MdContactPage   className='IoHome1'/>
+          <p className='link_p2'>Buyutmalar</p>
+        </div>
+        </div>
+       </Link>    
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <TfiMenuAlt  className='IoHome1'/>
+          <p className='link_p2'>Mijozlar</p>
+        </div>
+        </div>
+       </Link>   
+
+       <Link to="about">
+       <div className='admin_link_1'>
+        <div className='admin__icons'>
+        <TfiMenuAlt  className='IoHome1'/>
+          <p className='link_p2'>Sayt foydalanuvchilari</p>
+        </div>
+        </div>
+       </Link>   
+
+       
+
+
+
+        <Link to="about">
+          <h1>about</h1>
+        </Link>
+        <Link to="game">
+          <h1>game</h1>
+        </Link>
+      </div>
+
+
+<div className='container_button3'>
+  <Outlet/>
+</div>
+
+      {/* <div className="container">
      <div className='container_id90'>
-     
+      <h1>hello</h1>
       <div className='sort_id'>
         <input id='sort_id'
           type="text"
@@ -173,7 +299,7 @@ const Homeadmin = () => {
       </div>
      </div>
 
-      {/* Search Input */}
+
     
 
       {showForm && (
@@ -212,7 +338,6 @@ const Homeadmin = () => {
       {filteredCategory.map((item) => (
         <div className="itemmm" key={item._id}
           style={{ cursor: "pointer" }}
-          onClick={() => { navigator("/admin/category/" + item._id); }}
         >
           <div className="item-info">
             <div className='name___ru'>{item.name_uz}</div>
@@ -220,6 +345,7 @@ const Homeadmin = () => {
           </div>
           <div className='img_button_id'>
             <img
+          onClick={() => { navigator("/admin/category/" + item._id); }}
               className='img_button_id_121'
               src={process.env.REACT_APP_BASE_URL + item.image}
               alt=""
@@ -235,6 +361,7 @@ const Homeadmin = () => {
       ))}
       <hr />
       <CustomBarChart />
+    </div> */}
     </div>
   );
 };

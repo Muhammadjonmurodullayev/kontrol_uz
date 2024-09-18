@@ -20,6 +20,7 @@ import banner315 from "./DALL·E 2024-08-21 12.52.11 - A website banner design f
 import kontrol_panel from "./Kontrol_panel.webp"
 import konrtol_panel_2 from "./Kontrol_panel_2.webp"
 import panel_3 from "./panel_3.webp"
+import CategoriesAndProducts from '../Chaild/CategoriesAndProducts';
 ///
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -203,6 +204,8 @@ const Home = () => {
       }
       <div className="Products_section">
         {/* <div>Products</div> */}
+          <CategoriesAndProducts className="CategoriesAndProducts_id534"/>
+
 
         {
           filteredProducts.map((product) => (
@@ -231,6 +234,43 @@ const Home = () => {
           ))
         }
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

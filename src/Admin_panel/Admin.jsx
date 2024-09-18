@@ -38,7 +38,7 @@ const Admin = () => {
           <label>Parol:</label>
           <input type="password" value={password} onChange={handlePasswordChange} />
         </div>
-        <button type="submit" onClick={()=>navigatore("/admin/products")}>Kirish</button>
+        <button type="submit" onClick={()=>navigatore("/products")}>Kirish</button>
       </form>
     </div>
     </div>

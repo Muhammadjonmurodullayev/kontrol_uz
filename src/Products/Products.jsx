@@ -41,7 +41,7 @@ export const Products = () => {
       ...prev,
       [item.id]: prev[item.id]
         ? { ...prev[item.id], selected: !prev[item.id].selected }
-        : { ...item, selected: true, quantity: 1 },
+        : { ...item, selected: true, quantity:1},
     }));
   };
 

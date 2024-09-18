@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Parent from '../Parent/Parent'
 import "./App.css"
 import Kontact from '../Kontact/Kontact'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { BrowserRouter,Routes,Route,Outlet } from 'react-router-dom'
 import Chaild  from '../Chaild/Chaild.jsx'
 import  { Products } from '../Products/Products.jsx'
 import  { OneProduct } from '../OneProduct/OneProduct.jsx'
@@ -17,6 +17,9 @@ import Homeadmin from '../Admin_p/Admin_p.jsx'
 import { Productss } from '../Mobile/SelectedCardsPage1.jsx'
 import { OneProductt } from '../Mobile/Carddetal.jsx'
 import Yordam from '../Chaild/yordam.jsx'
+import { Home1 } from '../Admin_p/home_admnin.jsx'
+import { About1 } from '../Admin_p/about_admin.jsx'
+import { Game1 } from '../Admin_p/Game_admin.jsx'
 export const App = () => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <=800);
@@ -70,14 +73,19 @@ export const App = () => {
       <Route  path='/product/:id'   element={<OneProduct/>} />
 
       <Route  path='/category/:id'   element={<Products/>} />
+          <Route path="/admin" element={<Admin/>} />
 
-          <Route path="/admin"  >
-          <Route index element={<Admin/>} />
-          
-          <Route path="products" element={<Homeadmin/>} />
-          <Route path='category/:id' element={<AdminProducts/>} />
-          </Route>
-      </Routes>
+           <Route path="products" element={<Homeadmin/>} >
+
+               <Route path='category/:id' element={<AdminProducts/>} />
+               <Route path='home' element={<Home1/>} />
+               <Route path='about' element={<About1/>} />
+               <Route path='game' element={<Game1/>} />
+         
+
+            </Route>
+
+          </Routes>
       </div>
       <Kontact  />
       </>

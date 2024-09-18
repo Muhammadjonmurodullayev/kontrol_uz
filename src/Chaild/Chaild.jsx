@@ -3,7 +3,7 @@ import "./Chaild.css"
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
-import Logo from "./kontrol.uz svg.jpg";
+import Logo from "./kontrol.uz_svg.png";
 import { FaSearch } from "react-icons/fa";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { IoIosHelpCircle } from "react-icons/io";
@@ -18,12 +18,12 @@ import { PiSolarPanelDuotone } from "react-icons/pi";
 import axios from 'axios';
 import { IoClose } from "react-icons/io5";
 import { IoWaterSharp } from "react-icons/io5";
-import banner315 from "./DALL·E 2024-08-21 12.52.11 - A website banner design featuring solar panels similar to the ones shown in the provided image. The banner should have a clean, modern look with a foc.webp"
-import kontrol_panel from "./Kontrol_panel.webp"
-import konrtol_panel_2 from "./Kontrol_panel_2.webp"
-import panel_3 from "./panel_3.webp"
 import { OneProductss } from './OneProductss';
 import CategoriesAndProducts from './CategoriesAndProducts';
+import Panel1 from "./panel1.webp"
+import Panel2 from "./panel2.webp"
+import Panel3 from "./Panel3.webp"
+import Panel4 from "./Panel4.webp"
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -138,33 +138,38 @@ const Chaild = ({ cards, addCard }) => {
   };//bot uchun 
   // const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+
+
+
+
+  // banner tutorial 
   const banners = [
     {
       id: 1,
       text: "",
       bgColor: "linear-gradient(135deg, #ff7e5f, #feb47b)",
-      imgSrc: banner315 // Replace with your image path
+      imgSrc:Panel1 // Replace with your image path
     },
     {
       id: 2,
       text: "",
       bgColor: "linear-gradient(135deg, #42e695, #3bb2b8)",
-      imgSrc: kontrol_panel // Replace with your image path
+      imgSrc:Panel2 // Replace with your image path
     },
     {
       id: 3,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc: konrtol_panel_2 // Replace with your image path
+      imgSrc:Panel3 // Replace with your image path
     },
     {
       id: 4,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc: panel_3 // Replace with your image path
+      imgSrc:Panel4 // Replace with your image path
     }
   ];// corusel 
-  //panel_3
+
 
 
 
@@ -196,7 +201,7 @@ const Chaild = ({ cards, addCard }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-    }, 10000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);//corusel 
@@ -428,7 +433,7 @@ const Chaild = ({ cards, addCard }) => {
       </div>
       {searchTerm ?
         <div className='main-content'>
-          <h1>Mahsulotlar</h1>
+          <h1>Продукты</h1>
           <div className='card_container1'>
             {loading ? (
               <div className='Loading6'>
@@ -459,16 +464,12 @@ const Chaild = ({ cards, addCard }) => {
 
                       <p className='card_name3232'>{product.name_uz}</p>
                       {/* <p>{product.name_ru}</p> */}
-                      <FaStar className='star' />
-                      <FaStar className='star' />
-                      <FaStar className='star' />
-                      <FaStar className='star' />
-                      <FaStar className='star' />
+                    
                       <div>
                         <p className='Oldingi_narx'>Oldingi narx: <del id='decoration'>{product.priceMonth}</del></p>
-                        <span className='span_price'>Narxi:{product.price} so'm</span>
+                        <span className='span_price'>Narxi:{product.price} cум</span>
                         {/* <p>{product.desc}</p> */}
-                        <p className='Omborda_po'>Omborda: {product.count}ta qoldi</p>
+                        <p className='Omborda_po'>Omborda: {product.count}ta</p>
                       </div>
                     </div>
                   ))
@@ -567,7 +568,7 @@ const Chaild = ({ cards, addCard }) => {
             <h1 style={{
               color: "rgb(87, 87, 221)"
 
-            }}>Mahsulotlar</h1>
+            }}>Продукты</h1>
             <div className='card_container1'>
               {loading ? (
                 <div className='Loading6'>
@@ -597,17 +598,15 @@ const Chaild = ({ cards, addCard }) => {
                         )}
 
                         <p className='card_name3232'>{product.name_uz}</p>
-                        {/* <p>{product.name_ru}</p> */}
+                        {/* <FaStar className='star' />
                         <FaStar className='star' />
                         <FaStar className='star' />
                         <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
+                        <FaStar className='star' /> */}
                         <div>
                           <p className='Oldingi_narx'><del id='decoration'>{product.priceMonth} so'm</del></p>
-                          <span className='span_price'>{product.price} so'm</span>
-                          {/* <p>{product.desc}</p> */}
-                          <p className='Omborda_po'>Omborda: {product.count}ta qoldi</p>
+                          <span className='span_price'>{product.price} cум</span>
+                          <p className='Omborda_po'>Omborda: {product.count}ta </p>
                         </div>
                       </div>
                     ))
