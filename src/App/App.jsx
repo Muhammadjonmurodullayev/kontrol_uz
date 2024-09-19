@@ -20,6 +20,7 @@ import Yordam from '../Chaild/yordam.jsx'
 import { Home1 } from '../Admin_p/home_admnin.jsx'
 import { About1 } from '../Admin_p/about_admin.jsx'
 import { Game1 } from '../Admin_p/Game_admin.jsx'
+import { Mahsulotlar } from '../Admin_p/Mahsulotlar.jsx'
 export const App = () => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <=800);
@@ -76,9 +77,11 @@ export const App = () => {
           <Route path="/admin" element={<Admin/>} />
 
            <Route path="products" element={<Homeadmin/>} >
-
                <Route path='category/:id' element={<AdminProducts/>} />
+
+
                <Route path='home' element={<Home1/>} />
+               <Route path='mahsulotlar' element={<Mahsulotlar/>} />
                <Route path='about' element={<About1/>} />
                <Route path='game' element={<Game1/>} />
          

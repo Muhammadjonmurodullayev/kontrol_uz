@@ -126,6 +126,7 @@ export const AdminProducts = () => {
 
     return (
         <div className="products-container">
+            <h1>salom</h1>
             <h1 id="category-title">Products for Category</h1>
             <button id="add-product-btn" onClick={() => setShowForm(true)}>Add Product</button>
 

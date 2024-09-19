@@ -74,9 +74,12 @@ const Parent = () => {
         </div>
 
 
-        <div className="yuridik">
+       <div className="yuridik">
           <BiSolidShoppingBags className='BiSolidShoppingBags' />
-          <span className='Yuridik'>Yuridik shaxs</span>
+       <Link to="/admin" className='Yuridik'>
+          <span className='Yuridik'
+          style={{color:"black"}}>Yuridik shaxs</span>
+       </Link>
         </div>
 
 
