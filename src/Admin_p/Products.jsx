@@ -3,6 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import "./Products.css";
 
+// Utility function to format numbers with commas
+const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 export const AdminProducts = () => {
     let { id } = useParams(); // Category ID from URL
     const navigate = useNavigate();
@@ -126,7 +131,6 @@ export const AdminProducts = () => {
 
     return (
         <div className="products-container">
-            <h1>salom</h1>
             <h1 id="category-title">Products for Category</h1>
             <button id="add-product-btn" onClick={() => setShowForm(true)}>Add Product</button>
 
@@ -194,25 +198,33 @@ export const AdminProducts = () => {
                 </form>
             )}
 
-            <div id="product-list">
-                {products.length > 0 ? products.map(product => (
-                    <div key={product._id} className="product-card">
-                        <div className="product-name-uz">{product.name_uz}</div>
-                        <div className="product-name-en">{product.name_en}</div>
-                        <div className="product-desc">{product.desc}</div>
-                        <div className="product-price">{product.price}</div>
-                        <div className="product-count">{product.count}</div>
-                        <div className="product-price-month">{product.priceMonth}</div>
-                        <img
-                            src={`${process.env.REACT_APP_BASE_URL}${product.image}`}
-                            alt={product.name_uz}
-                            className="product-image"
-                        />
-                        <button className="edit-btn" onClick={() => handleEdit(product)}>Edit</button>
-                        <button className="delete-btn" onClick={() => handleDelete(product._id)}>Delete</button>
-                    </div>
-                )) : <h1 id="no-products">No products available</h1>}
-            </div>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Price per Month</th>
+                        <th>Count</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.length > 0 ? products.map((product, index) => (
+                        <tr key={product._id}>
+                            <td>{index + 1}</td>
+                            <td>{product.name_uz}</td>
+                            <td>{formatPrice(product.price)}</td> {/* Formatted price */}
+                            <td>{formatPrice(product.priceMonth)}</td> {/* Formatted monthly price */}
+                            <td>{product.count}</td>
+                            <td>
+                                <button className="edit-btn" onClick={() => handleEdit(product)}>Edit</button>
+                                <button className="delete-btn" onClick={() => handleDelete(product._id)}>Delete</button>
+                            </td>
+                        </tr>
+                    )) : <tr><td colSpan="6">No products available</td></tr>}
+                </tbody>
+            </table>
         </div>
     );
 };

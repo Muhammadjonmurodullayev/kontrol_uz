@@ -4,6 +4,7 @@ import { useTable } from 'react-table';
 import { IoMdMenu } from "react-icons/io";
 import { FaGlobe } from "react-icons/fa6";
 import { RiAdminFill } from "react-icons/ri";
+import { FaPencil } from "react-icons/fa6";
 import axios from 'axios';
 import "./Mahsulotlar.css"
 import BarChart from './Bar';
@@ -184,96 +185,126 @@ export const Mahsulotlar = () => {
 <hr />
 <div className='mahsulotlar_panel6'>
 
-<div>
-    +
-</div>
 <div className='table'>
+  <div className="container">
+    <div className='container_id90'>
+      {/* <h1>Product Table</h1> */}
+      
+      <div className='button_item_id9'>
+        <button className="button_id66" onClick={() => { setShowForm(true); setFormType("category"); setEditMode(false); }}>+ Add</button>
+      </div>
+    </div>
 
+    {showForm && (
+      <form className="form" onSubmit={handleFormSubmit}>
+        {formType === "category" && (
+          <>
+            <input
+              className="input"
+              type="text"
+              placeholder="Name UZ"
+              value={formData.name_uz}
+              onChange={(e) => setFormData({ ...formData, name_uz: e.target.value })}
+              required
+            />
+            <input
+              className="input"
+              type="text"
+              placeholder="Name RU"
+              value={formData.name_ru}
+              onChange={(e) => setFormData({ ...formData, name_ru: e.target.value })}
+              required
+            />
+          </>
+        )}
+        <input
+          className="input"
+          type="file"
+          onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })}
+          required
+        />
+        <button className="submit-button" type="submit">Submit</button>
+        <button className="cancel-button" type="button" onClick={() => { setShowForm(false); setEditMode(false); setFormData({ name_uz: "", name_ru: "", image: null, title: "" }); }}>Cancel</button>
+      </form>
+    )}
 
-
-      <div className="container">
-     <div className='container_id90'>
-      <h1>hello</h1>
-      <div className='sort_id'>
-        <input id='sort_id'
+    <table className="styled-table">
+      <thead>
+        <tr>
+          <th><div className='sort_id'>
+        <input id='input_sotr_buy'
           type="text"
-          placeholder="Search by Name UZ"
+          placeholder="Search..."
           value={searchTerm}
           onChange={handleSearchChange}
         />
-      </div>
-      <div className='button_item_id9'>
-        <button className="button_id66" onClick={() => { setShowForm(true); setFormType("category"); setEditMode(false); }}>+ Add</button>
+      </div></th>
+          <th> </th>
+          <th></th>
+          <th> </th>
+          <th> </th>
+          <th></th>
+          <th> </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Product Name</th>
+          <th>Narxi</th>
+          <th>Rassrochka narxi</th>
+          <th>Buyurtmalar soni</th>
+          <th>Kategoriya</th>
+          <th>Flag Id</th>
+          <th>Статус</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredCategory.map((item, index) => (
+          <tr key={item._id}>
+            <td>{index + 1}</td>
+            <td>{item.name_uz}</td>
+            <td>{item.price}</td>
+            <td>{item.installmentPrice}</td>
+            <td>{item.orderCount}</td>
+            <td>{item.category}</td>
+            <td>{item.flag}</td>
+            <td>
+  {item.image ? (
+    <img
+    onClick={() => { navigator("/products/category/" + item._id); }}
+      src={`${process.env.REACT_APP_BASE_URL}/${item.image}`}
+      alt={item.name_uz}
+      style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+    />
+  ) : (
+    'No Image'
+  )}
+</td>
 
-      </div>
-     </div>
+            <td>
+              <div className="item-buttons">
+                <button id="edit-button" onClick={() => handleEdit(item, "category")}>
+                  {/* <div> */}<br />
+                    <FaPencil/>
+                  {/* </div> */}
+                  </button>
+                <button className="delete-button" onClick={() => handleDelete(item._id, "category")}>Delete</button>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
 
-
-    
-
-      {showForm && (
-        <form className="form" onSubmit={handleFormSubmit}>
-          {formType === "category" && (
-            <>
-              <input
-                className="input"
-                type="text"
-                placeholder="Name UZ"
-                value={formData.name_uz}
-                onChange={(e) => setFormData({ ...formData, name_uz: e.target.value })}
-                required
-              />
-              <input
-                className="input"
-                type="text"
-                placeholder="Name RU"
-                value={formData.name_ru}
-                onChange={(e) => setFormData({ ...formData, name_ru: e.target.value })}
-                required
-              />
-            </>
-          )}
-          <input
-            className="input"
-            type="file"
-            onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })}
-            required
-          />
-          <button className="submit-button" type="submit">Submit</button>
-          <button className="cancel-button" type="button" onClick={() => { setShowForm(false); setEditMode(false); setFormData({ name_uz: "", name_ru: "", image: null, title: "" }); }}>Cancel</button>
-        </form>
-      )}
-
-      {filteredCategory.map((item) => (
-        <div className="itemmm" key={item._id}
-          style={{ cursor: "pointer" }}
-        >
-          <div className="item-info">
-            <div className='name___ru'>{item.name_uz}</div>
-            <div className="name-ruuu">{item.name_ru}</div>
-          </div>
-          <div className='img_button_id'>
-            <img
-          onClick={() => { navigator("/products/category/" + item._id); }}
-              className='img_button_id_121'
-              src={process.env.REACT_APP_BASE_URL + item.image}
-              alt=""
-              width="50px"
-              height="50px"
-            />
-          </div>
-          <div className="item-buttons">
-            <button className="edit-button" onClick={() => handleEdit(item, "category")}>Edit</button>
-            <button className="delete-button" onClick={() => handleDelete(item._id, "category")}>Delete</button>
-          </div>
-        </div>
-      ))}
-      <hr />
-      <CustomBarChart />
-    </div>
-
-
+    <hr />
+    <CustomBarChart />
+  </div>
 </div>
+
 
 </div>
     </div>

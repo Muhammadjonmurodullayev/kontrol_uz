@@ -78,9 +78,7 @@ export const App = () => {
 
            <Route path="products" element={<Homeadmin/>} >
                <Route path='category/:id' element={<AdminProducts/>} />
-
-
-               <Route path='home' element={<Home1/>} />
+               <Route index element={<Home1/>} />
                <Route path='mahsulotlar' element={<Mahsulotlar/>} />
                <Route path='about' element={<About1/>} />
                <Route path='game' element={<Game1/>} />

@@ -30,7 +30,9 @@ const Chaild = ({ cards, addCard }) => {
   const words1 = [
     "Uz", "Ru"
   ];
-
+  const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
   useEffect(() => {
     localStorage.setItem('selectedWord1', selectedWord1);
   }, [selectedWord1]);
@@ -466,10 +468,10 @@ const Chaild = ({ cards, addCard }) => {
                       {/* <p>{product.name_ru}</p> */}
                     
                       <div>
-                        <p className='Oldingi_narx'>Oldingi narx: <del id='decoration'>{product.priceMonth}</del></p>
-                        <span className='span_price'>Narxi:{product.price} cум</span>
+                        <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
+                        <span className='span_price'>{formatPrice(product.price)} cум</span>
                         {/* <p>{product.desc}</p> */}
-                        <p className='Omborda_po'>Omborda: {product.count}ta</p>
+                        <p className='Omborda_po'>Omborda: {product.count}</p>
                       </div>
                     </div>
                   ))
@@ -604,8 +606,8 @@ const Chaild = ({ cards, addCard }) => {
                         <FaStar className='star' />
                         <FaStar className='star' /> */}
                         <div>
-                          <p className='Oldingi_narx'><del id='decoration'>{product.priceMonth} so'm</del></p>
-                          <span className='span_price'>{product.price} cум</span>
+                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
+                          <span className='span_price'>{formatPrice(product.price)} cум</span>
                           <p className='Omborda_po'>Omborda: {product.count}ta </p>
                         </div>
                       </div>
