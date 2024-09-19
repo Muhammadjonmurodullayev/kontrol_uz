@@ -37,7 +37,7 @@
   .input-group input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #1e90ff;
+    /* border: 1px solid #1e90ff; */
     border-radius: 5px;
   }
   
@@ -60,4 +60,11 @@
     margin-bottom: 15px;
     font-weight: bold;
   }
-  
+  /* Add styles for input borders */
+.error-border {
+  border: 2px solid red;
+}
+
+.success-border {
+  border: 2px solid green;
+}
