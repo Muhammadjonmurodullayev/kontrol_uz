@@ -217,7 +217,7 @@ export const AdminProducts = () => {
                             <td>{formatPrice(product.price)}</td> {/* Formatted price */}
                             <td>{formatPrice(product.priceMonth)}</td> {/* Formatted monthly price */}
                             <td>{product.count}</td>
-                            <td>
+                            <td className='btn_ibuton'>
                                 <button className="edit-btn" onClick={() => handleEdit(product)}>Edit</button>
                                 <button className="delete-btn" onClick={() => handleDelete(product._id)}>Delete</button>
                             </td>

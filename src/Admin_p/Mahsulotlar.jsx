@@ -167,7 +167,7 @@ export const Mahsulotlar = () => {
 <div className='mahsulotlar_parent1'>
 <div className='mahsulotlar_parent'>
    <IoMdMenu className='IoMdMenu33'/>
-    <p className='IoMdMenu33_text'>Home</p>
+    <p className='IoMdMenu33_text'>Mahsulotlar</p>
 </div>
 <div className='mahsulotlar_parent2'>
 <div className='globale1'>

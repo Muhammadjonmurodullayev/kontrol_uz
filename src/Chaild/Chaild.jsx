@@ -24,6 +24,10 @@ import Panel1 from "./panel1.webp"
 import Panel2 from "./panel2.webp"
 import Panel3 from "./Panel3.webp"
 import Panel4 from "./Panel4.webp"
+import Gaz from "./Gaz_logo.jpg"
+import Water from "./water_logo.jpg"
+import Quvvat from "./Quvvat_logo.jpg"
+import Panel from "./Panel_logo.jpg"
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -532,31 +536,26 @@ const Chaild = ({ cards, addCard }) => {
                 </div>
                 <div className='kontainer_id_item'>
                   <div className="kontainer_id_item1">
-                    < IoWaterSharp className='IoWaterSharp' />
-                    <p className='Suv_hisoblagichi'>Water meter</p>
+                   <img src={Quvvat} alt="#"  className='Card_loco_iconsid1'/>
                   </div>
-                  <div className="kontainer_id_item2">технические работы на сайте
-                    <div className='Loading6'>
-                      <div className="spinner">
-                      </div>
-                    </div>
+                  <div className="kontainer_id_item2">
+                    <img src={Gaz} alt=""  className='Card_loco_iconsid2'/>
 
                   </div>
-                  <div className="kontainer_id_item3">технические работы на сайте
-                    <div className='Loading6'>
-                      <div className="spinner">
-                      </div>
-                    </div>
+                  <div className="kontainer_id_item3">
+                    <img src={Water} alt="#"  className='Card_loco_iconsid3'/>
                   </div>
-                  <div className="kontainer_id_item4">технические работы на сайте
+                  <div className="kontainer_id_item4">
                     <div className='Loading6'>
-                      <div className="spinner">
-                      </div>
-                    </div></div>
-                  <div className="kontainer_id_item5">
+                     <a href="">
+                     <img src={Panel} alt="#"   className='Card_loco_iconsid4'/>
+                     </a>
+                    </div>
+                    </div>
+                  {/* <div className="kontainer_id_item5">
                     <PiSolarPanelDuotone className='PiSolarPanelDuotone' />
                     <p className='solarpanel'>Solar panel</p>
-                  </div>
+                  </div> */}
 
                 </div>
               </div>
