@@ -552,10 +552,7 @@ const Chaild = ({ cards, addCard }) => {
                      </a>
                     </div>
                     </div>
-                  {/* <div className="kontainer_id_item5">
-                    <PiSolarPanelDuotone className='PiSolarPanelDuotone' />
-                    <p className='solarpanel'>Solar panel</p>
-                  </div> */}
+                 
 
                 </div>
               </div>
