@@ -227,6 +227,7 @@ const Home = () => {
                 <FaStar className='startr' />
                 <FaStar className='startr' />
               </div> */}
+              
               <del className='del323'>{product.priceMonth} so'm</del>
               <div className="product_price">{product.price} so'm</div>
 
