@@ -40,7 +40,7 @@ const Homeadmin = () => {
        </Link>
 
 
-       <Link to="about">
+       <Link to="Sozlamalar">
        <div className='admin_link_1'>
         <div className='admin__icons'>
         <IoSettingsSharp  className='IoHome1'/>
@@ -49,7 +49,7 @@ const Homeadmin = () => {
         </div>
        </Link>
 
-       <Link to="about">
+       <Link to="Xarakteristika">
        <div className='admin_link_1'>
         <div className='admin__icons'>
         <TfiMenuAlt  className='IoHome1'/>
@@ -58,7 +58,7 @@ const Homeadmin = () => {
         </div>
        </Link>
 
-       <Link to="about">
+       <Link to="Kategoriya">
        <div className='admin_link_1'>
         <div className='admin__icons'>
         <TfiMenuAlt  className='IoHome1'/>

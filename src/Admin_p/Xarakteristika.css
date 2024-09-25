@@ -1,0 +1,73 @@
+.table-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+  
+  .add-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .custom-table th {
+    background-color: #f5f5f5;
+  }
+  
+  .custom-table td {
+    background-color: #fff;
+  }
+  
+  .status-label {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .action-icon {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .view-icon {
+    color: #17a2b8;
+  }
+  
+  .edit-icon {
+    color: #ffc107;
+  }
+  
+  .delete-icon {
+    color: #dc3545;
+  }
+  
+  .table-footer {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  

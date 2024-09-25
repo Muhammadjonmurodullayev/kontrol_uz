@@ -566,7 +566,9 @@ const Chaild = ({ cards, addCard }) => {
             <h1 style={{
               color: "rgb(87, 87, 221)"
 
-            }}>Продукты</h1>
+            }}>
+              Продукты
+              </h1>
             <div className='card_container1'>
               {loading ? (
                 <div className='Loading6'>
@@ -580,7 +582,7 @@ const Chaild = ({ cards, addCard }) => {
 
                   {
                     filteredProducts.map((product) => (
-                      <div key={product._id} className='card'
+                      <div key={product._id} className='cardd'
                         onClick={() => { navigator("/product/" + product._id) }}
                       >
 

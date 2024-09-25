@@ -20,7 +20,8 @@ import banner315 from "./DALL·E 2024-08-21 12.52.11 - A website banner design f
 import kontrol_panel from "./Kontrol_panel.webp"
 import konrtol_panel_2 from "./Kontrol_panel_2.webp"
 import panel_3 from "./panel_3.webp"
-import CategoriesAndProducts from '../Chaild/CategoriesAndProducts';
+import CategoriesAndProducts1 from './CategoriesAndProducts1';
+
 ///
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -204,7 +205,7 @@ const Home = () => {
       }
       <div className="Products_section">
         {/* <div>Products</div> */}
-          <CategoriesAndProducts className="CategoriesAndProducts_id534"/>
+          <CategoriesAndProducts1 className="CategoriesAndProducts_id534"/>
 
 
         {
@@ -220,12 +221,12 @@ const Home = () => {
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
               <div className="product_name">{product.name_uz}</div>
-              <div className='startrm'>
+              {/* <div className='startrm'>
                 <FaStar className='startr' />
                 <FaStar className='startr' />
                 <FaStar className='startr' />
                 <FaStar className='startr' />
-              </div>
+              </div> */}
               <del className='del323'>{product.priceMonth} so'm</del>
               <div className="product_price">{product.price} so'm</div>
 

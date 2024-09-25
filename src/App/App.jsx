@@ -21,6 +21,9 @@ import { Home1 } from '../Admin_p/home_admnin.jsx'
 import { About1 } from '../Admin_p/about_admin.jsx'
 import { Game1 } from '../Admin_p/Game_admin.jsx'
 import { Mahsulotlar } from '../Admin_p/Mahsulotlar.jsx'
+import Xarakteristika from '../Admin_p/Xarakteristika.jsx'
+import Sozlamalar from '../Admin_p/Sozlamalar.jsx'
+import Kategoriya from '../Admin_p/Kategoriya.jsx'
 export const App = () => {
   const [selectedCards, setSelectedCards] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <=800);
@@ -78,6 +81,10 @@ export const App = () => {
 
            <Route path="products" element={<Homeadmin/>} >
                <Route path='home' element={<Home1/>} />
+               <Route path='Xarakteristika' element={<Xarakteristika/>} />
+               <Route path='Sozlamalar' element={<Sozlamalar/>} />
+               <Route path='Kategoriya' element={<Kategoriya/>} />
+               
                <Route path='category/:id' element={<AdminProducts/>} />
                <Route path='mahsulotlar' element={<Mahsulotlar/>} />
                <Route path='about' element={<About1/>} />
