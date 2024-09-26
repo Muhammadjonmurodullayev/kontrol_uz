@@ -50,7 +50,7 @@ const Admin = () => {
    return (
      <div className="admin_panel">
        <div className="login-container">
-         <h2>Login Page</h2>
+         <h2>Online shop </h2>
          {error && <p className="error">{error}</p>}
          <form onSubmit={handleSubmit}>
            <div className="input-group">
