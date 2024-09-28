@@ -453,7 +453,7 @@ const Chaild = ({ cards, addCard }) => {
 
                 {
                   filteredProducts.map((product) => (
-                    <div key={product._id} className='card'
+                    <div key={product._id} className='cardd'
                       onClick={() => { navigator("/product/" + product._id) }}
                     >
 
@@ -467,17 +467,20 @@ const Chaild = ({ cards, addCard }) => {
                           />
                         </div>
                       )}
-
+  <div className='sikitki_tovar'>
+                       <p className='sikidka2'>{product.count}% скидка</p>
+                        </div>
                       <p className='card_name3232'>{product.name_uz}</p>
                       {/* <p>{product.name_ru}</p> */}
                     
                       <div>
                         <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
                         <span className='span_price'>{formatPrice(product.price)} cум</span>
-                        {/* <p>{product.desc}</p> */}
-                        <p className='Omborda_po'>Omborda: {product.count}</p>
+                       
                       </div>
-                    </div>
+                    
+                      </div>
+                    
                   ))
                 }
 
@@ -596,18 +599,18 @@ const Chaild = ({ cards, addCard }) => {
                             />
                           </div>
                         )}
-
+ <div className='sikitki_tovar'>
+                       <p className='sikidka2'>{product.count}% скидка</p>
+                        </div>
                         <p className='card_name3232'>{product.name_uz}</p>
-                        {/* <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' />
-                        <FaStar className='star' /> */}
+                      
                         <div>
                           <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
                           <span className='span_price'>{formatPrice(product.price)} cум</span>
-                          <p className='Omborda_po'>Omborda: {product.count}ta </p>
                         </div>
+
+
+                       
                       </div>
                     ))
                   }

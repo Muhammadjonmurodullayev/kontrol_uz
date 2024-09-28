@@ -75,7 +75,7 @@
     padding: 5px 10px;
     border: none;
     border-radius: 3px;
-    color: #fff;
+    /* color: #000000; */
     cursor: pointer;
     margin-right: 5px;
 }
@@ -149,4 +149,9 @@
 }
 .btn_ibuton{
     display: flex;
+  gap:10px;
+}
+.button_img_id45{
+    width:80px;
+    height:auto;
 }

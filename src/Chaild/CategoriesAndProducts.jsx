@@ -69,7 +69,8 @@ const CategoriesAndProducts = () => {
         <div key={category._id} className='categotr_name_uz'>
           <h2 id='category_name_uz_id67'
           style={{
-            fontSize:"30px"
+            fontSize:"21px",
+            marginTop:"20px"
           }}
           >{category.name_uz}</h2>
           <div className='categoru_poroduct_card'>
@@ -77,7 +78,7 @@ const CategoriesAndProducts = () => {
               .filter(product => product.category_id === category._id)
               .map(filteredProduct => (
                 <div
-                  className='card'
+                  className='cardd'
                   onClick={() => { navigator("/product/" + filteredProduct._id) }}
                   key={filteredProduct._id}
                   style={{ border: '1px solid #ddd', padding: '10px', marginTop: '10px' }}
@@ -89,17 +90,21 @@ const CategoriesAndProducts = () => {
                       style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                       onError={() => console.error('Error loading image for product:', `https://schetchik.com.uz${filteredProduct.image}`)}
                     />
+                      <div className='sikitki_tovar1'>
+                       <p className='sikidka21'>{filteredProduct.count}% <br/> скидка</p>
+                        </div>
                   </div>
                   <h3 className='card_name3232'>{filteredProduct.name_uz}</h3>
+                  {/* <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
-                  <FaStar id='star'/>
-                  <FaStar id='star'/><br />
+                  <FaStar id='star'/> */}
+                  {/* <br /> */}
                   <span className='span_price'>{filteredProduct.price} so'm</span>
                   <p className='Oldingi_narx'><del id='decoration'>{filteredProduct.priceMonth} so'm</del></p>
-                  <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p>
+                  {/* <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p> */}
                 </div>
               ))}
           </div>

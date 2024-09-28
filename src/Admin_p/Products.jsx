@@ -141,7 +141,7 @@ export const AdminProducts = () => {
                         name="name_uz"
                         value={formData.name_uz}
                         onChange={handleInputChange}
-                        placeholder="Name (UZ)"
+                        placeholder="Name"
                         required
                     />
                     <input
@@ -149,7 +149,7 @@ export const AdminProducts = () => {
                         name="name_en"
                         value={formData.name_en}
                         onChange={handleInputChange}
-                        placeholder="Name (EN)"
+                        placeholder="Name"
                         required
                     />
                     <textarea
@@ -164,7 +164,15 @@ export const AdminProducts = () => {
                         name="price"
                         value={formData.price}
                         onChange={handleInputChange}
-                        placeholder="Price"
+                        placeholder="narxi"
+                        required
+                    />
+                      <input
+                        type="number"
+                        name="priceMonth"
+                        value={formData.priceMonth}
+                        onChange={handleInputChange}
+                        placeholder="Eski narx"
                         required
                     />
                     <input
@@ -172,17 +180,10 @@ export const AdminProducts = () => {
                         name="count"
                         value={formData.count}
                         onChange={handleInputChange}
-                        placeholder="Count"
+                        placeholder="ombor"
                         required
                     />
-                    <input
-                        type="number"
-                        name="priceMonth"
-                        value={formData.priceMonth}
-                        onChange={handleInputChange}
-                        placeholder="Price per Month"
-                        required
-                    />
+                  
                     <input
                         type="file"
                         name="image"
@@ -202,10 +203,11 @@ export const AdminProducts = () => {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                        <th>Price per Month</th>
-                        <th>Count</th>
+                        <th> Name</th>
+                        <th>Narxi</th>
+                        <th>Eski narx</th>
+                        <th>Ombor</th>
+                        <th>img</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -217,10 +219,15 @@ export const AdminProducts = () => {
                             <td>{formatPrice(product.price)}</td> {/* Formatted price */}
                             <td>{formatPrice(product.priceMonth)}</td> {/* Formatted monthly price */}
                             <td>{product.count}</td>
+                            <td>
+                                <img className='button_img_id45' src={process.env.REACT_APP_BASE_URL + product.image} alt={product.name_uz} />
+   
+</td>
                             <td className='btn_ibuton'>
-                                <button className="edit-btn" onClick={() => handleEdit(product)}>Edit</button>
-                                <button className="delete-btn" onClick={() => handleDelete(product._id)}>Delete</button>
+                                <button className="edit_btn" onClick={() => handleEdit(product)}>Edit</button>
+                                <button className="delete_btn" onClick={() => handleDelete(product._id)}>Delete</button>
                             </td>
+
                         </tr>
                     )) : <tr><td colSpan="6">No products available</td></tr>}
                 </tbody>

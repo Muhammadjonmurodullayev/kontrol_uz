@@ -64,7 +64,9 @@ export const Products = () => {
   const [category, setCategory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showSalom, setShowSalom] = useState(false);
-
+  const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
   function productClick(productId) {
     navigate("/product/" + productId);
   }
@@ -78,7 +80,7 @@ export const Products = () => {
         setCategory(categoryResponse.data);
 
         // Check if category name matches "panel"
-        if (categoryResponse.data.data.name_uz === 'Panellar') {
+        if (categoryResponse.data.data.name_uz === 'Stabilizator') {
           setShowSalom(true);
         } else {
           setShowSalom(false);
@@ -166,18 +168,17 @@ export const Products = () => {
                    style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                   src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product-image" />
                   </div>
+                  <div className='sikitki_tovarr'>
+                       <p className='sikidka21'>{product.count}% скидка</p>
+                        </div>
                   <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
+                 
 
                   {/* <div className="product-name-en">{product.name_ru}</div> */}
                   {/* <div className="product-desc">{product.desc}</div> */}
-                  <div id='product-priceMonth1' className="product-priceMonth">Oldingi narxi:<del id='product-priceMonth'>{product.priceMonth}</del></div>
-                  <div id='product-price' className="product-price">Narxi:{product.price} so'm</div>
-                  <div id='product-count' className="product-count">Omborda:{product.count} ta </div>
+                  <div id='product-priceMonth1' className="product-priceMonth"><del id='product-priceMonth'>{formatPrice(product.priceMonth)}</del></div>
+                  <div id='product-price' className="product-price">{formatPrice(product.price)} so'm</div>
+                  {/* <div id='product-count' className="product-count">Omborda:{product.count} ta </div> */}
                 </div>
               ))
             ) : (

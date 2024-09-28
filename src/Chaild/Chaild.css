@@ -316,7 +316,7 @@
 }
 .cardd {
   width:15%;
-  height: auto;
+  height:auto;
   cursor: pointer;
   padding:10px;
   border: 1px solid #ccc;
@@ -335,7 +335,7 @@
   /* font-size: 20px; */
   /* margin: 8px 0; */
   color:#002fff;
-  font-weight:600;
+  font-weight:200;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -352,8 +352,10 @@
   color: rgb(0, 0, 0);
 }
 .span_price {
-  color: rgb(0, 0, 0);
-  font-weight: 900;
+  /* color: rgb(0, 0, 0);
+   */
+   color: #3a5cf5;
+  font-weight:700;
 }
 #button_item1 {
   margin-top: 10px;
@@ -896,13 +898,9 @@ margin-left:10px;
 color:red;
   }
   .Oldingi_narx{
-    font-weight:600;
+    font-weight:400;
     font-size:15px;
-    color: #333;
-
-  }
-  .Omborda_po{
-    color:rgb(115, 115, 115);
+    /* color: #333; */
 
   }
   .kontainer_id_item{
@@ -1022,3 +1020,25 @@ align-items: center;
   .Card_loco_iconsid4:hover{
     padding:10px;
   }
+
+.sikitki_tovar{
+  width: 60px;
+  height:60px;
+  /* border:2px solid black; */
+  border-radius:50%;
+  position:absolute;
+  box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+  margin-top:19px;
+  margin-left:140px;
+  background-color:#ef2b15;
+  text-align: center;
+  transform: rotate(20deg);
+}
+.sikidka2{
+font-weight:400;
+color:white;
+font-size:13px;
+}
