@@ -21,6 +21,7 @@ import kontrol_panel from "./Kontrol_panel.webp"
 import konrtol_panel_2 from "./Kontrol_panel_2.webp"
 import panel_3 from "./panel_3.webp"
 import CategoriesAndProducts1 from './CategoriesAndProducts1';
+import baneer from "./bannner.jpg"
 
 ///
 const Home = () => {
@@ -53,15 +54,15 @@ const Home = () => {
   const slides = [
    
     {
-      img: kontrol_panel,
+      img: baneer,
       text: '',
     },
    
     {
-      img:panel_3,
+      img:baneer  ,
       text:""
     }
-    // Ko'proq slayderlar qo'shishingiz mumkin
+   
   ];
 
   const nextSlide = () => {
@@ -69,8 +70,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); // 1000 ms = 1 sekunt
-    return () => clearInterval(interval); // Tozalash funksiyasi
+    const interval = setInterval(nextSlide, 5000); 
+    return () => clearInterval(interval); 
   }, [currentIndex]); //
   let [categoryes, setCategory] = useState([]);
   let [products, setProducts] = useState([]);
@@ -196,7 +197,7 @@ const Home = () => {
       {searchTerm === "" &&
         <div className="carousel-container">
           <div className="carousel-slide">
-            <img src={slides[currentIndex].img} alt="slide" className="slide-image" />
+            <img  src={slides[currentIndex].img} alt="slide" className="slide-image" />
             <div className="slide-text">{slides[currentIndex].text}</div>
           </div>
         </div>
@@ -221,13 +222,9 @@ const Home = () => {
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
               <div className="product_name">{product.name_uz}</div>
-              {/* <div className='startrm'>
-                <FaStar className='startr' />
-                <FaStar className='startr' />
-                <FaStar className='startr' />
-                <FaStar className='startr' />
-              </div> */}
-              
+              <div className='sikitki_tovar22'>
+                       <p className='sikidka222'>{product.count}% скидка</p>
+                        </div>
               <del className='del323'>{product.priceMonth} so'm</del>
               <div className="product_price">{product.price} so'm</div>
 

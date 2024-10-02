@@ -5,24 +5,22 @@
     width:100%;
     height:auto;
     padding:10px;
-    /* border:2px solid black; */
 }
 .categotr_name_uz{
     width:100%;
     height:auto;
-    /* border:2px solid black; */
+
 }
 .categoru_poroduct_card{
     display: flex;
     gap:15px;
     flex-wrap:wrap;
 }
-/* CategoriesAndProducts.css */
 .card h3 {
-    white-space: nowrap;          /* Prevent text from wrapping */
-    overflow: hidden;             /* Hide the overflowed text */
-    text-overflow: ellipsis;      /* Display ellipses for the overflowed text */
-    width: 100%;                  /* Ensure it takes full width of its container */
+    white-space: nowrap;          
+    overflow: hidden;             
+    text-overflow: ellipsis;     
+    width: 100%;                  
   }
   .category_name_uz_id67{
     font-size:500px;
@@ -30,7 +28,6 @@
   .sikitki_tovar1{
     width: 60px;
     height:60px;
-    /* border:2px solid black; */
     border-radius:50%;
     position:absolute;
     box-sizing: border-box;

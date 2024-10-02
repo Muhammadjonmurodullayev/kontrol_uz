@@ -27,3 +27,37 @@
   .category_name_uz_id67{
     font-size:500px;
   }
+  .carddd{
+    width:44%;
+    height:auto;
+    cursor: pointer;
+    padding:10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: start;
+    /* cursor: pointer; */
+    /* border: 2px solid black; */
+    color: black;
+  }
+  .sikitki_tovar2{
+    width: 60px;
+    height:60px;
+    /* border:2px solid black; */
+    border-radius:50%;
+    position:absolute;
+    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    margin-top:5px;
+    margin-left:100px;
+    background-color:#ef2b15;
+    text-align: center;
+    transform: rotate(20deg);
+  }
+  .sikidka22{
+  font-weight:400;
+  color:white;
+  font-size:13px;
+  }

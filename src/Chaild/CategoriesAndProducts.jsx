@@ -78,7 +78,7 @@ const CategoriesAndProducts = () => {
               .filter(product => product.category_id === category._id)
               .map(filteredProduct => (
                 <div
-                  className='cardd'
+                  className='cardd1'
                   onClick={() => { navigator("/product/" + filteredProduct._id) }}
                   key={filteredProduct._id}
                   style={{ border: '1px solid #ddd', padding: '10px', marginTop: '10px' }}

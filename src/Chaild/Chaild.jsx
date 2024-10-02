@@ -453,7 +453,7 @@ const Chaild = ({ cards, addCard }) => {
 
                 {
                   filteredProducts.map((product) => (
-                    <div key={product._id} className='cardd'
+                    <div key={product._id} className='cardd1'
                       onClick={() => { navigator("/product/" + product._id) }}
                     >
 
@@ -585,7 +585,7 @@ const Chaild = ({ cards, addCard }) => {
 
                   {
                     filteredProducts.map((product) => (
-                      <div key={product._id} className='cardd'
+                      <div key={product._id} className='cardd1'
                         onClick={() => { navigator("/product/" + product._id) }}
                       >
 

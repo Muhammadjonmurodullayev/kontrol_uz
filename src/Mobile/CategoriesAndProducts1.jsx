@@ -77,7 +77,7 @@ const CategoriesAndProducts1 = () => {
               .filter(product => product.category_id === category._id)
               .map(filteredProduct => (
                 <div
-                  className='card'
+                  className='carddd'
                   onClick={() => { navigator("/product/" + filteredProduct._id) }}
                   key={filteredProduct._id}
                   style={{ border: '1px solid #ddd', padding: '10px', marginTop: '10px' }}
@@ -91,15 +91,18 @@ const CategoriesAndProducts1 = () => {
                     />
                   </div>
                   <h3 className='card_name3232'>{filteredProduct.name_uz}</h3>
+                  <div className='sikitki_tovar2'>
+                       <p className='sikidka22'>{filteredProduct.count}% скидка</p>
+                        </div>
+                  {/* <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
-                  <FaStar id='star'/>
-                  <FaStar id='star'/>
-                  <FaStar id='star'/><br />
-                  <span className='span_price'>{filteredProduct.price} so'm</span>
-                  <p className='Oldingi_narx'><del id='decoration'>{filteredProduct.priceMonth} so'm</del></p>
-                  <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p>
+                  <FaStar id='star'/> */}
+                  {/* <FaStar id='star'/><br /> */}
+                  <span className='span_price'>{filteredProduct.price}</span>
+                  <p className='Oldingi_narx'><del id='decoration'>{filteredProduct.priceMonth}</del></p>
+                  {/* <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p> */}
                 </div>
               ))}
           </div>
