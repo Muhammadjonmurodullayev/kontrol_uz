@@ -570,7 +570,7 @@ const Chaild = ({ cards, addCard }) => {
               color: "rgb(87, 87, 221)"
 
             }}>
-              Продукты
+              Популярный
               </h1>
             <div className='card_container1'>
               {loading ? (
