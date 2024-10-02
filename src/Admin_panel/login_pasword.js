@@ -1,5 +1,5 @@
 export const credentials = {
-    login: '11',
-    password: '11',
+    login: 'admin',
+    password: '12345678aziz',
   };
   

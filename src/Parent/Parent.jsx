@@ -78,7 +78,7 @@ const Parent = () => {
           <BiSolidShoppingBags className='BiSolidShoppingBags' />
        <Link to="/admin" className='Yuridik'>
           <span className='Yuridik'
-          style={{color:"black"}}>Yuridik shaxs</span>
+          style={{color:"black"}}>Войти</span>
        </Link>
         </div>
 

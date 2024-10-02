@@ -45,3 +45,12 @@
   color:white;
   font-size:13px;
   }
+  .meta_tag{
+    width:100%;
+    height:auto;
+    padding:20px;
+    text-align:start;
+  }
+  .meta_tag1{
+    color:rgb(31, 31, 31);
+  }

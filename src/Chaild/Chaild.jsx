@@ -37,7 +37,7 @@ const Chaild = ({ cards, addCard }) => {
   ];
   const formatPrice = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
+  };
   useEffect(() => {
     localStorage.setItem('selectedWord1', selectedWord1);
   }, [selectedWord1]);
@@ -155,25 +155,25 @@ const Chaild = ({ cards, addCard }) => {
       id: 1,
       text: "",
       bgColor: "linear-gradient(135deg, #ff7e5f, #feb47b)",
-      imgSrc:bannerrr // Replace with your image path
+      imgSrc: bannerrr // Replace with your image path
     },
     {
       id: 2,
       text: "",
       bgColor: "linear-gradient(135deg, #42e695, #3bb2b8)",
-      imgSrc:bannerrr // Replace with your image path
+      imgSrc: bannerrr // Replace with your image path
     },
     {
       id: 3,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc:bannerrr // Replace with your image path
+      imgSrc: bannerrr // Replace with your image path
     },
     {
       id: 4,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc:bannerrr // Replace with your image path
+      imgSrc: bannerrr // Replace with your image path
     }
   ];// corusel 
 
@@ -468,20 +468,20 @@ const Chaild = ({ cards, addCard }) => {
                           />
                         </div>
                       )}
-  <div className='sikitki_tovar'>
-                       <p className='sikidka2'>{product.count}% скидка</p>
-                        </div>
+                      <div className='sikitki_tovar'>
+                        <p className='sikidka2'>{product.count}% скидка</p>
+                      </div>
                       <p className='card_name3232'>{product.name_uz}</p>
                       {/* <p>{product.name_ru}</p> */}
-                    
+
                       <div>
-                        <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
-                        <span className='span_price'>{formatPrice(product.price)} cум</span>
-                       
+                        <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}</del></p>
+                        <span className='span_price'>{formatPrice(product.price)}</span>
+
                       </div>
-                    
-                      </div>
-                    
+
+                    </div>
+
                   ))
                 }
 
@@ -540,23 +540,23 @@ const Chaild = ({ cards, addCard }) => {
                 </div>
                 <div className='kontainer_id_item'>
                   <div className="kontainer_id_item1">
-                   <img src={Quvvat} alt="#"  className='Card_loco_iconsid1'/>
+                    <img src={Quvvat} alt="#" className='Card_loco_iconsid1' />
                   </div>
                   <div className="kontainer_id_item2">
-                    <img src={Gaz} alt=""  className='Card_loco_iconsid2'/>
+                    <img src={Gaz} alt="" className='Card_loco_iconsid2' />
 
                   </div>
                   <div className="kontainer_id_item3">
-                    <img src={Water} alt="#"  className='Card_loco_iconsid3'/>
+                    <img src={Water} alt="#" className='Card_loco_iconsid3' />
                   </div>
                   <div className="kontainer_id_item4">
                     <div className='Loading6'>
-                     <a href="">
-                     <img src={Panel} alt="#"   className='Card_loco_iconsid4'/>
-                     </a>
+                      <a href="">
+                        <img src={Panel} alt="#" className='Card_loco_iconsid4' />
+                      </a>
                     </div>
-                    </div>
-                 
+                  </div>
+
 
                 </div>
               </div>
@@ -572,7 +572,7 @@ const Chaild = ({ cards, addCard }) => {
 
             }}>
               Популярный
-              </h1>
+            </h1>
             <div className='card_container1'>
               {loading ? (
                 <div className='Loading6'>
@@ -600,18 +600,18 @@ const Chaild = ({ cards, addCard }) => {
                             />
                           </div>
                         )}
- <div className='sikitki_tovar'>
-                       <p className='sikidka2'>{product.count}% скидка</p>
+                        <div className='sikitki_tovar'>
+                          <p className='sikidka2'>{product.count}% скидка</p>
                         </div>
                         <p className='card_name3232'>{product.name_uz}</p>
-                      
+
                         <div>
                           <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
                           <span className='span_price'>{formatPrice(product.price)} cум</span>
                         </div>
 
 
-                       
+
                       </div>
                     ))
                   }
@@ -628,7 +628,52 @@ const Chaild = ({ cards, addCard }) => {
 
 
 
+<div className='meta_tag'> 
+<h1>Kontrol.uz - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
+   <p className='meta_tag1'>
+   Kontrol.uz – bu O'zbekiston bo'ylab suv, gaz va elektr energiya o'lchagichlari va boshqa sanoat uskunalarini taklif etuvchi yetakchi onlayn platforma. Bizning assortimentimizda eng ilg'or texnologiyalar asosida ishlab chiqilgan mahsulotlar mavjud bo'lib, ular sizning uy va biznesingiz uchun ishonchli yechim bo'ladi.
 
+Bizning Mahsulotlar:
+Suv o'lchagichlar (Schetchiklar): Eng yangi texnologiyaga ega bo'lgan suv hisoblagichlar turli hajmlarda va foydalanish sharoitlariga mos.
+Gaz o'lchagichlar: Yuqori aniqlikka ega gaz hisoblagichlari uy yoki korxonalar uchun samarali yechimlar.
+Elektr hisoblagichlar: Sifatli va energiyani tejashga yordam beruvchi zamonaviy elektr hisoblagichlari.
+Avtomatika va rele uskunalari: Avtomatlashtirilgan boshqaruv tizimlari, elektr yuklamalarini boshqarish uchun asboblar.
+Kompensatsiya tizimlari: Elektr energiyasini tejash va sifatini oshirish uchun kompensatsiya qurilmalari.
+Signalizatsiya tizimlari: Xavfsizlik va ogohlantirish tizimlari, to'liq xavfsizlikni ta'minlaydi.
+Nima uchun Kontrol.uz-ni tanlash kerak?
+Sifatli mahsulotlar: Bizning barcha mahsulotlarimiz xalqaro sifat standartlariga mos keladi.
+Moslashuvchan narxlar: Har qanday byudjet uchun qulay narxlar.
+Tezkor yetkazib berish: Butun O'zbekiston bo'ylab tez va ishonchli yetkazib berish xizmati.
+Texnik qo'llab-quvvatlash: Xariddan keyin ham professional qo'llab-quvvatlash va xizmat ko'rsatish.
+Kalit So'zlar:
+Suv o'lchagichlar O'zbekistonda
+Gaz o'lchagichlar sotib olish
+Elektr hisoblagichlar narxlari
+Sanoat uskunalari O'zbekiston
+O'lchagich va hisoblagich sotuvchilari
+Avtomatika va rele uskunalari
+Xavfsizlik tizimlari va signalizatsiya
+Kontrol.uz orqali kerakli o'lchagichlarni va sanoat uskunalarini toping. Bizning mahsulotlarimiz yordamida energiyani tejang va ishonchli yechimlardan foydalaning!
+Suv hisoblagichlari: Innovatsion suv o‘lchagichlar uy va sanoat obyektlari uchun yuqori aniqlik va samaradorlikni ta'minlaydi.
+Gaz hisoblagichlari: Yirik va kichik iste'molchilar uchun moslashtirilgan gaz hisoblagichlari.
+Elektr energiya hisoblagichlari: Energiyani nazorat qilish va tejash uchun zamonaviy elektron hisoblagichlar.
+Avtomatika tizimlari: Sanoat korxonalarini avtomatlashtirish uchun ilg‘or texnologiyalar.
+Signalizatsiya va xavfsizlik tizimlari: Qurilmalarni himoya qilish uchun yuqori samarali xavfsizlik yechimlari.
+Nega Aynan Kontrol.uz?
+Zamonaviy texnologiyalar: Eng so‘nggi innovatsiyalar va ishonchli qurilmalar.
+Eng yaxshi narxlar: Bozorda raqobatbardosh va foydali narx siyosati.
+Tezkor xizmat ko‘rsatish: O‘z vaqtida yetkazib berish va mijozlarni qo‘llab-quvvatlash.
+Keng assortiment: Har bir ehtiyoj uchun mos bo‘lgan keng turdagi mahsulotlar.
+Kalit So‘zlar:
+Suv hisoblagichlarini sotib olish
+Gaz hisoblagichlari O‘zbekistonda
+Elektr hisoblagichlar narxlari
+Avtomatik boshqaruv tizimlari
+Hisoblagichlar va sanoat uskunalari yetkazib berish
+Energiya nazorati va xavfsizlik tizimlari
+Kontrol.uz saytida siz o'zingizga kerakli barcha o‘lchagichlar va sanoat uchun avtomatlashtirish uskunalarini topishingiz mumkin. Biz sizga ishonchli va sifatli texnologiyalarni taklif etamiz!
+   </p>
+</div>
 
 
 
