@@ -28,6 +28,7 @@ import Gaz from "./Gaz_logo.jpg"
 import Water from "./water_logo.jpg"
 import Quvvat from "./Quvvat_logo.jpg"
 import Panel from "./Panel_logo.jpg"
+import bannerrr from "./bannner.jpg"
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -154,25 +155,25 @@ const Chaild = ({ cards, addCard }) => {
       id: 1,
       text: "",
       bgColor: "linear-gradient(135deg, #ff7e5f, #feb47b)",
-      imgSrc:Panel1 // Replace with your image path
+      imgSrc:bannerrr // Replace with your image path
     },
     {
       id: 2,
       text: "",
       bgColor: "linear-gradient(135deg, #42e695, #3bb2b8)",
-      imgSrc:Panel2 // Replace with your image path
+      imgSrc:bannerrr // Replace with your image path
     },
     {
       id: 3,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc:Panel3 // Replace with your image path
+      imgSrc:bannerrr // Replace with your image path
     },
     {
       id: 4,
       text: "",
       bgColor: "linear-gradient(135deg, #ff758c, #ff7eb3)",
-      imgSrc:Panel4 // Replace with your image path
+      imgSrc:bannerrr // Replace with your image path
     }
   ];// corusel 
 
