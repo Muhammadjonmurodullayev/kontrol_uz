@@ -641,7 +641,7 @@ const Chaild = ({ cards, addCard }) => {
 
 
 <div className='meta_tag'> 
-<h1>Kontrol.uz - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
+<h1>Schetchik.com.uz  - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
    <p className='meta_tag1'>
    Schetchik.com.uz  – bu O'zbekiston bo'ylab suv, gaz va elektr energiya o'lchagichlari va boshqa sanoat uskunalarini taklif etuvchi yetakchi onlayn platforma. Bizning assortimentimizda eng ilg'or texnologiyalar asosida ishlab chiqilgan mahsulotlar mavjud bo'lib, ular sizning uy va biznesingiz uchun ishonchli yechim bo'ladi.
 
