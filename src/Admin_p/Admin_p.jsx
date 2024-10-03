@@ -81,7 +81,7 @@ const Homeadmin = () => {
        <div className='admin_link_1'>
         <div className='admin__icons'>
         <FaGlobe  className='IoHome1'/>
-          <p className='link_p2'>MahsulotlarK</p>
+          <p className='link_p2'>Mahsulotlar</p>
         </div>
         </div>
        </Link>
