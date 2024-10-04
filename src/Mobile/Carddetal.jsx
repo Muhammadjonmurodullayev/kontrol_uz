@@ -60,7 +60,7 @@ export const OneProductt = () => {
                             <p>Первоначальный взнос: {products.initialPayment}</p>
                             <p>Цена в рассрочку: {products.totalPriceInInstallments}</p>
                         </div>
-                        <a href=" tel:903291284">
+                        <a href=" tel:+998712006800">
                         <button className="buy-button" >Купить</button>
                         </a>
                         {/* https://t.me/kontroluz */}
