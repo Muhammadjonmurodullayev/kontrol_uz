@@ -173,7 +173,8 @@ const Home = () => {
         </div>
 
         <IoMenu className="filter-button" onClick={() => setMenuOpen(!menuOpen)} />
-        <img className='page21' src={logo2143} alt="" />
+        <h1 className='page21'>Schetchik</h1>
+        {/* <img className='page21' src={logo2143} alt="" />   */}
       </div>
 
 

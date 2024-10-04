@@ -12,13 +12,14 @@ const Profil = () => {
   return (
     <div className='parent_1_i_1'>
       <div className='kontrol__1_uz'>
-        <img
+        {/* <img
           style={{
             width: '350px',
             height: "auto",
           objectFit: 'cover',
           }}
-          src={kontrol___uz} alt="" />
+          src={kontrol___uz} alt="" /> */}
+          <h1 className='page2122'>Schetchik</h1>
       </div>
       <div className="sidebar-item1">
         <i className="fa fa-user-circle"></i>

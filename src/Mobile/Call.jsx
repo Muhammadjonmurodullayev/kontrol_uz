@@ -8,13 +8,14 @@ import facebook from  "./facebook_icons.png"
 const Call = () => {
   return (
     <div className='call_centerr'>
-      <div style={{backgroundColor:"blue"}} className='kontrol'>
-        <img style={{
+      <div style={{backgroundColor:"rgb(3, 8, 101)"}} className='kontrol'>
+        {/* <img style={{
           width: "350px",
           height:"auto",
           // fontSize:"500px",
           objectFit: 'cover',
-        }}  src={kontrol} alt="" />
+        }}  src={kontrol} alt="" /> */}
+        <h1 className='page212'>Schetchik</h1>
       </div>
       <div className='contact_info'>
         <p><strong>Call-центр</strong></p>
