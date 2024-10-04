@@ -29,6 +29,11 @@ import Water from "./water_logo.jpg"
 import Quvvat from "./Quvvat_logo.jpg"
 import Panel from "./Panel_logo.jpg"
 import bannerrr from "./bannner.jpg"
+import logo_image from "./logo image 3.webp"
+import logo_image2 from "./logo image 4.png"
+import logo_image3 from "./logo imge 1.webp"
+import logo_image5 from "./solar_panel.webp"
+
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -550,27 +555,36 @@ const Chaild = ({ cards, addCard }) => {
                   </div>
                   <button className="carousel-button next" onClick={nextSlide}>&#10095;</button>
                 </div>
+
+
                 <div className='kontainer_id_item'>
                   <div className="kontainer_id_item1">
-                    <img src={Quvvat} alt="#" className='Card_loco_iconsid1' />
+                    <img src={logo_image} alt="#" className='Card_loco_iconsid1' />
                   </div>
                   <div className="kontainer_id_item2">
-                    <img src={Gaz} alt="" className='Card_loco_iconsid2' />
+                    <img src={logo_image2} alt="" className='Card_loco_iconsid2' />
 
                   </div>
                   <div className="kontainer_id_item3">
-                    <img src={Water} alt="#" className='Card_loco_iconsid3' />
+                    <img src={logo_image3} alt="#" className='Card_loco_iconsid3' />
                   </div>
                   <div className="kontainer_id_item4">
                     <div className='Loading6'>
                       <a href="">
-                        <img src={Panel} alt="#" className='Card_loco_iconsid4' />
+                        <img src={logo_image5} alt="#" className='Card_loco_iconsid4' />
                       </a>
                     </div>
                   </div>
 
 
                 </div>
+
+
+
+
+
+
+
               </div>
             </div>
           </div>
