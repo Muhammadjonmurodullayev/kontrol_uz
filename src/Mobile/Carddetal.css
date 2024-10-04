@@ -4,7 +4,7 @@
     padding: 0;
 }
 .product-card {
-    width: 300px;
+    width: 90%;
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 16px;
@@ -21,6 +21,8 @@
     object-fit: contain;
     margin-bottom: 16px;
     border-radius: 8px;
+    /* text-align: center; */
+    margin-left:120px;
 }
 
 .product-details h1 {
@@ -103,4 +105,14 @@
 }
 .FaStar{
     color: rgb(0, 0, 0);
+}
+.Schetchik{
+    width:100%;
+    height:auto;
+    text-align: center;
+    color:white;
+    padding:10px;
+}
+.name_uz345676543{
+    margin-top: \=;
 }

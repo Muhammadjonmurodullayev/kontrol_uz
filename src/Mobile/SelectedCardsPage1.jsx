@@ -37,6 +37,10 @@ export const Productss = () => {
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState({});
 
+  const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   const toggleItem = (item) => {
     setSelectedItems((prev) => ({
       ...prev,
@@ -102,15 +106,18 @@ export const Productss = () => {
 
   return (
     <div className="products_container">
+      {/* <h1>sa</h1> */}
       <div className='kontrol____uz'>
-        <img 
+        {/* <img 
         style={{
           backgroundColor:"blue",
           width:"95%",
           height:'auto',
           boxSizing:"border-box"
         }}
-        src={kontrol_uz} alt="" />
+        
+        src={kontrol_uz} alt="" /> */}
+        <h1 className='paage21e' >Schetchik</h1>
       </div>
       {loading ? (
         <h1 className="loading-text">Loading...</h1>
@@ -136,17 +143,21 @@ export const Productss = () => {
                   src={process.env.REACT_APP_BASE_URL + product.image} alt=""  />
                   </div>
                   <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
+                  {/* <FaStar className='star' />
                   <FaStar className='star' />
                   <FaStar className='star' />
                   <FaStar className='star' />
-                  <FaStar className='star' />
-                  <FaStar className='star' />
+                  <FaStar className='star' /> */}
 
                   {/* <div className="product-name-en">{product.name_ru}</div> */}
                   {/* <div className="product-desc">{product.desc}</div> */}
-                  <div id='product-priceMonth1' className="product-priceMonth"><del id='product-priceMonth'>{product.priceMonth}</del></div>
-                  <div id='product-price' className="product-price">{product.price} so'm</div>
-                  <div id='product-count' className="product-count">{product.count} ta qoldi </div>
+                  <div id='product-priceMonth1' className="product-priceMonth"><del id='product-priceMonth'>{formatPrice(product.priceMonth)}</del></div>
+                  <div id='product-price' className="product-price" style={
+                    {
+                      fontSize:"12px"
+                    }
+                  }>{formatPrice(product.price)}</div>
+                  {/* <div id='product-count' className="product-count">{product.count} ta qoldi </div> */}
                 </div>
               ))
             ) : (

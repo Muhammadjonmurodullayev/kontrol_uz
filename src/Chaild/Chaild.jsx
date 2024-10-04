@@ -632,8 +632,8 @@ const Chaild = ({ cards, addCard }) => {
                         <p className='card_name3232'>{product.name_uz}</p>
 
                         <div>
-                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)} cум</del></p>
-                          <span className='span_price'>{formatPrice(product.price)} cум</span>
+                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}</del></p>
+                          <span className='span_price'>{formatPrice(product.price)} </span>
                         </div>
 
 

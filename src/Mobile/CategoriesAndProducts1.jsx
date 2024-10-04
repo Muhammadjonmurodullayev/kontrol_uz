@@ -65,6 +65,7 @@ const CategoriesAndProducts1 = () => {
 
   return (
     <div className='products_vcatd'>
+      {/* <h1>sa</h1> */}
       {filteredCategories.map(category => (
         <div key={category._id} className='categotr_name_uz'>
           <h2 id='category_name_uz_id67'

@@ -29,15 +29,18 @@ export const OneProductt = () => {
     return (
       <div className='parent___id__1'>
        <div className='kontrol_com1'>
-            <img className='kontrol_com1' src={kontrol_com} alt="" />
+            {/* <img className='kontrol_com1' src={kontrol_com} alt="" /> */}
+            <h1 className='Schetchik'>Schetchik</h1>
           </div>
        <div className="product-card">
          
             {
                 products ? (
                     <div className="product-details">
-                        <img src={process.env.REACT_APP_BASE_URL + products.image} alt="Product" className="product-image" />
-                        <h1>{products.name_uz}</h1>
+                        <img  src={process.env.REACT_APP_BASE_URL + products.image} alt="Product" className="product-image" />
+                        {/* <img src={process.env.REACT_APP_BASE_URL + products.image} alt="Product" className="product-image" /> */}
+                        {/* <img src={process.env.REACT_APP_BASE_URL + products.image} alt="Product" className="product-image" /> */}
+                       <br /> <span className='name_uz345676543'>{products.name_uz}</span> <br />
                         <FaStar className='FaStar'/>
                         <FaStar className='FaStar'/>
                         <FaStar className='FaStar'/>
@@ -54,10 +57,13 @@ export const OneProductt = () => {
                         </div>
                         <div className="installment-info">
                             <p>Рассрочка: {products.priceMonth} сум/месяц на 6 месяцев.</p>
-                            <p>Первоначальный взнос: {products.initialPayment} сум.</p>
-                            <p>Цена в рассрочку: {products.totalPriceInInstallments} сум.</p>
+                            <p>Первоначальный взнос: {products.initialPayment}</p>
+                            <p>Цена в рассрочку: {products.totalPriceInInstallments}</p>
                         </div>
-                        <button className="buy-button">Купить</button>
+                        <a href=" tel:903291284">
+                        <button className="buy-button" >Купить</button>
+                        </a>
+                        {/* https://t.me/kontroluz */}
                     </div>
                 ) : <h1>loading</h1>
             }
