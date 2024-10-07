@@ -2,13 +2,42 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import jsPDF from 'jspdf';
+// import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 import 'jspdf-autotable';
 import './OneProduct.css';
-import pechat from "./pechat.jpg"
+import pechat from "./pechat.jpg";  // Placeholder for the stamp image
+
 export const OneProduct = () => {
     let { id } = useParams();
     let [product, setProduct] = useState();
-
+    const formatPrice = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      };
+    const generatePDF = () => {
+        const input = document.getElementById("pdf-content");
+        html2canvas(input, { scale: 2 }).then((canvas) => {
+          const imgData = canvas.toDataURL({pechat});
+          const pdf = new jsPDF("p", "mm", "a4");
+          const imgWidth = 210; // A4 width in mm
+          const pageHeight = 295; // A4 height in mm
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          let heightLeft = imgHeight;
+          let position = 0;
+    
+          pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+    
+          while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+          }
+    
+          pdf.save("commercial_proposal.pdf");
+        });
+      };
     useEffect(() => {
         let config = {
             method: 'get',
@@ -26,44 +55,29 @@ export const OneProduct = () => {
             });
     }, [id]);
 
-    const generatePDF = () => {
-        const doc = new jsPDF();
-        doc.setFont('Helvetica');  // To'g'ri shriftni tanlang
-        doc.text('Коммерческое предложение', 20, 30);  // Matnni to'g'ri joylashtiring
-        doc.save('document.pdf');
-        
-        
+    const [currentDate, setCurrentDate] = useState("");
+    const [currentDate2, setCurrentDate2] = useState("");
 
+    useEffect(() => {
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1; // Oy 0 dan boshlanadi, shuning uchun 1 qo'shamiz.
+      const year = date.getFullYear();
+  
+      setCurrentDate(`${day}/${month}/${year}`);
+    }, []);
+    useEffect(() => {
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth() + 1; // Oy 0 dan boshlanadi, shuning uchun 1 qo'shamiz.
+        const year = date.getFullYear();
     
-        // Set up the PDF content
-        doc.setFont('Arial', 'normal');
-        doc.setFontSize(16);
-        doc.text('Коммерческое предложение', 300, 40, { align: 'center' });
-    
-        // Adding table and content (as explained earlier)
-        doc.autoTable({
-            startY: 80,
-            head: [['№', 'Товар', 'Цена', 'Количество', 'Общая стоимость']],
-            body: [
-                ['1', 'Пример товара', '250000 сум', '1', '250000 сум']
-            ],
-            theme: 'grid',
-            styles: { halign: 'center' },
-            headStyles: { fillColor: [0, 128, 0], textColor: [255, 255, 255] }
-        });
-    
-        const vat = (250000 * 0.12).toFixed(3); // Example VAT calculation
-        const total = 250000 + parseFloat(vat);
-    
-        let finalY = doc.lastAutoTable.finalY + 20;
-        doc.text(`НДС 12%: ${vat} сум`, 40, finalY);
-        doc.text(`Общая сумма: 250000 сум`, 40, finalY + 20);
-    
-        // Saving the PDF
-        doc.save('commercial-offer.pdf');
-    };
-    
+        setCurrentDate2(`${day}${month}${year}`);
+      }, []);
+
+
     return (
+     <div>
         <div className="product-page">
             {
                 product ? (
@@ -80,31 +94,17 @@ export const OneProduct = () => {
                         </div>
                         <div className="details-section">
                             <h1 className="product-name">{product.name_uz}</h1>
-                            <div className="product-rating">
-                                <span>⭐⭐⭐⭐⭐</span> 
-                                <span>0 Отзывов</span>
-                            </div>
-                            <div className="product-description">
-                                <h3>Краткое описание</h3>
-                                <p>Количество баночек: 12</p>
-                                <p>Объем банки: 85 мл.</p>
-                                <p>Материал банок: Панель</p>
-                                <p>Материал основания: Металл</p>
-                                <p>Материал держателей: нержавеющая сталь</p>
-                            </div>
                             <div className="product-price-section">
-                                <div className="price-wrapper">
-                                    <span className="current-price">{product.price} сум</span>
-                                    <span className="old-price">{product.priceMonth} сум</span>
-                                    <span className="discount"></span>
-                                </div>
-                                <p className="price-in-usd">Omborda:{product.count} ta qoldi</p>
+                                <span className="current-price">{formatPrice(product.price)} сум</span>
+                                <p className="price-in-usd">Omborda: {product.count} ta qoldi</p>
                                 <p>В наличии</p>
                             </div>
                             <Link to="/">
                                 <button className="add-to-cart">Добавить в корзину</button>
                             </Link>
-                            <button className="add-to-cart" onClick={generatePDF}>Коммерческий</button>
+                            <button className="add-to-cart"
+                            onClick={generatePDF} 
+                            >Коммерческий</button>
                         </div>
                         <div className="delivery-section">
                             <h3>Доставка</h3>
@@ -117,5 +117,81 @@ export const OneProduct = () => {
                 )
             }
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className='pdfl'>
+      <div id="pdf-content" style={{ padding: "20px" }}>
+      <div className='currentDate2'>
+      <p className='h21'>Письмо №{currentDate2}</p>
+      </div>
+<div className='currentDate2'>
+<p className='h21'>Коммерческое предложение от {currentDate}</p>
+
+</div>
+        <p className='h21'>
+        На всю продукцию имеются сертификаты соответствия Агентства «УзСтандарт». Гарантийный срок от 1 года при соблюдении требований Поставщика. Срок поставки согласно заключенному контракту. Форма оплаты - любая. ВНИМАНИЕ! Наименования товаров (формулировка одного и того же товара) на сайте и в бухгалтерских документах могут различаться. Перед заказом уточните наличие необходимого товара и его количества у менеджера.
+        </p>
+
+       {
+        product?( <table border="1" cellPadding="10" style={{ width: "100%", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Товар</th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th>Общая стоимость</th>
+          </tr>
+        </thead>
+        <tbody>
+          <th>1</th>
+          <th>{product.name_uz}</th>
+          <th>{formatPrice(product.price)}</th>
+          <th>1</th>
+          <th>{formatPrice(product.price)}</th>
+        </tbody>
+      </table>):""
+       }
+
+     <div className='parend_pdff'>
+     <div>
+       <p style={{ marginTop: "20px" }}>НДС:</p>
+        <p>Общая сумма:</p>
+        <p>Общее количество:</p>
+       </div>
+
+        <div style={{ marginTop: "50px" }} >
+          <img
+            src={pechat} // replace with the actual stamp image path
+            alt="Stamp"
+            style={{ width: "150px", height: "150px" }}
+          />
+          <p>Директор: Улашев А.У</p>
+
+        </div>
+
+     </div>
+      
+      </div>
+
+     
+    </div>
+
+
+
+
+     </div>
     );
 }
+    

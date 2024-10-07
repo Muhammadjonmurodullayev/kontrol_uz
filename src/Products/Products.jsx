@@ -41,7 +41,7 @@ export const Products = () => {
       ...prev,
       [item.id]: prev[item.id]
         ? { ...prev[item.id], selected: !prev[item.id].selected }
-        : { ...item, selected: true, quantity:1},
+        : { ...item, selected: true, quantity: 1 },
     }));
   };
 
@@ -66,7 +66,7 @@ export const Products = () => {
   const [showSalom, setShowSalom] = useState(false);
   const formatPrice = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
+  };
   function productClick(productId) {
     navigate("/product/" + productId);
   }
@@ -105,74 +105,75 @@ export const Products = () => {
     <div className="products-container">
       {showSalom && (
         <div className="power-calculator">
-        <h2>Stabilizator quvvati kalkulyatori</h2>
-        <div className="items-container">
-          {items.map((item) => (
-            <div key={item.id} className={`item ${selectedItems[item.id]?.selected ? 'selected' : ''}`}>
-              <label className="item-label">
-                <input
-                  type="checkbox"
-                  checked={selectedItems[item.id]?.selected || false}
-                  onChange={() => toggleItem(item)}
-                />
-                <span className="icon">{item.icon}</span> 
-                {item.name} -
-                {selectedItems[item.id]?.selected && (
-                  <span className="item-power">
-                    {item.power * selectedItems[item.id].quantity} vt
-                  </span>
-                )}
-              </label>
-              {selectedItems[item.id]?.selected && (
-                <div className="quantity">
-                  <button onClick={() => changeQuantity(item, -1)}>-</button>
+          <h2>Stabilizator quvvati kalkulyatori</h2>
+          <div className="items-container">
+            {items.map((item) => (
+              <div key={item.id} className={`item ${selectedItems[item.id]?.selected ? 'selected' : ''}`}>
+                <label className="item-label">
                   <input
-                    type="number"
-                    value={selectedItems[item.id].quantity}
-                    onChange={(e) =>
-                      changeQuantity(item, parseInt(e.target.value) - selectedItems[item.id].quantity)
-                    }
-                    min="1"
+                    type="checkbox"
+                    checked={selectedItems[item.id]?.selected || false}
+                    onChange={() => toggleItem(item)}
                   />
-                  <button onClick={() => changeQuantity(item, 1)}>+</button>
-                </div>
-              )}
-            </div>
-          ))}
+                  <span className="icon">{item.icon}</span>
+                  {item.name} -
+                  {selectedItems[item.id]?.selected && (
+                    <span className="item-power">
+                      {item.power * selectedItems[item.id].quantity} vt
+                    </span>
+                  )}
+                </label>
+                {selectedItems[item.id]?.selected && (
+                  <div className="quantity">
+                    <button onClick={() => changeQuantity(item, -1)}>-</button>
+                    <input
+                      type="number"
+                      value={selectedItems[item.id].quantity}
+                      onChange={(e) =>
+                        changeQuantity(item, parseInt(e.target.value) - selectedItems[item.id].quantity)
+                      }
+                      min="1"
+                    />
+                    <button onClick={() => changeQuantity(item, 1)}>+</button>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="total-power">
+            <strong>Umumiy quvvat: {getTotalPower()} vt</strong>
+          </div>
         </div>
-        <div className="total-power">
-          <strong>Umumiy quvvat: {getTotalPower()} vt</strong>
-        </div>
-      </div>
       )}
       {loading ? (
         <h1 className="loading-text">Loading...</h1>
       ) : (
         <div className='product_katecory'>
+      
           {category ? (
             <h2 className="category-name1">{category.data.name_uz}</h2>
           ) : (
             <h2 className="no-category">Category not found</h2>
           )}
-         
+
           <div className='product_katecory_p'>
             {products.length ? (
               products.map((product) => (
-                <div 
-                style={{
-                  width:"15%"
-                }}
-                key={product._id} className="product-card21" onClick={() => productClick(product._id)}>
+                <div
+                  style={{
+                    width: "15%"
+                  }}
+                  key={product._id} className="product-card21" onClick={() => productClick(product._id)}>
                   <div className='img_product_id'>
-                  <img 
-                   style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                  src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product-image" />
+                    <img
+                      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+                      src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product_image" />
                   </div>
                   <div className='sikitki_tovarr'>
-                       <p className='sikidka21'>{product.count}% скидка</p>
-                        </div>
+                    <p className='sikidka21'>{product.count}% скидка</p>
+                  </div>
                   <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
-                 
+
 
                   {/* <div className="product-name-en">{product.name_ru}</div> */}
                   {/* <div className="product-desc">{product.desc}</div> */}
@@ -184,9 +185,9 @@ export const Products = () => {
             ) : (
               <h2 className="no-products">No products available</h2>
             )}
-            
+
           </div>
-          
+
         </div>
       )}
 
@@ -201,7 +202,7 @@ export const Products = () => {
         )}
       </div>
 
-      
+
     </div>
   );
 };

@@ -8,14 +8,7 @@ body, html {
     background-color: #f5f5f5;
 }
 
-.product-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    background-color: #f5f5f5;
-}
+
 
 .product-container {
     display: flex;
@@ -29,6 +22,8 @@ body, html {
 }
 
 .image-section {
+    width:100%;
+    height:auto;
     flex: 0.4;
     padding: 20px;
     display: flex;
@@ -67,6 +62,8 @@ body, html {
 }
 
 .details-section {
+    width:100%;
+    height:auto;
     flex: 0.4;
     padding: 20px;
     border-right: 1px solid #e0e0e0;
@@ -189,4 +186,55 @@ body, html {
 
 .generate-pdf:hover {
     background-color: #0056b3;
+}
+.pdfl{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+display:flex;
+justify-content: center;
+align-items: center;
+}
+#pdf-content{
+    width:70%;
+    height:auto;
+    /* position:absolute; */
+    /* margin-top:900px; */
+    z-index:1;
+}
+.product-page {
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* width: 100%; */
+    background-color: #f5f5f5;
+    /* z-index:2; */
+}
+.poroduict_idemmmm{
+    width:100%;
+    height:auto;
+}
+.currentDate2{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+    text-align: center;
+    padding:5px;
+    font-size: 20px;
+    /* font-family:; */
+}
+.h21{
+    font-family:inherit;
+    color:rgb(76, 76, 76);
+}
+.parend_pdff{
+    width:100%;
+    height:auto;
+    display: flex;
+    gap:650px;
+    justify-content: center;
+    align-items: center;
 }
