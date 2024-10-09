@@ -33,7 +33,8 @@ import logo_image from "./logo image 3.webp"
 import logo_image2 from "./logo image 4.png"
 import logo_image3 from "./logo imge 1.webp"
 import logo_image5 from "./solar_panel.webp"
-
+// import { GiCubeforce } from 'react-icons/gi'; // Ensure you import your icon correctly
+// import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom
 const Chaild = ({ cards, addCard }) => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
@@ -314,7 +315,12 @@ const Chaild = ({ cards, addCard }) => {
   const filteredProducts = productAll.filter(product => `${product.name_uz ?? ""}`.toLowerCase().includes(searchTerm.toLowerCase()) || `${product.name_ru ?? ""}`.toLowerCase().includes(searchTerm.toLowerCase()));
 
 
+  const navigate = useNavigate();
+  const [expandedCategoryId, setExpandedCategoryId] = useState(null);
 
+  const toggleSubcategories = (categoryId) => {
+    setExpandedCategoryId(prevId => (prevId === categoryId ? null : categoryId));
+  };
 
 
 
@@ -457,7 +463,7 @@ const Chaild = ({ cards, addCard }) => {
       </div>
       {searchTerm ?
         <div className='main-content'>
-          <h1>Продукты</h1>
+          <p>Продукты</p>
           <div className='card_container1'>
             {loading ? (
               <div className='Loading6'>
@@ -510,10 +516,6 @@ const Chaild = ({ cards, addCard }) => {
         <div className='card-list-container'>
           <div className="card-list-container">
             <div className='shochik_uzlk'>
-
-
-
-
               <div className="BiSolidCategory" >
                 <div className='BiSolidCategory21coin'>
                   <BiSolidCategory className='BiSolidCategory21' />
@@ -536,6 +538,39 @@ const Chaild = ({ cards, addCard }) => {
                   }
                   <hr />
                 </div>
+
+
+
+{/* 
+<div className='GiCubeforce12'>
+      {categoryes.map((category) => (
+        <div key={category._id} className='category_id9696'>
+          <div className='GiCubeforce1' onClick={() => toggleSubcategories(category._id)}>
+            <GiCubeforce className='GiCubeforce' />
+            <p className='category_name_uz'>{category.name_uz}</p>
+          </div>
+
+          {expandedCategoryId === category._id && (
+            <div className='subcategories'>
+              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/water-meter`)}>
+                Счетчики воды
+              </div>
+              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/gas-meter`)}>
+                Газовый счетчик
+              </div>
+              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/electric-meter`)}>
+                Электрический счетчик
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+      <hr />
+    </div> */}
+
+
+
+
               </div>
               <div className='carousel_parent'>
                 <div className="carousel">
@@ -597,7 +632,8 @@ const Chaild = ({ cards, addCard }) => {
               color: "rgb(87, 87, 221)"
 
             }}>
-              Популярный
+          <p className='rerf'>Продукты</p>
+             
             </h1>
             <div className='card_container1'>
               {loading ? (
@@ -629,11 +665,11 @@ const Chaild = ({ cards, addCard }) => {
                         <div className='sikitki_tovar'>
                           <p className='sikidka2'>{product.count}% скидка</p>
                         </div>
-                        <p className='card_name3232'>{product.name_uz}</p>
+                        <p className='card_name3232'>{product.name_uz}сум</p><br />
 
                         <div>
-                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}</del></p>
-                          <span className='span_price'>{formatPrice(product.price)} </span>
+                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}сум</del></p>
+                          <span className='span_1price'>{formatPrice(product.price)} сум</span>
                         </div>
 
 

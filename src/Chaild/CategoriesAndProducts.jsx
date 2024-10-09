@@ -62,6 +62,9 @@ const CategoriesAndProducts = () => {
   const filteredCategories = categories.filter(category =>
     category.name_uz === 'Новые продукты' || category.name_uz === 'Скидки на Товары' || category.name_uz === 'Бестселлеры'
   );
+  const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   return (
     <div className='products_vcatd'>
@@ -72,7 +75,9 @@ const CategoriesAndProducts = () => {
             fontSize:"21px",
             marginTop:"20px"
           }}
-          >{category.name_uz}</h2>
+          >
+          <p className='rerf'>  {category.name_uz}</p>
+          </h2>
           <div className='categoru_poroduct_card'>
             {products
               .filter(product => product.category_id === category._id)
@@ -94,7 +99,7 @@ const CategoriesAndProducts = () => {
                        <p className='sikidka21'>{filteredProduct.count}% <br/> скидка</p>
                         </div>
                   </div>
-                  <h3 className='card_name3232'>{filteredProduct.name_uz}</h3>
+                  <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
                   {/* <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
@@ -102,8 +107,8 @@ const CategoriesAndProducts = () => {
                   <FaStar id='star'/>
                   <FaStar id='star'/> */}
                   {/* <br /> */}
-                  <span className='span_price'>{filteredProduct.price} so'm</span>
-                  <p className='Oldingi_narx'><del id='decoration'>{filteredProduct.priceMonth} so'm</del></p>
+                  <p className='Oldingi_narx1'><del id='decoration'>{filteredProduct.priceMonth} сум</del></p>
+                  <span className='span_1price'>{formatPrice(filteredProduct.price)} сум</span>
                   {/* <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p> */}
                 </div>
               ))}
