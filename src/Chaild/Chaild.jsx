@@ -35,8 +35,16 @@ import logo_image3 from "./logo imge 1.webp"
 import logo_image5 from "./solar_panel.webp"
 // import { GiCubeforce } from 'react-icons/gi'; // Ensure you import your icon correctly
 // import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom
-const Chaild = ({ cards, addCard }) => {
+const Chaild = ({cards }) => {
   const [showDiv1, setShowDiv1] = useState(false);
+
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+
+
+
+
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord1') || '');
   const words1 = [
     "Uz", "Ru"
@@ -149,7 +157,7 @@ const Chaild = ({ cards, addCard }) => {
       });
     } catch (error) {
     }
-  
+
     try {
       await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         chat_id: chatId,
@@ -161,7 +169,7 @@ const Chaild = ({ cards, addCard }) => {
 
   };
 
-  
+
   const [loading, setLoading] = useState(true);
 
 
@@ -324,6 +332,19 @@ const Chaild = ({ cards, addCard }) => {
 
 
 
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded); // Toggle expansion
+  };
+
+  // Maxsus uchta kategoriya
+  const specialCategories = categoryes.filter(category => 
+    ['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
+  );
+
+  // Qolgan barcha kategoriyalar (maxsus bo'lmagan)
+  const otherCategories = categoryes.filter(category => 
+    !['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
+  );
 
 
   return (
@@ -491,15 +512,13 @@ const Chaild = ({ cards, addCard }) => {
                           />
                         </div>
                       )}
-                      <div className='sikitki_tovar'>
                         <p className='sikidka2'>{product.count}% скидка</p>
-                      </div>
-                      <p className='card_name3232'>{product.name_uz}</p>
+                      <p className='card_name3232'>{product.name_uz}</p><br />
                       {/* <p>{product.name_ru}</p> */}
 
                       <div>
+                        <span className='span_price22'>{formatPrice(product.price)}</span>
                         <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}</del></p>
-                        <span className='span_price'>{formatPrice(product.price)}</span>
 
                       </div>
 
@@ -522,12 +541,12 @@ const Chaild = ({ cards, addCard }) => {
                   <span className='Category_item'>Category</span>
                 </div>
 
-                <div className='GiCubeforce12'>
+                {/* <div className='GiCubeforce12'>
                   {
                     categoryes.map((category) => (
                       <div key={category._id} className='category_id9696'>
                         <div className='GiCubeforce1' onClick={() => {
-                          navigator("/category/" + category._id);
+                          navigator("/category/" + category._id)
 
                         }}>
                           <GiCubeforce className='GiCubeforce' />
@@ -537,36 +556,86 @@ const Chaild = ({ cards, addCard }) => {
                     ))
                   }
                   <hr />
-                </div>
+                </div> */}
 
 
 
-{/* 
+
+
+
+
+
+
 <div className='GiCubeforce12'>
-      {categoryes.map((category) => (
+      {/* Only other categories, excluding the special ones */}
+      {otherCategories.map((category) => (
         <div key={category._id} className='category_id9696'>
-          <div className='GiCubeforce1' onClick={() => toggleSubcategories(category._id)}>
+          <div
+            className='GiCubeforce1'
+            onClick={() => navigator("/category/" + category._id)}
+          >
             <GiCubeforce className='GiCubeforce' />
             <p className='category_name_uz'>{category.name_uz}</p>
           </div>
-
-          {expandedCategoryId === category._id && (
-            <div className='subcategories'>
-              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/water-meter`)}>
-                Счетчики воды
-              </div>
-              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/gas-meter`)}>
-                Газовый счетчик
-              </div>
-              <div className='subcategory' onClick={() => navigate(`/category/${category._id}/electric-meter`)}>
-                Электрический счетчик
-              </div>
-            </div>
-          )}
         </div>
       ))}
+
+      {/* Name button for expanding the specific categories */}
+      <div className='GiCubeforce1' onClick={handleToggle}>
+      <GiCubeforce className='GiCubeforce' />
+        <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
+      </div>
+
+      {/* Only show special categories if expanded */}
+      {isExpanded && (
+        <div className='expanded-categories'>
+          {specialCategories.map((category) => (
+            <div key={category._id} className='category_id9696'>
+              <div
+                className='GiCubeforce1'
+                onClick={() => navigator("/category/" + category._id)}
+              >
+                <GiCubeforce className='GiCubeforce' />
+                <p className='category_name_uz'>{category.name_uz}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
       <hr />
-    </div> */}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -593,27 +662,36 @@ const Chaild = ({ cards, addCard }) => {
 
 
                 <div className='kontainer_id_item'>
-                  <div className="kontainer_id_item1">
+                  <div className="kontainer_id_item1"
+                onClick={() => navigator("/category/"+"66fe29c1a1ac1b08272d5012")}
+                  >
                     <img src={logo_image} alt="#" className='Card_loco_iconsid1' />
                   </div>
-                  <div className="kontainer_id_item2">
+                  <div className="kontainer_id_item2"
+                onClick={() => navigator("/category/"+"66e04294e8bc2bedd57b2cf2")}
+                  
+                  >
                     <img src={logo_image2} alt="" className='Card_loco_iconsid2' />
 
                   </div>
-                  <div className="kontainer_id_item3">
+                  <div className="kontainer_id_item3"
+                onClick={() => navigator("/category/"+"66e17e3911b8489150edf115")}
+                  
+                  >
                     <img src={logo_image3} alt="#" className='Card_loco_iconsid3' />
                   </div>
                   <div className="kontainer_id_item4">
-                    <div className='Loading6'>
-                      <a href="">
+                    <div className='Loading6'
+                onClick={() => navigator("/category/"+"66e11def5429c67e4f1de279")}
+                    
+                    >
                         <img src={logo_image5} alt="#" className='Card_loco_iconsid4' />
-                      </a>
                     </div>
                   </div>
 
 
                 </div>
-
+                
 
 
 
@@ -632,8 +710,8 @@ const Chaild = ({ cards, addCard }) => {
               color: "rgb(87, 87, 221)"
 
             }}>
-          <p className='rerf'>Продукты</p>
-             
+              <p className='rerf'>Продукты</p>
+
             </h1>
             <div className='card_container1'>
               {loading ? (
@@ -654,22 +732,23 @@ const Chaild = ({ cards, addCard }) => {
 
                         {product.image && (
                           <div className='card_input_card'>
+
                             <img
                               id='src_img11'
                               src={`${process.env.REACT_APP_BASE_URL}${product.image}`} // Append base URL to image path
                               alt={product.name_uz}
                               style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                             />
+
                           </div>
                         )}
-                        <div className='sikitki_tovar'>
-                          <p className='sikidka2'>{product.count}% скидка</p>
-                        </div>
+                        <p className='sikidka2'>-{product.count}% </p>
+                       
                         <p className='card_name3232'>{product.name_uz}сум</p><br />
 
                         <div>
-                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}сум</del></p>
                           <span className='span_1price'>{formatPrice(product.price)} сум</span>
+                          <p className='Oldingi_narx'><del id='decoration'>{formatPrice(product.priceMonth)}сум</del></p>
                         </div>
 
 
@@ -690,52 +769,52 @@ const Chaild = ({ cards, addCard }) => {
 
 
 
-<div className='meta_tag'> 
-<h1>Schetchik.com.uz  - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
-   <p className='meta_tag1'>
-   Schetchik.com.uz  – bu O'zbekiston bo'ylab suv, gaz va elektr energiya o'lchagichlari va boshqa sanoat uskunalarini taklif etuvchi yetakchi onlayn platforma. Bizning assortimentimizda eng ilg'or texnologiyalar asosida ishlab chiqilgan mahsulotlar mavjud bo'lib, ular sizning uy va biznesingiz uchun ishonchli yechim bo'ladi.
+      <div className='meta_tag'>
+        <h1>Schetchik.com.uz  - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
+        <p className='meta_tag1'>
+          Schetchik.com.uz  – bu O'zbekiston bo'ylab suv, gaz va elektr energiya o'lchagichlari va boshqa sanoat uskunalarini taklif etuvchi yetakchi onlayn platforma. Bizning assortimentimizda eng ilg'or texnologiyalar asosida ishlab chiqilgan mahsulotlar mavjud bo'lib, ular sizning uy va biznesingiz uchun ishonchli yechim bo'ladi.
 
-Bizning Mahsulotlar:
-Suv o'lchagichlar (Schetchiklar): Eng yangi texnologiyaga ega bo'lgan suv hisoblagichlar turli hajmlarda va foydalanish sharoitlariga mos.
-Gaz o'lchagichlar: Yuqori aniqlikka ega gaz hisoblagichlari uy yoki korxonalar uchun samarali yechimlar.
-Elektr hisoblagichlar: Sifatli va energiyani tejashga yordam beruvchi zamonaviy elektr hisoblagichlari.
-Avtomatika va rele uskunalari: Avtomatlashtirilgan boshqaruv tizimlari, elektr yuklamalarini boshqarish uchun asboblar.
-Kompensatsiya tizimlari: Elektr energiyasini tejash va sifatini oshirish uchun kompensatsiya qurilmalari.
-Signalizatsiya tizimlari: Xavfsizlik va ogohlantirish tizimlari, to'liq xavfsizlikni ta'minlaydi.
-Nima uchun Kontrol.uz-ni tanlash kerak?
-Sifatli mahsulotlar: Bizning barcha mahsulotlarimiz xalqaro sifat standartlariga mos keladi.
-Moslashuvchan narxlar: Har qanday byudjet uchun qulay narxlar.
-Tezkor yetkazib berish: Butun O'zbekiston bo'ylab tez va ishonchli yetkazib berish xizmati.
-Texnik qo'llab-quvvatlash: Xariddan keyin ham professional qo'llab-quvvatlash va xizmat ko'rsatish.
-Kalit So'zlar:
-Suv o'lchagichlar O'zbekistonda
-Gaz o'lchagichlar sotib olish
-Elektr hisoblagichlar narxlari
-Sanoat uskunalari O'zbekiston
-O'lchagich va hisoblagich sotuvchilari
-Avtomatika va rele uskunalari
-Xavfsizlik tizimlari va signalizatsiya
-Kontrol.uz orqali kerakli o'lchagichlarni va sanoat uskunalarini toping. Bizning mahsulotlarimiz yordamida energiyani tejang va ishonchli yechimlardan foydalaning!
-Suv hisoblagichlari: Innovatsion suv o‘lchagichlar uy va sanoat obyektlari uchun yuqori aniqlik va samaradorlikni ta'minlaydi.
-Gaz hisoblagichlari: Yirik va kichik iste'molchilar uchun moslashtirilgan gaz hisoblagichlari.
-Elektr energiya hisoblagichlari: Energiyani nazorat qilish va tejash uchun zamonaviy elektron hisoblagichlar.
-Avtomatika tizimlari: Sanoat korxonalarini avtomatlashtirish uchun ilg‘or texnologiyalar.
-Signalizatsiya va xavfsizlik tizimlari: Qurilmalarni himoya qilish uchun yuqori samarali xavfsizlik yechimlari.
-Nega Aynan Kontrol.uz?
-Zamonaviy texnologiyalar: Eng so‘nggi innovatsiyalar va ishonchli qurilmalar.
-Eng yaxshi narxlar: Bozorda raqobatbardosh va foydali narx siyosati.
-Tezkor xizmat ko‘rsatish: O‘z vaqtida yetkazib berish va mijozlarni qo‘llab-quvvatlash.
-Keng assortiment: Har bir ehtiyoj uchun mos bo‘lgan keng turdagi mahsulotlar.
-Kalit So‘zlar:
-Suv hisoblagichlarini sotib olish
-Gaz hisoblagichlari O‘zbekistonda
-Elektr hisoblagichlar narxlari
-Avtomatik boshqaruv tizimlari
-Hisoblagichlar va sanoat uskunalari yetkazib berish
-Energiya nazorati va xavfsizlik tizimlari
-Kontrol.uz saytida siz o'zingizga kerakli barcha o‘lchagichlar va sanoat uchun avtomatlashtirish uskunalarini topishingiz mumkin. Biz sizga ishonchli va sifatli texnologiyalarni taklif etamiz!
-   </p>
-</div>
+          Bizning Mahsulotlar:
+          Suv o'lchagichlar (Schetchiklar): Eng yangi texnologiyaga ega bo'lgan suv hisoblagichlar turli hajmlarda va foydalanish sharoitlariga mos.
+          Gaz o'lchagichlar: Yuqori aniqlikka ega gaz hisoblagichlari uy yoki korxonalar uchun samarali yechimlar.
+          Elektr hisoblagichlar: Sifatli va energiyani tejashga yordam beruvchi zamonaviy elektr hisoblagichlari.
+          Avtomatika va rele uskunalari: Avtomatlashtirilgan boshqaruv tizimlari, elektr yuklamalarini boshqarish uchun asboblar.
+          Kompensatsiya tizimlari: Elektr energiyasini tejash va sifatini oshirish uchun kompensatsiya qurilmalari.
+          Signalizatsiya tizimlari: Xavfsizlik va ogohlantirish tizimlari, to'liq xavfsizlikni ta'minlaydi.
+          Nima uchun Kontrol.uz-ni tanlash kerak?
+          Sifatli mahsulotlar: Bizning barcha mahsulotlarimiz xalqaro sifat standartlariga mos keladi.
+          Moslashuvchan narxlar: Har qanday byudjet uchun qulay narxlar.
+          Tezkor yetkazib berish: Butun O'zbekiston bo'ylab tez va ishonchli yetkazib berish xizmati.
+          Texnik qo'llab-quvvatlash: Xariddan keyin ham professional qo'llab-quvvatlash va xizmat ko'rsatish.
+          Kalit So'zlar:
+          Suv o'lchagichlar O'zbekistonda
+          Gaz o'lchagichlar sotib olish
+          Elektr hisoblagichlar narxlari
+          Sanoat uskunalari O'zbekiston
+          O'lchagich va hisoblagich sotuvchilari
+          Avtomatika va rele uskunalari
+          Xavfsizlik tizimlari va signalizatsiya
+          Kontrol.uz orqali kerakli o'lchagichlarni va sanoat uskunalarini toping. Bizning mahsulotlarimiz yordamida energiyani tejang va ishonchli yechimlardan foydalaning!
+          Suv hisoblagichlari: Innovatsion suv o‘lchagichlar uy va sanoat obyektlari uchun yuqori aniqlik va samaradorlikni ta'minlaydi.
+          Gaz hisoblagichlari: Yirik va kichik iste'molchilar uchun moslashtirilgan gaz hisoblagichlari.
+          Elektr energiya hisoblagichlari: Energiyani nazorat qilish va tejash uchun zamonaviy elektron hisoblagichlar.
+          Avtomatika tizimlari: Sanoat korxonalarini avtomatlashtirish uchun ilg‘or texnologiyalar.
+          Signalizatsiya va xavfsizlik tizimlari: Qurilmalarni himoya qilish uchun yuqori samarali xavfsizlik yechimlari.
+          Nega Aynan Kontrol.uz?
+          Zamonaviy texnologiyalar: Eng so‘nggi innovatsiyalar va ishonchli qurilmalar.
+          Eng yaxshi narxlar: Bozorda raqobatbardosh va foydali narx siyosati.
+          Tezkor xizmat ko‘rsatish: O‘z vaqtida yetkazib berish va mijozlarni qo‘llab-quvvatlash.
+          Keng assortiment: Har bir ehtiyoj uchun mos bo‘lgan keng turdagi mahsulotlar.
+          Kalit So‘zlar:
+          Suv hisoblagichlarini sotib olish
+          Gaz hisoblagichlari O‘zbekistonda
+          Elektr hisoblagichlar narxlari
+          Avtomatik boshqaruv tizimlari
+          Hisoblagichlar va sanoat uskunalari yetkazib berish
+          Energiya nazorati va xavfsizlik tizimlari
+          Kontrol.uz saytida siz o'zingizga kerakli barcha o‘lchagichlar va sanoat uchun avtomatlashtirish uskunalarini topishingiz mumkin. Biz sizga ishonchli va sifatli texnologiyalarni taklif etamiz!
+        </p>
+      </div>
 
 
 

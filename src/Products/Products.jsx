@@ -169,9 +169,8 @@ export const Products = () => {
                       style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                       src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product_image" />
                   </div>
-                  <div className='sikitki_tovarr'>
-                    <p className='sikidka21'>{product.count}% скидка</p>
-                  </div>
+                    <p className='sikidka21' style={{color:'red'}}>{product.count}% </p>
+                  
                   <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
 
 

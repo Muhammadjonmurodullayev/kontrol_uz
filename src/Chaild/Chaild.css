@@ -339,6 +339,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top:10px;
 }
 .shochik_uzlk {
   width: 100%;
@@ -842,6 +843,7 @@ margin-left:10px;
   /* border:2px solid black; */
   display: flex;
   padding:2px;
+  /* margin-left:2px; */
 }
 .GiCubeforce12{
   width:100%;
@@ -1045,7 +1047,9 @@ align-items: center;
 }
 .sikidka2{
 font-weight:400;
-color:white;
+color:rgb(255, 0, 0);
+font-weight:900;
+padding-top:10px;
 font-size:13px;
 }
 .rerf{
@@ -1053,4 +1057,12 @@ font-size:13px;
   font-size:20px;
   margin-left:10px;
   padding:10px;
+}
+
+
+/* GiCubeforce12 is your container */
+
+.span_price22{
+  color: #007bff;
+  font-weight:600;
 }

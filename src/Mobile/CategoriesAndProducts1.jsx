@@ -46,6 +46,9 @@ const CategoriesAndProducts1 = () => {
   }, []);
   
   const navigator = useNavigate();
+  const formatPrice = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   // Ma'lumotlar to'g'ri formatda ekanligini tekshiramiz
   if (!Array.isArray(categories)) {
@@ -70,7 +73,10 @@ const CategoriesAndProducts1 = () => {
         <div key={category._id} className='categotr_name_uz'>
           <h2 id='category_name_uz_id67'
           style={{
-            fontSize:"30px"
+            padding:"20px",
+            fontSize:"20px",
+            color:"black",
+            fontWeight:"600"
           }}
           >{category.name_uz}</h2>
           <div className='categoru_poroduct_card'>
@@ -91,18 +97,17 @@ const CategoriesAndProducts1 = () => {
                       onError={() => console.error('Error loading image for product:', `https://schetchik.com.uz${filteredProduct.image}`)}
                     />
                   </div>
-                  <h3 className='card_name3232'>{filteredProduct.name_uz}</h3>
-                  <div className='sikitki_tovar2'>
                        <p className='sikidka22'>{filteredProduct.count}% скидка</p>
-                        </div>
+                  <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
+                  
                   {/* <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/> */}
                   {/* <FaStar id='star'/><br /> */}
-                  <span className='span_price'>{filteredProduct.price}</span>
-                  <p className='Oldingi_narx'><del id='decoration'>{filteredProduct.priceMonth}</del></p>
+                  <span className='span_price1'>{formatPrice(filteredProduct.price)}</span>
+                  <p className='Oldingi_narx'><del id='decoration'>{formatPrice(filteredProduct.priceMonth)}</del></p>
                   {/* <p className='Omborda_po'>Omborda: {filteredProduct.count}ta qoldi</p> */}
                 </div>
               ))}

@@ -326,6 +326,7 @@ text-overflow: ellipsis;
 }
 .del323{
   color:red;
+  font-size:12px;
 }
 /* Mahsulot miqdori */
 .Product_card .product_count {
@@ -465,7 +466,29 @@ align-items: center;
   transform: rotate(20deg);
 }
 .sikidka222{
-font-weight:400;
-color:white;
-font-size:13px;
+font-weight:600;
+/* color:white; */
+font-size:12px;
+}
+
+/* GiCubeforce12 is your container */
+
+
+.GiCubeforce1 {
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.expanded-categories.show {
+  max-height: 500px; /* Adjust based on content height */
+}
+
+.GiCubeforce1{
+  width:100%;
+  height:auto;
+  /* border:2px solid black; */
 }

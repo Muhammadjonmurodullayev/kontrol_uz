@@ -95,10 +95,12 @@ const CategoriesAndProducts = () => {
                       style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                       onError={() => console.error('Error loading image for product:', `https://schetchik.com.uz${filteredProduct.image}`)}
                     />
-                      <div className='sikitki_tovar1'>
-                       <p className='sikidka21'>{filteredProduct.count}% <br/> скидка</p>
-                        </div>
+                      
                   </div>
+                  <p className='sikidka21' style={{
+                    color:"red"
+                  }}>{filteredProduct.count}%</p>
+
                   <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
                   {/* <FaStar id='star'/>
                   <FaStar id='star'/>

@@ -37,3 +37,21 @@
   font-size: 20px;
 }
 
+.call12212{
+  width:100%;
+  height:auto;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap:px; */
+  flex-direction: column;
+}
+.BsFillTelephoneFill{
+  font-size:20px;
+  color:white;
+}
+.CallCallCall{
+  /* margin-top:2px; */
+  /* box-sizing: border-box; */
+}

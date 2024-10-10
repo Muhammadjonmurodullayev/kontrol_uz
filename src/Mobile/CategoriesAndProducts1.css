@@ -57,7 +57,12 @@
     transform: rotate(20deg);
   }
   .sikidka22{
-  font-weight:400;
-  color:white;
-  font-size:13px;
+  font-weight:900;
+  color:rgb(255, 0, 0);
+  font-size:12px;
+  }
+  .span_price1{
+    color:blue;
+    /* font-family:900; */
+    font-weight:600;
   }

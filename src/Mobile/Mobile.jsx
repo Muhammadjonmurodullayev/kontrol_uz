@@ -13,14 +13,18 @@ const Mobile = () => {
           <FaHome  id='FaHome1212'/>
           <span>Home</span>
         </Link>
-        <a href="https://t.me/kontroluz"  id='FaHome12121'  className="footer-nav-item">
+        <a href="https://t.me/kontrol_uz"  id='FaHome12121'  className="footer-nav-item">
         <BsTelegram />
           <span>Telegram</span>
         </a>
-        <Link to="/Call"  id='FaHome12122'  className="footer-nav-item">
-        <BsFillTelephoneFill />
-          <span>Cart</span>
-        </Link>
+       <a href="tel:+998 95 015 55 48">
+     
+       <div className='call12212'>
+       <BsFillTelephoneFill className='BsFillTelephoneFill' />
+          <span className='CallCallCall'>Call</span>
+       </div>
+ 
+       </a>
         <Link  to="/Profil"  id='FaHome12123'  className="footer-nav-item">
           <FaUser />
           <span>Profile</span>

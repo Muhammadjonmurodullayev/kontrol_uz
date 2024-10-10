@@ -52,17 +52,17 @@ const Home = () => {
   // corusel ////
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
-   
+
     {
       img: baneer,
       text: '',
     },
-   
+
     {
-      img:baneer  ,
-      text:""
+      img: baneer,
+      text: ""
     }
-   
+
   ];
 
   const nextSlide = () => {
@@ -70,8 +70,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000); 
-    return () => clearInterval(interval); 
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
   }, [currentIndex]); //
   let [categoryes, setCategory] = useState([]);
   let [products, setProducts] = useState([]);
@@ -144,7 +144,21 @@ const Home = () => {
 
 
 
+  const [isExpanded, setIsExpanded] = useState(false);
 
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded); // Toggle expansion
+  };
+
+  // Maxsus uchta kategoriya
+  const specialCategories = categoryes.filter(category => 
+    ['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
+  );
+
+  // Qolgan barcha kategoriyalar (maxsus bo'lmagan)
+  const otherCategories = categoryes.filter(category => 
+    !['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
+  );
 
 
   return (
@@ -156,21 +170,77 @@ const Home = () => {
             <IoIosCloseCircle className='div_clos_item' onClick={() => setMenuOpen(!menuOpen)} />
           </div>
           <div className='Category__all'>Category</div>
+{/* 
+          
           {
             categoryes.map((category) => (
               <div key={category._id}>
                 <div className='fon_bacrount' onClick={() => { navigator("/category/" + category._id) }}>
                   <div className='category___name_uz'>
-                    <GiCubeforce  className='GiCubeforce'/>
+                    <GiCubeforce className='GiCubeforce' />
                     <p className='category__name_uz'>{category.name_uz} </p>
                   </div>
 
                 </div>
               </div>
             ))
-          }
+          } */}
+
+
+
+
+<div className='GiCubeforce12'>
+      {/* Only other categories, excluding the special ones */}
+      {otherCategories.map((category) => (
+        <div key={category._id} className='category_id9696'>
+          <div
+            className='GiCubeforce1'
+            onClick={() => navigator("/category/" + category._id)}
+          >
+            <GiCubeforce className='GiCubeforce' />
+            <p className='category_name_uz'>{category.name_uz}</p>
+          </div>
+        </div>
+      ))}
+
+      {/* Name button for expanding the specific categories */}
+      <div className='GiCubeforce1' onClick={handleToggle}>
+      <GiCubeforce className='GiCubeforce' />
+        <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
+      </div>
+
+      {/* Only show special categories if expanded */}
+      {isExpanded && (
+        <div className='expanded-categories'>
+          {specialCategories.map((category) => (
+            <div key={category._id} className='category_id9696'>
+              <div
+                className='GiCubeforce1'
+                onClick={() => navigator("/category/" + category._id)}
+              >
+                <GiCubeforce className='GiCubeforce' />
+                <p className='category_name_uz'>{category.name_uz}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      <hr />
+
+
+
+
+
+
+      
+    </div>
 
         </div>
+
+
+
+
+
 
         <IoMenu className="filter-button" onClick={() => setMenuOpen(!menuOpen)} />
         <h1 className='page21'>Schetchik</h1>
@@ -198,7 +268,7 @@ const Home = () => {
       {searchTerm === "" &&
         <div className="carousel-container">
           <div className="carousel-slide">
-            <img  src={slides[currentIndex].img} alt="slide" className="slide-image" />
+            <img src={slides[currentIndex].img} alt="slide" className="slide-image" />
             <div className="slide-text">{slides[currentIndex].text}</div>
           </div>
         </div>
@@ -207,7 +277,7 @@ const Home = () => {
       }
       <div className="Products_section">
         {/* <div>Products</div> */}
-          <CategoriesAndProducts1 className="CategoriesAndProducts_id534"/>
+        <CategoriesAndProducts1 className="CategoriesAndProducts_id534" />
 
 
         {
@@ -222,14 +292,13 @@ const Home = () => {
                   style={{ width: '150px', height: '150px', objectFit: 'cover' }}
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
-              <div className="product_name">{product.name_uz}</div>
-              <div className='sikitki_tovar22'>
-                       <p className='sikidka222'>{product.count}% скидка</p>
-                        </div>
-              <del className='del323'>{product.priceMonth} so'm</del>
+                <p className='sikidka222' style={{color:"red"}}>{product.count}% скидка</p>
+              <div className="product_name">{product.name_uz}</div><br />
+            
               <div className="product_price">{product.price} so'm</div>
+              <del className='del323'>{product.priceMonth} so'm</del>
 
-              <div className="product_count">Ombor: {product.count}</div>
+              {/* <div className="product_count">Ombor: {product.count}</div> */}
             </div>
           ))
         }
@@ -275,75 +344,75 @@ const Home = () => {
 
 
 
-      <div  className="contact_1">
-     <div className="contact_id_item">
-<h3>Kontact</h3>
-<p className='call_center'>Call center</p>
-<p className='tel_item'>+998997726700</p>
-<p className='call_center' >Gmail pochta</p>
-<p className='tel_item'>Kontrol@gmail.com</p>
-<p className='call_center' >Ish grafigi</p>
-<div className='ish'>
-<p className='tel_item'>Ish kunlari</p> 
-<p className='tel_item'>09:00 dan</p> 
-<p className='tel_item'>18:00 gacha</p> 
-</div>
-<div className='ish'>
-<p className='tel_item'>Shanba    </p>
-<p className='tel_item' id='ish2'>09:00 dan</p> 
-<p className='tel_item'>18:00 gacha</p> 
+      <div className="contact_1">
+        <div className="contact_id_item">
+          <h3>Kontact</h3>
+          <p className='call_center'>Call center</p>
+          <p className='tel_item'>+998997726700</p>
+          <p className='call_center' >Gmail pochta</p>
+          <p className='tel_item'>Kontrol@gmail.com</p>
+          <p className='call_center' >Ish grafigi</p>
+          <div className='ish'>
+            <p className='tel_item'>Ish kunlari</p>
+            <p className='tel_item'>09:00 dan</p>
+            <p className='tel_item'>18:00 gacha</p>
+          </div>
+          <div className='ish'>
+            <p className='tel_item'>Shanba    </p>
+            <p className='tel_item' id='ish2'>09:00 dan</p>
+            <p className='tel_item'>18:00 gacha</p>
 
-</div>
+          </div>
 
-     </div>
-   
-     <div className="contact_id_item">
-      <h3>Kompaniya</h3>
-     <div className="kompaniy443434">
-     <p >О нас</p>
-      <p>Реквизиты</p>
-      <p>Контакты</p>
-      <p>Вакансии</p>
-      <p>Карта сайта</p>
-      <p>Публичная оферта</p>
-     </div>
-      {/* <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.243358%2C41.357223&mode=whatshere&whatshere%5Bpoint%5D=69.242743%2C41.357430&whatshere%5Bzoom%5D=17&z=19.57">location</a> */}
-     </div>
+        </div>
 
-     <div className="contact_id_item">
-      <h3>Yordam xizmati</h3>
-      <div className="kompaniy443434">
-     <p>Вопросы и ответы</p>
-     <p>Условия рассрочки</p>
-     <p>Способ оптлаты</p>
-     <p>Доставка</p>
-     <p>Возврат товаров</p>
-     <p>Сервисные центры</p>
-     </div>
-     </div>
-    </div>
-    <div className="contact_id_item">
-      <h3>Bizning ishtimoiy tarmoqlar</h3>
-      <div className='tarmoqlar'>
-       <a href="https://t.me/kontroluz">
-       <img className='telegram' src={telegram} alt="" />
-       </a>
-       <a href="https://www.instagram.com/kontroluz/">
-       <img className='instagram' src={instagram} alt="" />
-       </a>
-      <a href="https://www.youtube.com/@kontroluz1064">
-      <img className='youtube' src={youtube} alt="" />
-      </a>
-       <a href="https://www.facebook.com/search/top?q=kontrol.uz">
-       <img className='facebook' src={facebook} alt="" />
-       </a>
+        <div className="contact_id_item">
+          <h3>Kompaniya</h3>
+          <div className="kompaniy443434">
+            <p >О нас</p>
+            <p>Реквизиты</p>
+            <p>Контакты</p>
+            <p>Вакансии</p>
+            <p>Карта сайта</p>
+            <p>Публичная оферта</p>
+          </div>
+          {/* <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.243358%2C41.357223&mode=whatshere&whatshere%5Bpoint%5D=69.242743%2C41.357430&whatshere%5Bzoom%5D=17&z=19.57">location</a> */}
+        </div>
+
+        <div className="contact_id_item">
+          <h3>Yordam xizmati</h3>
+          <div className="kompaniy443434">
+            <p>Вопросы и ответы</p>
+            <p>Условия рассрочки</p>
+            <p>Способ оптлаты</p>
+            <p>Доставка</p>
+            <p>Возврат товаров</p>
+            <p>Сервисные центры</p>
+          </div>
+        </div>
       </div>
-      <div className='hamkorlar_item_id'>
-<img className='sofy' src={Sofy} alt="" />
-<img className='anorbank' src={Anorbank} alt="" />
+      <div className="contact_id_item">
+        <h3>Bizning ishtimoiy tarmoqlar</h3>
+        <div className='tarmoqlar'>
+          <a href="https://t.me/kontroluz">
+            <img className='telegram' src={telegram} alt="" />
+          </a>
+          <a href="https://www.instagram.com/kontroluz/">
+            <img className='instagram' src={instagram} alt="" />
+          </a>
+          <a href="https://www.youtube.com/@kontroluz1064">
+            <img className='youtube' src={youtube} alt="" />
+          </a>
+          <a href="https://www.facebook.com/search/top?q=kontrol.uz">
+            <img className='facebook' src={facebook} alt="" />
+          </a>
+        </div>
+        <div className='hamkorlar_item_id'>
+          <img className='sofy' src={Sofy} alt="" />
+          <img className='anorbank' src={Anorbank} alt="" />
+        </div>
+        <p className='yil'>Kontrol.uz internet-do‘koni 2017-2024. Barcha huquqlar himoyalangan</p>
       </div>
-      <p className='yil'>Kontrol.uz internet-do‘koni 2017-2024. Barcha huquqlar himoyalangan</p>
-     </div>
 
 
     </div>
