@@ -149,7 +149,9 @@ export const OneProduct = () => {
                     Доставка по г.Ташкенту до 24 часов, по Республике Узбекистан до 2 рабочих дней.
                   </p><br />
                   <a href="tel:+998 (90) 329 12 84">
-                  <button className="add-to-cart">Добавить в корзину</button>
+                <a href="tel:+998712006800">
+                <button className="add-to-cart">Добавить в корзину</button>
+                </a>
 
                   </a>
                   <button className="add-to-cart"

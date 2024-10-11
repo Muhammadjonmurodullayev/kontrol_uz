@@ -355,8 +355,9 @@
 .span_1price {
   /* color: rgb(0, 0, 0);
    */
-   color: #3a5cf5;
-  font-weight:700;
+   color: #000000;
+  font-weight:900;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:18px;
 }
 #button_item1 {

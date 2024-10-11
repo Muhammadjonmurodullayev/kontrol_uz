@@ -17,7 +17,7 @@ const Mobile = () => {
         <BsTelegram />
           <span>Telegram</span>
         </a>
-       <a href="tel:+998 95 015 55 48">
+       <a href="tel:+998712006800">
      
        <div className='call12212'>
        <BsFillTelephoneFill className='BsFillTelephoneFill' />

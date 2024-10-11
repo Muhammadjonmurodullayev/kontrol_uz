@@ -770,49 +770,49 @@ const Chaild = ({cards }) => {
 
 
       <div className='meta_tag'>
-        <h1>Schetchik.com.uz  - Sifatli Suv, Gaz va Elektr Energiya O'lchagichlari</h1><br />
+        <h1>Schetchik.com.uz - Сифатли Сув, Газ ва Электр Энергия Улчагычлари</h1><br />
         <p className='meta_tag1'>
-          Schetchik.com.uz  – bu O'zbekiston bo'ylab suv, gaz va elektr energiya o'lchagichlari va boshqa sanoat uskunalarini taklif etuvchi yetakchi onlayn platforma. Bizning assortimentimizda eng ilg'or texnologiyalar asosida ishlab chiqilgan mahsulotlar mavjud bo'lib, ular sizning uy va biznesingiz uchun ishonchli yechim bo'ladi.
+        Schetchik.com.uz — ведущая онлайн-платформа, предлагающая счетчики воды, газа и электроэнергии и другое промышленное оборудование по всему Узбекистану. В нашем ассортименте представлена ​​продукция, разработанная на основе самых передовых технологий, которая станет надежным решением для вашего дома и бизнеса.
 
-          Bizning Mahsulotlar:
-          Suv o'lchagichlar (Schetchiklar): Eng yangi texnologiyaga ega bo'lgan suv hisoblagichlar turli hajmlarda va foydalanish sharoitlariga mos.
-          Gaz o'lchagichlar: Yuqori aniqlikka ega gaz hisoblagichlari uy yoki korxonalar uchun samarali yechimlar.
-          Elektr hisoblagichlar: Sifatli va energiyani tejashga yordam beruvchi zamonaviy elektr hisoblagichlari.
-          Avtomatika va rele uskunalari: Avtomatlashtirilgan boshqaruv tizimlari, elektr yuklamalarini boshqarish uchun asboblar.
-          Kompensatsiya tizimlari: Elektr energiyasini tejash va sifatini oshirish uchun kompensatsiya qurilmalari.
-          Signalizatsiya tizimlari: Xavfsizlik va ogohlantirish tizimlari, to'liq xavfsizlikni ta'minlaydi.
-          Nima uchun Kontrol.uz-ni tanlash kerak?
-          Sifatli mahsulotlar: Bizning barcha mahsulotlarimiz xalqaro sifat standartlariga mos keladi.
-          Moslashuvchan narxlar: Har qanday byudjet uchun qulay narxlar.
-          Tezkor yetkazib berish: Butun O'zbekiston bo'ylab tez va ishonchli yetkazib berish xizmati.
-          Texnik qo'llab-quvvatlash: Xariddan keyin ham professional qo'llab-quvvatlash va xizmat ko'rsatish.
-          Kalit So'zlar:
-          Suv o'lchagichlar O'zbekistonda
-          Gaz o'lchagichlar sotib olish
-          Elektr hisoblagichlar narxlari
-          Sanoat uskunalari O'zbekiston
-          O'lchagich va hisoblagich sotuvchilari
-          Avtomatika va rele uskunalari
-          Xavfsizlik tizimlari va signalizatsiya
-          Kontrol.uz orqali kerakli o'lchagichlarni va sanoat uskunalarini toping. Bizning mahsulotlarimiz yordamida energiyani tejang va ishonchli yechimlardan foydalaning!
-          Suv hisoblagichlari: Innovatsion suv o‘lchagichlar uy va sanoat obyektlari uchun yuqori aniqlik va samaradorlikni ta'minlaydi.
-          Gaz hisoblagichlari: Yirik va kichik iste'molchilar uchun moslashtirilgan gaz hisoblagichlari.
-          Elektr energiya hisoblagichlari: Energiyani nazorat qilish va tejash uchun zamonaviy elektron hisoblagichlar.
-          Avtomatika tizimlari: Sanoat korxonalarini avtomatlashtirish uchun ilg‘or texnologiyalar.
-          Signalizatsiya va xavfsizlik tizimlari: Qurilmalarni himoya qilish uchun yuqori samarali xavfsizlik yechimlari.
-          Nega Aynan Kontrol.uz?
-          Zamonaviy texnologiyalar: Eng so‘nggi innovatsiyalar va ishonchli qurilmalar.
-          Eng yaxshi narxlar: Bozorda raqobatbardosh va foydali narx siyosati.
-          Tezkor xizmat ko‘rsatish: O‘z vaqtida yetkazib berish va mijozlarni qo‘llab-quvvatlash.
-          Keng assortiment: Har bir ehtiyoj uchun mos bo‘lgan keng turdagi mahsulotlar.
-          Kalit So‘zlar:
-          Suv hisoblagichlarini sotib olish
-          Gaz hisoblagichlari O‘zbekistonda
-          Elektr hisoblagichlar narxlari
-          Avtomatik boshqaruv tizimlari
-          Hisoblagichlar va sanoat uskunalari yetkazib berish
-          Energiya nazorati va xavfsizlik tizimlari
-          Kontrol.uz saytida siz o'zingizga kerakli barcha o‘lchagichlar va sanoat uchun avtomatlashtirish uskunalarini topishingiz mumkin. Biz sizga ishonchli va sifatli texnologiyalarni taklif etamiz!
+          Наши продукты:
+          Счетчики воды (Скетчики): Счетчики воды, изготовленные по новейшим технологиям, доступны в различных размерах и условиях использования.
+          Счетчики газа. Высокоточные счетчики газа — эффективное решение для дома или бизнеса.
+          Счетчики электроэнергии: Качественные и современные счетчики электроэнергии, которые помогают экономить электроэнергию.
+          Автоматика и релейное оборудование: Автоматизированные системы управления, устройства управления электрическими нагрузками.
+          Системы компенсации: Компенсационные устройства для экономии и улучшения качества электроэнергии.
+          Системы сигнализации: Системы безопасности и оповещения, обеспечивающие полную безопасность.
+          Почему стоит выбрать Kontrol.uz?
+          Качественная продукция: Вся наша продукция соответствует международным стандартам качества.
+          Гибкая ценовая политика: доступные цены для любого бюджета.
+          Быстрая доставка: Быстрая и надежная служба доставки по всему Узбекистану.
+          Техническая поддержка: Профессиональная поддержка и обслуживание даже после покупки.
+          Ключевые слова:
+          Счетчики воды в Узбекистане
+          Покупка газовых счетчиков
+          Цены на электросчетчики
+          Промышленное оборудование Узбекистан
+          Счетчики и дилеры счетчиков
+          Автоматика и релейное оборудование
+          Системы безопасности и сигнализации
+          Найдите необходимые счетчики и промышленное оборудование через Kontrol.uz. Экономьте энергию и используйте надежные решения с нашей продукцией!
+          Счетчики воды: Инновационные счетчики воды обеспечивают высокую точность и эффективность для бытовых и промышленных объектов.
+          Счетчики газа: Счетчики газа по индивидуальному заказу для крупных и мелких потребителей.
+          Счетчики электроэнергии: Современные электронные счетчики для контроля и экономии энергии.
+          Системы автоматизации: Передовые технологии промышленной автоматизации.
+          Системы сигнализации и безопасности: Высокопроизводительные охранные решения для защиты устройств.
+          Почему именно Kontrol.uz?
+          Новейшие технологии: новейшие инновации и надежные устройства.
+          Лучшие цены: Конкурентная и выгодная ценовая политика на рынке.
+          Оперативное обслуживание: своевременная доставка и поддержка клиентов.
+          Широкий ассортимент: Широкий ассортимент продукции на любой вкус.
+          Ключевые слова:
+          Покупка счетчиков воды
+          Газовые счетчики в Узбекистане
+          Цены на электросчетчики
+          Системы автоматического управления
+          Поставка счетчиков и промышленного оборудования
+          Системы энергоконтроля и безопасности
+          На сайте Kontrol.uz вы сможете найти все необходимые вам счетчики и средства промышленной автоматизации. Мы предлагаем Вам надежные и качественные технологии!
         </p>
       </div>
 

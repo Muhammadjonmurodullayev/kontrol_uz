@@ -12,19 +12,19 @@ const Contact = () => {
   return (
     <div  className="contact">
      <div className="contact_id_item">
-<h3>Kontact</h3>
+<h3>Контакт</h3>
 <p className='call_center'>Call center</p>
 <p className='tel_item'>+998 90 329 12 84</p>
-<p className='call_center' >Gmail pochta</p>
+<p className='call_center' >почта Gmail</p>
 <p className='tel_item'>Kontrol@gmail.com</p>
-<p className='call_center' >Ish grafigi</p>
+<p className='call_center' >Иш графи</p>
 <div className='ish'>
-<p className='tel_item'>Ish kunlari</p> 
+<p className='tel_item'>Иш Кунлари</p> 
 <p className='tel_item'>09:00 dan</p> 
 <p className='tel_item'>18:00 gacha</p> 
 </div>
 <div className='ish'>
-<p className='tel_item'>Shanba    </p>
+<p className='tel_item'>Шанба</p>
 <p className='tel_item' id='ish2'>09:00 dan</p> 
 <p className='tel_item'>18:00 gacha</p> 
 
@@ -32,7 +32,7 @@ const Contact = () => {
 
      </div>
      <div className="contact_id_item">
-      <h3>Bizning ishtimoiy tarmoqlar</h3>
+      <h3>Бизнинг иштимой тармоклар</h3>
       <div className='tarmoqlar'>
        <a href="https://t.me/kontroluz">
        <img className='telegram' src={telegram} alt="" />
@@ -51,10 +51,10 @@ const Contact = () => {
 <img className='sofy' src={Sofy} alt="" />
 <img className='anorbank' src={Anorbank} alt="" />
       </div>
-      <p className='yil'>Kontrol.uz internet-do‘koni 2017-2024. Barcha huquqlar himoyalangan</p>
+      <p className='yil'>Kontrol.uz интернет-до’кони 2017-2024. Барча Хукуклар Химояланган</p>
      </div>
      <div className="contact_id_item">
-      <h3>Kompaniya</h3>
+      <h3>Компания</h3>
      <div className="kompaniy443434">
      <p >О нас</p>
       <p>Реквизиты</p>
@@ -66,7 +66,7 @@ const Contact = () => {
       {/* <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.243358%2C41.357223&mode=whatshere&whatshere%5Bpoint%5D=69.242743%2C41.357430&whatshere%5Bzoom%5D=17&z=19.57">location</a> */}
      </div>
      <div className="contact_id_item">
-      <h3>Yordam xizmati</h3>
+      <h3>Йордам Хизмати</h3>
       <div className="kompaniy443434">
      <p>Вопросы и ответы</p>
      <p>Условия рассрочки</p>

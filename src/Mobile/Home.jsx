@@ -348,7 +348,9 @@ const Home = () => {
         <div className="contact_id_item">
           <h3>Kontact</h3>
           <p className='call_center'>Call center</p>
-          <p className='tel_item'>+998997726700</p>
+      <a href="tel:+998712006800">
+      <p className='tel_item'>+998712006800</p>
+      </a>
           <p className='call_center' >Gmail pochta</p>
           <p className='tel_item'>Kontrol@gmail.com</p>
           <p className='call_center' >Ish grafigi</p>
