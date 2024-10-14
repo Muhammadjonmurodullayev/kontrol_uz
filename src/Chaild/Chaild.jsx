@@ -35,7 +35,7 @@ import logo_image3 from "./logo imge 1.webp"
 import logo_image5 from "./solar_panel.webp"
 // import { GiCubeforce } from 'react-icons/gi'; // Ensure you import your icon correctly
 // import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom
-const Chaild = ({cards }) => {
+const Chaild = ({ cards }) => {
   const [showDiv1, setShowDiv1] = useState(false);
 
 
@@ -337,12 +337,15 @@ const Chaild = ({cards }) => {
   };
 
   // Maxsus uchta kategoriya
-  const specialCategories = categoryes.filter(category => 
+  const specialCategories = categoryes.filter(category =>
     ['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
   );
 
   // Qolgan barcha kategoriyalar (maxsus bo'lmagan)
-  const otherCategories = categoryes.filter(category => 
+  const otherCategories = categoryes.filter(category =>
+    !['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
+  );
+  const otherCategories1 = categoryes.filter(category =>
     !['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
   );
 
@@ -512,7 +515,7 @@ const Chaild = ({cards }) => {
                           />
                         </div>
                       )}
-                        <p className='sikidka2'>{product.count}% скидка</p>
+                      <p className='sikidka2'>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% скидка</p>
                       <p className='card_name3232'>{product.name_uz}</p><br />
                       {/* <p>{product.name_ru}</p> */}
 
@@ -566,44 +569,44 @@ const Chaild = ({cards }) => {
 
 
 
-<div className='GiCubeforce12'>
-      {/* Only other categories, excluding the special ones */}
-      {otherCategories.map((category) => (
-        <div key={category._id} className='category_id9696'>
-          <div
-            className='GiCubeforce1'
-            onClick={() => navigator("/category/" + category._id)}
-          >
-            <GiCubeforce className='GiCubeforce' />
-            <p className='category_name_uz'>{category.name_uz}</p>
-          </div>
-        </div>
-      ))}
+                <div className='GiCubeforce12'>
+                  {/* Only other categories, excluding the special ones */}
+                  {otherCategories.map((category) => (
+                    <div key={category._id} className='category_id9696'>
+                      <div
+                        className='GiCubeforce1'
+                        onClick={() => navigator("/category/" + category._id)}
+                      >
+                        <GiCubeforce className='GiCubeforce' />
+                        <p className='category_name_uz'>{category.name_uz}</p>
+                      </div>
+                    </div>
+                  ))}
 
-      {/* Name button for expanding the specific categories */}
-      <div className='GiCubeforce1' onClick={handleToggle}>
-      <GiCubeforce className='GiCubeforce' />
-        <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
-      </div>
+                  {/* Name button for expanding the specific categories */}
+                  <div className='GiCubeforce1' onClick={handleToggle}>
+                    <GiCubeforce className='GiCubeforce' />
+                    <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
+                  </div>
 
-      {/* Only show special categories if expanded */}
-      {isExpanded && (
-        <div className='expanded-categories'>
-          {specialCategories.map((category) => (
-            <div key={category._id} className='category_id9696'>
-              <div
-                className='GiCubeforce1'
-                onClick={() => navigator("/category/" + category._id)}
-              >
-                <GiCubeforce className='GiCubeforce' />
-                <p className='category_name_uz'>{category.name_uz}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-      <hr />
-    </div>
+                  {/* Only show special categories if expanded */}
+                  {isExpanded && (
+                    <div className='expanded-categories'>
+                      {specialCategories.map((category) => (
+                        <div key={category._id} className='category_id9696'>
+                          <div
+                            className='GiCubeforce1'
+                            onClick={() => navigator("/category/" + category._id)}
+                          >
+                            <GiCubeforce className='GiCubeforce' />
+                            <p className='category_name_uz'>{category.name_uz}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <hr />
+                </div>
 
 
 
@@ -663,35 +666,35 @@ const Chaild = ({cards }) => {
 
                 <div className='kontainer_id_item'>
                   <div className="kontainer_id_item1"
-                onClick={() => navigator("/category/"+"66fe29c1a1ac1b08272d5012")}
+                    onClick={() => navigator("/category/" + "66fe29c1a1ac1b08272d5012")}
                   >
                     <img src={logo_image} alt="#" className='Card_loco_iconsid1' />
                   </div>
                   <div className="kontainer_id_item2"
-                onClick={() => navigator("/category/"+"66e04294e8bc2bedd57b2cf2")}
-                  
+                    onClick={() => navigator("/category/" + "66e04294e8bc2bedd57b2cf2")}
+
                   >
                     <img src={logo_image2} alt="" className='Card_loco_iconsid2' />
 
                   </div>
                   <div className="kontainer_id_item3"
-                onClick={() => navigator("/category/"+"66e17e3911b8489150edf115")}
-                  
+                    onClick={() => navigator("/category/" + "66e17e3911b8489150edf115")}
+
                   >
                     <img src={logo_image3} alt="#" className='Card_loco_iconsid3' />
                   </div>
                   <div className="kontainer_id_item4">
                     <div className='Loading6'
-                onClick={() => navigator("/category/"+"66e11def5429c67e4f1de279")}
-                    
+                      onClick={() => navigator("/category/" + "66e11def5429c67e4f1de279")}
+
                     >
-                        <img src={logo_image5} alt="#" className='Card_loco_iconsid4' />
+                      <img src={logo_image5} alt="#" className='Card_loco_iconsid4' />
                     </div>
                   </div>
 
 
                 </div>
-                
+
 
 
 
@@ -742,8 +745,8 @@ const Chaild = ({cards }) => {
 
                           </div>
                         )}
-                        <p className='sikidka2'>-{product.count}% </p>
-                       
+                        <p className='sikidka2'>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% </p>
+
                         <p className='card_name3232'>{product.name_uz}сум</p><br />
 
                         <div>
@@ -772,7 +775,7 @@ const Chaild = ({cards }) => {
       <div className='meta_tag'>
         <h1>Schetchik.com.uz - Сифатли Сув, Газ ва Электр Энергия Улчагычлари</h1><br />
         <p className='meta_tag1'>
-        Schetchik.com.uz — ведущая онлайн-платформа, предлагающая счетчики воды, газа и электроэнергии и другое промышленное оборудование по всему Узбекистану. В нашем ассортименте представлена ​​продукция, разработанная на основе самых передовых технологий, которая станет надежным решением для вашего дома и бизнеса.
+          Schetchik.com.uz — ведущая онлайн-платформа, предлагающая счетчики воды, газа и электроэнергии и другое промышленное оборудование по всему Узбекистану. В нашем ассортименте представлена ​​продукция, разработанная на основе самых передовых технологий, которая станет надежным решением для вашего дома и бизнеса.
 
           Наши продукты:
           Счетчики воды (Скетчики): Счетчики воды, изготовленные по новейшим технологиям, доступны в различных размерах и условиях использования.

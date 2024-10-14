@@ -83,7 +83,7 @@ export const Productss = () => {
         setCategory(categoryResponse.data);
 
         // Check if category name matches "panel"
-        if (categoryResponse.data.data.name_uz === 'Panel') {
+        if (categoryResponse.data.data.name_uz === 'Стабилизатор') {
           setShowSalom(true);
         } else {
           setShowSalom(false);

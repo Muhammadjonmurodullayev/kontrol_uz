@@ -97,7 +97,7 @@ const CategoriesAndProducts1 = () => {
                       onError={() => console.error('Error loading image for product:', `https://schetchik.com.uz${filteredProduct.image}`)}
                     />
                   </div>
-                       <p className='sikidka22'>{filteredProduct.count}% скидка</p>
+                       <p className='sikidka22'>{Math.floor(((filteredProduct.priceMonth-filteredProduct.price)/filteredProduct.priceMonth*100))}% скидка</p>
                   <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
                   
                   {/* <FaStar id='star'/>

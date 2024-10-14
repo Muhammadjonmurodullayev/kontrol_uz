@@ -99,7 +99,7 @@ const CategoriesAndProducts = () => {
                   </div>
                   <p className='sikidka21' style={{
                     color:"red"
-                  }}>{filteredProduct.count}%</p>
+                  }}>{Math.floor(((filteredProduct.priceMonth-filteredProduct.price)/filteredProduct.priceMonth*100))}%</p>
 
                   <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
                   {/* <FaStar id='star'/>

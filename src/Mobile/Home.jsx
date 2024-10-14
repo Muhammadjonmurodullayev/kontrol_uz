@@ -292,7 +292,7 @@ const Home = () => {
                   style={{ width: '150px', height: '150px', objectFit: 'cover' }}
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
-                <p className='sikidka222' style={{color:"red"}}>{product.count}% скидка</p>
+                <p className='sikidka222' style={{color:"red"}}>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% скидка</p>
               <div className="product_name">{product.name_uz}</div><br />
             
               <div className="product_price">{product.price} so'm</div>

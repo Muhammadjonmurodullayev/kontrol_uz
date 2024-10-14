@@ -169,7 +169,7 @@ export const Products = () => {
                       style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                       src={process.env.REACT_APP_BASE_URL + product.image} alt="" className="product_image" />
                   </div>
-                    <p className='sikidka21' style={{color:'red'}}>{product.count}% </p>
+                    <p className='sikidka21' style={{color:'red'}}>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% </p>
                   
                   <div id='product-name-uz' className="product-name-uz">{product.name_uz}</div>
 

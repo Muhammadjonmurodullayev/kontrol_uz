@@ -48,7 +48,7 @@ export const OneProductt = () => {
                         <FaStar className='FaStar'/>
                        <del style={{color:"red"}}> <p style={{color:"red"}}>{products.priceMonth}</p></del>
                         <h2>{products.price} сум</h2>
-                        <p className='omborda_1_'>{products.count} ta qoldi</p>
+                        <p className='omborda_1_'>{Math.floor(((products.priceMonth-products.price)/products.priceMonth*100))}%</p>
                         <p className="price-usd">≈ ${products.price}</p>
                         <p className="availability">В наличии</p>
                         <div className="delivery-info">

@@ -32,7 +32,7 @@ const Contact = () => {
 
      </div>
      <div className="contact_id_item">
-      <h3>Бизнинг иштимой тармоклар</h3>
+      <h3>Мы в социальных сетях</h3>
       <div className='tarmoqlar'>
        <a href="https://t.me/kontroluz">
        <img className='telegram' src={telegram} alt="" />
@@ -66,7 +66,7 @@ const Contact = () => {
       {/* <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.243358%2C41.357223&mode=whatshere&whatshere%5Bpoint%5D=69.242743%2C41.357430&whatshere%5Bzoom%5D=17&z=19.57">location</a> */}
      </div>
      <div className="contact_id_item">
-      <h3>Йордам Хизмати</h3>
+      <h3>Помощь</h3>
       <div className="kompaniy443434">
      <p>Вопросы и ответы</p>
      <p>Условия рассрочки</p>
