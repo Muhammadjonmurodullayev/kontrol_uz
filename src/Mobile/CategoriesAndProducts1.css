@@ -66,3 +66,10 @@
     /* font-family:900; */
     font-weight:600;
   }
+
+.card_name3232{
+  white-space: nowrap;         /* Prevent text from wrapping to a new line */
+  overflow: hidden;            /* Hide overflowed content */
+  text-overflow: ellipsis;     /* Show "..." for text that overflows */
+  width: 150px;
+}

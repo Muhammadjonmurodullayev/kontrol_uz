@@ -838,6 +838,9 @@ margin-left:10px;
   /* display: flex; */
 }
 
+.expanded-categories{
+
+}
 
 .GiCubeforce1{
   width:100%;
@@ -855,6 +858,8 @@ margin-left:10px;
   /* border:2px solid black; */
 }
 .GiCubeforce{
+  width:20px;
+  height:auto;
   color: #002fff;
 }
 .category_name_uz{
@@ -896,8 +901,8 @@ margin-left:10px;
   .category_id9696{
     width:100%;
     height:auto;
-    /* border:2px solid black; */
-    padding:5px;
+    
+    /* padding:5px; */
   }
 
   #decoration{

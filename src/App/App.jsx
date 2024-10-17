@@ -15,7 +15,7 @@ import Admin from '../Admin_panel/Admin.jsx'
 import { AdminProducts } from '../Admin_p/Products.jsx'
 import Homeadmin from '../Admin_p/Admin_p.jsx'
 import { Productss } from '../Mobile/SelectedCardsPage1.jsx'
-import { OneProductt } from '../Mobile/Carddetal.jsx'
+// import { OneProductt } from '../Mobile/Carddetal.jsx'
 import Yordam from '../Chaild/yordam.jsx'
 import { Home1 } from '../Admin_p/home_admnin.jsx'
 import { About1 } from '../Admin_p/about_admin.jsx'
@@ -27,6 +27,7 @@ import Kategoriya from '../Admin_p/Kategoriya.jsx'
 
 const Home = lazy(()=> import("../Mobile/Home.jsx"))
 const Chaild = lazy(()=> import("../Chaild/Chaild.jsx"))
+const OneProductt = lazy(()=> import("../Mobile/Carddetal.jsx"))
 
 export const App = () => {
   const [selectedCards, setSelectedCards] = useState([]);

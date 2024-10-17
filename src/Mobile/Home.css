@@ -288,15 +288,18 @@ text-overflow: ellipsis;
 }
 
 /* Mahsulot nomi */
-.Product_card .product_name {
+.product_name {
   font-weight: bold;
   font-size: 14px;
   color: #000ecb;
   margin-bottom: 8px;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+    white-space: nowrap;         /* Prevent text from wrapping to a new line */
+    overflow: hidden;            /* Hide overflowed content */
+    text-overflow: ellipsis;     /* Show "..." for text that overflows */
+    width: 150px;                /* Adjust this width according to your card size */
+  
+  
 }
 
 /* Mahsulot tavsifi */
@@ -473,8 +476,21 @@ font-size:12px;
 
 /* GiCubeforce12 is your container */
 
+.GiCubeforce{
+  color:#001aff;
+
+}
+
+.category_name_uz{
+  color:black;
+  font-weight:900;
+  margin-left:10px;
+}
 
 .GiCubeforce1 {
+  width:100%;
+  height:auto;
+  gap:5px;
   display: flex;
   justify-content:start;
   align-items: center;
@@ -491,4 +507,11 @@ font-size:12px;
   width:100%;
   height:auto;
   /* border:2px solid black; */
+}
+
+
+.div_clos_item{
+  width:30px;
+  height:auto;
+  margin-left:25px;
 }

@@ -60,3 +60,14 @@
   .span_price{
 font-size:18px;
   }
+
+
+.card_name32321{
+  /* .product_name { */
+    white-space: nowrap;         /* Prevent text from wrapping to a new line */
+    overflow: hidden;            /* Hide overflowed content */
+    text-overflow: ellipsis;     /* Show "..." for text that overflows */
+    width: 150px;                /* Adjust this width according to your card size */
+  /* } */
+  
+}

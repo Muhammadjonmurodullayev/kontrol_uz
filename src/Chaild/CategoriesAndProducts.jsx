@@ -101,7 +101,7 @@ const CategoriesAndProducts = () => {
                     color:"red"
                   }}>{Math.floor(((filteredProduct.priceMonth-filteredProduct.price)/filteredProduct.priceMonth*100))}%</p>
 
-                  <h3 className='card_name3232'>{filteredProduct.name_uz}</h3><br />
+                  <h3 className='card_name32321' >{filteredProduct.name_uz}</h3><br />
                   {/* <FaStar id='star'/>
                   <FaStar id='star'/>
                   <FaStar id='star'/>

@@ -169,7 +169,7 @@ const Home = () => {
             <img className='konrol___img' src={konrol___img} alt="" />
             <IoIosCloseCircle className='div_clos_item' onClick={() => setMenuOpen(!menuOpen)} />
           </div>
-          <div className='Category__all'>Category</div>
+          <div className='Category__all'>Категории</div>
 {/* 
           
           {
@@ -293,7 +293,7 @@ const Home = () => {
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
                 <p className='sikidka222' style={{color:"red"}}>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% скидка</p>
-              <div className="product_name">{product.name_uz}</div><br />
+              <div className="product_name" >{product.name_uz}</div><br />
             
               <div className="product_price">{product.price} so'm</div>
               <del className='del323'>{product.priceMonth} so'm</del>
