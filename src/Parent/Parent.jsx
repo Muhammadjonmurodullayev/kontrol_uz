@@ -95,7 +95,7 @@ const Parent = () => {
         <div className="tel">
         <BsFillTelephoneFill className='BsFillTelephoneFill' />
          <a href="tel:+998712006800">
-         <span className='tel1'>+998 (71) 200 68 00</span>
+         <span className='tel11'>+998 (71) 200 68 00</span>
          </a>
 
         </div>

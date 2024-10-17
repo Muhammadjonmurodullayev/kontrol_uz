@@ -46,12 +46,14 @@
 .product-priceMonth {
     margin: 5px 0;
 }
-#product-name-uz{
-    color:blue;
+#product-name-uz1{
+    color:rgb(0, 0, 0);
     font-weight:900;
 }
 #product-price{
     font-weight:900;
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #product-count{
     color:rgb(115, 115, 115);
@@ -87,6 +89,7 @@
     text-overflow: ellipsis;
     white-space: nowrap; /* Prevents text from wrapping to the next line */
     display: block; /* Ensures the text takes up its own line */
+    color:black;
 }
 .product-name-en{
     overflow: hidden;

@@ -113,17 +113,14 @@ export const OneProduct = () => {
 <IoIosStar className='IoIosStarOutline'/>
                 </div>
                 <p>
-                  Краткое описание
+                Ushbu mahsulot o‘zbek milliy uslubida ishlab chiqarilgan va eng yuqori sifatli materiallardan tayyorlangan.
+Yuqori sifatli va bardoshli mahsulot – Har bir detalga e’tibor qaratilgan, uzoq muddat xizmat qiladigan sifat kafolati.
+Innovatsion dizayn va funksionallik – Zamonaviy talablarga mos, qulay va amaliy yechim.
+Tabiiy va ekologik toza materiallar – Mahsulotlarimiz tabiiy materiallardan tayyorlangan va ekologik tozalik kafolatlangan.
+Arzon narx va sifat kafolati – Bizning mahsulotlar nafaqat arzon narxda, balki eng yaxshi sifatda ham taqdim etiladi.
+Xalqaro standartlarga mos – Mahsulotlarimiz xalqaro sifat standartlariga mos ravishda ishlab chiqarilgan.
+Tez yetkazib berish xizmati – Buyurtmangizni tezkorlik bilan yetkazib beramiz.
 
-                  Процессор: 8х ядерный AMD Ryzen 7 6800H
-                  Частота процессора: до 4.7 ГГц
-                  Операционная система: FreeDOS
-                  Оперативная память: DDR5, 16 Гб
-                  Накопитель данных: SSD 512 Гб
-                  Модель видеокарты: GeForce RTX3050 Ti
-                  Тип видеокарты: дискретный
-                  Диагональ экрана: 16″
-                  Комплект: ноутбук, адаптер питания, документация
                 </p>
               </div>
 

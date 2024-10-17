@@ -485,9 +485,15 @@ const Chaild = ({ cards }) => {
       <div className='hr13'>
         <hr className='hr121243' />
       </div>
+
+
+
+
       {searchTerm ?
-        <div className='main-content'>
+        <div className='main_content1'>
+
           <p>Продукты</p>
+
           <div className='card_container1'>
             {loading ? (
               <div className='Loading6'>
@@ -543,34 +549,7 @@ const Chaild = ({ cards }) => {
                   <BiSolidCategory className='BiSolidCategory21' />
                   <span className='Category_item'>Category</span>
                 </div>
-
-                {/* <div className='GiCubeforce12'>
-                  {
-                    categoryes.map((category) => (
-                      <div key={category._id} className='category_id9696'>
-                        <div className='GiCubeforce1' onClick={() => {
-                          navigator("/category/" + category._id)
-
-                        }}>
-                          <GiCubeforce className='GiCubeforce' />
-                          <p className='category_name_uz'>{category.name_uz}</p>
-                        </div>
-                      </div>
-                    ))
-                  }
-                  <hr />
-                </div> */}
-
-
-
-
-
-
-
-
-
                 <div className='GiCubeforce12'>
-                  {/* Only other categories, excluding the special ones */}
                   {otherCategories.map((category) => (
                     <div key={category._id} className='category_id9696'>
                       <div
@@ -583,7 +562,6 @@ const Chaild = ({ cards }) => {
                     </div>
                   ))}
 
-                  {/* Name button for expanding the specific categories */}
                   <div className='GiCubeforce1' onClick={handleToggle}>
                     <GiCubeforce className='GiCubeforce' />
                     <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
@@ -768,6 +746,29 @@ const Chaild = ({ cards }) => {
 
         </div>
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
