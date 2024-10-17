@@ -151,12 +151,12 @@ const Home = () => {
   };
 
   // Maxsus uchta kategoriya
-  const specialCategories = categoryes.filter(category => 
+  const specialCategories = categoryes.filter(category =>
     ['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
   );
 
   // Qolgan barcha kategoriyalar (maxsus bo'lmagan)
-  const otherCategories = categoryes.filter(category => 
+  const otherCategories = categoryes.filter(category =>
     !['газовый счетчик', 'Счетчики воды', 'электрический счетчик'].includes(category.name_uz)
   );
 
@@ -170,82 +170,82 @@ const Home = () => {
             <IoIosCloseCircle className='div_clos_item' onClick={() => setMenuOpen(!menuOpen)} />
           </div>
           <div className='Category__all'>Категории</div>
-{/* 
-          
-          {
-            categoryes.map((category) => (
-              <div key={category._id}>
-                <div className='fon_bacrount' onClick={() => { navigator("/category/" + category._id) }}>
-                  <div className='category___name_uz'>
-                    <GiCubeforce className='GiCubeforce' />
-                    <p className='category__name_uz'>{category.name_uz} </p>
-                  </div>
 
+
+
+
+          <div className='GiCubeforce12'>
+            {/* Only other categories, excluding the special ones */}
+            {otherCategories.map((category) => (
+              <div key={category._id} className='category_id9696'>
+                <div
+                  className='GiCubeforce1'
+                  onClick={() => navigator("/category/" + category._id)}
+                >
+                  <GiCubeforce className='GiCubeforce' />
+                  <p className='category_name_uz'>{category.name_uz}</p>
                 </div>
               </div>
-            ))
-          } */}
+            ))}
 
-
-
-
-<div className='GiCubeforce12'>
-      {/* Only other categories, excluding the special ones */}
-      {otherCategories.map((category) => (
-        <div key={category._id} className='category_id9696'>
-          <div
-            className='GiCubeforce1'
-            onClick={() => navigator("/category/" + category._id)}
-          >
-            <GiCubeforce className='GiCubeforce' />
-            <p className='category_name_uz'>{category.name_uz}</p>
-          </div>
-        </div>
-      ))}
-
-      {/* Name button for expanding the specific categories */}
-      <div className='GiCubeforce1' onClick={handleToggle}>
-      <GiCubeforce className='GiCubeforce' />
-        <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
-      </div>
-
-      {/* Only show special categories if expanded */}
-      {isExpanded && (
-        <div className='expanded-categories'>
-          {specialCategories.map((category) => (
-            <div key={category._id} className='category_id9696'>
-              <div
-                className='GiCubeforce1'
-                onClick={() => navigator("/category/" + category._id)}
-              >
-                <GiCubeforce className='GiCubeforce' />
-                <p className='category_name_uz'>{category.name_uz}</p>
-              </div>
+            {/* Name button for expanding the specific categories */}
+            <div className='GiCubeforce1' onClick={handleToggle}>
+              <GiCubeforce className='GiCubeforce' />
+              <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
             </div>
-          ))}
+
+            {/* Only show special categories if expanded */}
+            {isExpanded && (
+              <div className='expanded-categories'>
+                {specialCategories.map((category) => (
+                  <div key={category._id} className='category_id9696'>
+                    <div
+                      className='GiCubeforce1'
+                      onClick={() => navigator("/category/" + category._id)}
+                    >
+                      <GiCubeforce className='GiCubeforce' />
+                      <p className='category_name_uz'>{category.name_uz}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <hr />
+
+
+
+
+
+
+
+          </div>
+
         </div>
-      )}
-      <hr />
 
 
 
 
 
 
-      
-    </div>
-
-        </div>
-
-
-
-
-
-
-        <IoMenu className="filter-button" onClick={() => setMenuOpen(!menuOpen)} />
-        <h1 className='page21'>Schetchik</h1>
-        {/* <img className='page21' src={logo2143} alt="" />   */}
+       <div className='wfff'>
+       <IoMenu className="filter-button" onClick={() => setMenuOpen(!menuOpen)} />
+        <h1 className='page__221'>Schetchik</h1>
+       </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -292,9 +292,9 @@ const Home = () => {
                   style={{ width: '150px', height: '150px', objectFit: 'cover' }}
                   src={`${process.env.REACT_APP_BASE_URL}${product.image}`} alt="" />
               </div>
-                <p className='sikidka222' style={{color:"red"}}>{Math.floor(((product.priceMonth-product.price)/product.priceMonth*100))}% скидка</p>
+              <p className='sikidka222' style={{ color: "red" }}>{Math.floor(((product.priceMonth - product.price) / product.priceMonth * 100))}% скидка</p>
               <div className="product_name" >{product.name_uz}</div><br />
-            
+
               <div className="product_price">{product.price} so'm</div>
               <del className='del323'>{product.priceMonth} so'm</del>
 
@@ -348,9 +348,9 @@ const Home = () => {
         <div className="contact_id_item">
           <h3>Kontact</h3>
           <p className='call_center'>Call center</p>
-      <a href="tel:+998712006800">
-      <p className='tel_item'>+998712006800</p>
-      </a>
+          <a href="tel:+998712006800">
+            <p className='tel_item'>+998712006800</p>
+          </a>
           <p className='call_center' >Gmail pochta</p>
           <p className='tel_item'>Kontrol@gmail.com</p>
           <p className='call_center' >Ish grafigi</p>
