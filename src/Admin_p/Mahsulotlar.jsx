@@ -202,7 +202,7 @@ export const Mahsulotlar = () => {
             <input
               className="input"
               type="text"
-              placeholder="Name UZ"
+              placeholder="Categoriya nomi:"
               value={formData.name_uz}
               onChange={(e) => setFormData({ ...formData, name_uz: e.target.value })}
               required
@@ -210,7 +210,7 @@ export const Mahsulotlar = () => {
             <input
               className="input"
               type="text"
-              placeholder="Name RU"
+              placeholder="Ceo qismi uchun:"
               value={formData.name_ru}
               onChange={(e) => setFormData({ ...formData, name_ru: e.target.value })}
               required

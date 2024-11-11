@@ -7,56 +7,84 @@ const Yordam = () => {
   const toggleExpansion = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // siljishni silliq qiladi
+    })
+  }
+
+  const handleBackClick = () => {
+    window.history.back();
+    scrollToTop()
+
+  };
 
   return (
-    <div className='yordam55'>
-        <div className='yordam56'>
-      <h2>Yordam</h2>
-      <div className="faq-container">
-        {faqData.map((faq, index) => (
-          <div key={index} className="faq-item">
-            <div 
-              onClick={() => toggleExpansion(index)} 
-              className="faq-title"
-            >
-              <h4>{faq.question}</h4>
+    <div className="yordam55">
+      <div className="yordam56">
+        <button onClick={handleBackClick} className="back-button">⬅️ Orqaga qaytish</button>
+        <h2>Похоже, что вы спрашиваете о часто задаваемых вопросах, связанных с установкой компенсаторов реактивной мощности...</h2>
+        <div className="faq-container">
+          {faqData.map((faq, index) => (
+            <div key={index} className="faq-item">
+              <div onClick={() => toggleExpansion(index)} className="faq-title">
+                <h4>{faq.question}</h4>
+              </div>
+              <div className={`faq-content ${expandedIndex === index ? 'expanded' : ''}`}>
+                <p>{faq.answer}</p>
+              </div>
             </div>
-            <div 
-              className={`faq-content ${expandedIndex === index ? 'expanded' : ''}`}
-            >
-              <p>{faq.answer}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
 
 const faqData = [
-  { question: 'React nima?', answer: 'React - bu foydalanuvchi interfeyslarini yaratish uchun JavaScript kutubxonasi.' },
-  { question: 'React-da komponent nima?', answer: 'Komponent - bu React-dagi mustaqil va qayta ishlatiladigan UI qismidir.' },
-  { question: 'React-da props nima?', answer: 'Props - bu komponentlarga ma\'lumot uzatish uchun ishlatiladigan obyektlardir.' },
-  { question: 'React-da state nima?', answer: 'State - bu komponentning ichki holatini ifodalaydi va vaqt o\'tishi bilan o\'zgarishi mumkin.' },
-  { question: 'React-da hooklar nima?', answer: 'Hooklar - bu funksional komponentlar ichida state va boshqa React xususiyatlarini ishlatish imkonini beruvchi funksiyalar.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
-  { question: 'React Router nima?', answer: 'React Router - bu React ilovalarida yo\'nalishlarni boshqarish uchun ishlatiladigan kutubxona.' },
+  { question: '1. Что такое компенсаторы реактивной мощности и зачем они нужны?', answer: 'Компенсаторы реактивной мощности используются для улучшения коэффициента мощности в электрических системах. Они помогают уменьшить количество реактивной мощности, что снижает потери энергии и улучшает эффективность работы оборудования.' },
+  {
+    question: '2. Как выбрать подходящий компенсатор?', answer: `При выборе компенсатора важно учитывать:
+- Мощность компенсатора, соответствующую потребностям вашей системы.
+- Тип компенсатора (например, статический или динамический).
+- Условия эксплуатации и климатические условия.
+- Совместимость с существующим оборудованием.` },
+  {
+    question: '3. Какие параметры необходимо учитывать при установке компенсатора?', answer: `- Номинальное напряжение и ток.
+- Тип нагрузки (индуктивная или ёмкостная).
+- Местоположение установки (ближе к нагрузке или к источнику питания).
+- Размер и конфигурация установки.` },
+  {
+    question: '4. Какие преимущества дает установка компенсаторов?', answer: `- Снижение потерь энергии: Улучшение коэффициента мощности помогает уменьшить потери энергии.
+- Снижение затрат на электроэнергию: Оптимизация работы электрической сети может снизить расходы на электроэнергию.
+- Увеличение срока службы оборудования: Компенсаторы помогают снизить нагрузку на трансформаторы и другие электрические компоненты.
+` },
+  {
+    question: '5. Как проводится установка компенсаторов?', answer: `Установка может включать следующие этапы:
+- Оценка системы: Анализ существующей нагрузки и определение необходимой мощности компенсатора.
+- Подбор оборудования: Выбор соответствующего компенсатора.
+- Монтаж: Установка компенсатора в соответствии с техническими требованиями и стандартами.
+- Настройка и тестирование: Проверка правильности работы компенсатора и настройка его параметров.` },
+  { question: `6. Как часто нужно проводить обслуживание компенсаторов?`, answer: `Регулярное обслуживание и проверка состояния компенсаторов важны для обеспечения их надежной работы. Рекомендуется проводить осмотры и техническое обслуживание в соответствии с рекомендациями производителя и условиями эксплуатации.` },
+  { question: `7. Какие ошибки можно избежать при установке?`, answer: `- Неправильный расчет мощности: Важно правильно определить необходимую мощность компенсатора, чтобы избежать его недо- или переизбытка.- Неудовлетворительное качество монтажа: Неправильная установка может привести к снижению эффективности или поломке оборудования` },
+  { question: `8. Что такое счетчик воды и зачем он нужен?`, answer: `Счетчик воды — это прибор, который измеряет количество воды, потребляемой в вашем доме или квартире. Он необходим для точного учета потребления воды, что позволяет платить только за фактически использованное количество воды и помогает контролировать расход.` },
+  {
+    question: `9. Какие типы счетчиков воды существуют?`, answer: `Существует несколько типов счетчиков воды:
+  - Механические счетчики (обычно основаны на турбинной или крыльчатой системе).
+  - Электронные счетчики (с цифровым дисплеем и возможностью передачи данных).
+  - Ультразвуковые счетчики (измеряют поток воды с помощью ультразвуковых волн).
+  - Индукционные счетчики (измеряют магнитное поле для определения потока воды).` },
+  { question: `10. Как выбрать счетчик воды?`, answer: `При выборе счетчика воды учитывайте:
+- Тип и модель (в зависимости от системы водоснабжения и ваших требований).
+- Диаметр счетчика, который должен соответствовать диаметру труб.
+- Показатели точности и допустимые предельные значения.
+- Производителя и гарантию.
+` },
+  // { question: `11. Где и как установить счетчик воды?`, answer: `Счетчик воды устанавливается на входе водопроводной линии в вашем доме. Установку должен выполнять квалифицированный специалист, чтобы обеспечить правильную работу прибора и соответствие техническим требованиям. Место установки должно быть легко доступным для проверки и снятия показаний.` },
+  // { question: `12.  Как часто нужно проверять или обслуживать счетчик воды?`, answer: `Счетчики воды следует регулярно проверять и обслуживать в соответствии с рекомендациями производителя и местными правилами. Обычно рекомендуется проверять счетчик раз в несколько лет, а также следить за его показаниями для обнаружения возможных проблем.` },
+  // { question: ``, answer: `` },
+  // Additional FAQs...
 ];
 
 export default Yordam;

@@ -33,15 +33,13 @@ import logo_image from "./logo image 3.webp"
 import logo_image2 from "./logo image 4.png"
 import logo_image3 from "./logo imge 1.webp"
 import logo_image5 from "./solar_panel.webp"
-// import { GiCubeforce } from 'react-icons/gi'; // Ensure you import your icon correctly
-// import { useNavigate } from 'react-router-dom'; // Assuming you're using react-router-dom
 const Chaild = ({ cards }) => {
   const [showDiv1, setShowDiv1] = useState(false);
 
 
   const [isExpanded, setIsExpanded] = useState(false);
 
-
+ 
 
 
 
@@ -241,7 +239,7 @@ const Chaild = ({ cards }) => {
 
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % banners.length);
-  };//corusel 
+  };
 
   const prevSlide = () => {
     setCurrentIndex((currentIndex - 1 + banners.length) % banners.length);
@@ -321,11 +319,8 @@ const Chaild = ({ cards }) => {
   };
 
   const filteredProducts = productAll.filter(product => `${product.name_uz ?? ""}`.toLowerCase().includes(searchTerm.toLowerCase()) || `${product.name_ru ?? ""}`.toLowerCase().includes(searchTerm.toLowerCase()));
-
-
   const navigate = useNavigate();
   const [expandedCategoryId, setExpandedCategoryId] = useState(null);
-
   const toggleSubcategories = (categoryId) => {
     setExpandedCategoryId(prevId => (prevId === categoryId ? null : categoryId));
   };
@@ -461,23 +456,21 @@ const Chaild = ({ cards }) => {
         </div>
         <div className="til" onClick={handleSalomClick1}>
           <FaGlobeAmericas className='FaGlobeAmericas' />
-          <span className='uz'>{selectedWord1}</span>
+          <span className='uz'>Ru</span>
         </div>
-        {showDiv1 && (
-          <div className="dropdown1">
-            {words1.map((word1, index) => (
-              <div className="p43">
-                <p className='p_claasname' key={index} onClick={() => handleWordClick1(word1)}>{word1}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        
+
+
         <div className="help">
-          <IoIosHelpCircle className='IoIosHelpCircle' />
+         <Link to="/yordam">
+         <IoIosHelpCircle className='IoIosHelpCircle' />
+         </Link>
 
         </div>
         <div className="hamkorlar">
+          <Link to="/yordam">
           <MdMenuBook className='MdMenuBook' />
+          </Link>
         </div>
 
 
@@ -489,8 +482,69 @@ const Chaild = ({ cards }) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {searchTerm ?
-        <div className='main_content1'>
+        <div className='main_content1'> 
 
           <p>Продукты</p>
 
@@ -502,9 +556,6 @@ const Chaild = ({ cards }) => {
               </div>
             ) : (
               <div className='card_container'>
-
-
-
                 {
                   filteredProducts.map((product) => (
                     <div key={product._id} className='cardd1'
@@ -547,7 +598,7 @@ const Chaild = ({ cards }) => {
               <div className="BiSolidCategory" >
                 <div className='BiSolidCategory21coin'>
                   <BiSolidCategory className='BiSolidCategory21' />
-                  <span className='Category_item'>Category</span>
+                  <span className='Category_item'>Категория</span>
                 </div>
                 <div className='GiCubeforce12'>
                   {otherCategories.map((category) => (
@@ -564,10 +615,9 @@ const Chaild = ({ cards }) => {
 
                   <div className='GiCubeforce1' onClick={handleToggle}>
                     <GiCubeforce className='GiCubeforce' />
-                    <p className='category_name_uz'>Счётчики</p> {/* This is the "Name" button */}
+                    <p className='category_name_uz'>Счётчики</p> 
                   </div>
 
-                  {/* Only show special categories if expanded */}
                   {isExpanded && (
                     <div className='expanded-categories'>
                       {specialCategories.map((category) => (

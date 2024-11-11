@@ -141,22 +141,22 @@ export const AdminProducts = () => {
                         name="name_uz"
                         value={formData.name_uz}
                         onChange={handleInputChange}
-                        placeholder="Name"
+                        placeholder="mahsulot nomi:"
                         required
                     />
                     <input
                         type="text"
-                        name="name_en"
+                        name="name_ru"
                         value={formData.name_en}
                         onChange={handleInputChange}
-                        placeholder="Name"
+                        placeholder="mahsulot rus nomi:"
                         required
                     />
                     <textarea
                         name="desc"
                         value={formData.desc}
                         onChange={handleInputChange}
-                        placeholder="Description"
+                        placeholder="ceo:   "
                         required
                     />
                     <input
@@ -180,7 +180,7 @@ export const AdminProducts = () => {
                         name="count"
                         value={formData.count}
                         onChange={handleInputChange}
-                        placeholder="ombor"
+                        placeholder="Necha foiz chegirma:"
                         required
                     />
                   

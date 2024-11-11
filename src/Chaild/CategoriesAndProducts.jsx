@@ -22,8 +22,8 @@ const fetchProducts = async () => {
     const response = await fetch('https://schetchik.com.uz/api/v1/product/all');
     if (!response.ok) throw new Error('Network response was not ok');
     const data = await response.json();
-    console.log('Products Data:', data);
-    return data.data; // 'data' maydonini qaytaramiz
+    // console.log('Products Data:', data);
+    // return data.data; // 'data' maydonini qaytaramiz
   } catch (error) {
     console.error('Error fetching products:', error);
     return []; // Agar xatolik bo'lsa, bo'sh massiv qaytaramiz

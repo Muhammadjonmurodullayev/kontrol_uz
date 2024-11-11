@@ -10,6 +10,10 @@ import './OneProduct.css';
 import pechat from "./pechat.jpg";  // Placeholder for the stamp image
 
 export const OneProduct = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   let { id } = useParams();
   let [product, setProduct] = useState();
   const formatPrice = (num) => {

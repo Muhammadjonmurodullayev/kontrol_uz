@@ -8,6 +8,7 @@ import { FaHandshake } from "react-icons/fa6";
 import { BiSolidShoppingBags } from "react-icons/bi";
 import { GrHelpBook } from "react-icons/gr";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdHelp } from "react-icons/md";
 const Parent = () => {
   const [showDiv1, setShowDiv1] = useState(false);
   const [selectedWord1, setSelectedWord1] = useState(localStorage.getItem('selectedWord') || '');
@@ -33,9 +34,8 @@ const Parent = () => {
   const [showDiv, setShowDiv] = useState(false);
   const [selectedWord, setSelectedWord] = useState(localStorage.getItem('selectedWord') || '');
   const words = [
-    'Andijon', 'Buxoro', 'Fargʻona', 'Jizzax', 'Xorazm',
-    'Namangan', 'Navoiy', 'Qashqadaryo', 'Qoraqalpogʻiston',
-    'Samarqand', 'Sirdaryo', 'Surxondaryo', 'Toshkent'
+     'Buxoro', 
+    'Samarqand','Toshkent'
   ];
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const Parent = () => {
 
         <Link to="/Yordam">
         <div className="yordam">
-          <GrHelpBook className='GrHelpBook' />
+          <MdHelp className='MdHelp' />
           <span className='Yordam1'>Yordam</span>
         </div>  
         </Link>
@@ -93,7 +93,7 @@ const Parent = () => {
 
 
         <div className="tel">
-        <BsFillTelephoneFill className='BsFillTelephoneFill' />
+        <BsFillTelephoneFill className='BsFillTelephoneFill12' />
          <a href="tel:+998712006800">
          <span className='tel11'>+998 (71) 200 68 00</span>
          </a>

@@ -271,3 +271,117 @@ padding-left:10px;
   font-weight:900;
   color:white;
   }
+  .containet_meta1{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+    padding:10px;
+    display: flex;
+    gap:15px;
+  
+  }
+  .logo_imgmeta{
+    width:20%;
+    height:auto;
+    /* border:2px solid black; */
+  }
+  .input_meta{
+    width:100%;
+    height:auto;
+    /* border:2px solid black; */
+  }
+.logo_imgmeta1{
+  width:250px;
+  height:auto;
+  
+}
+
+.input_type {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_type_text12 {
+  width: 95%;
+  height: 35px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  font-weight: 600;
+  padding-left: 5px;
+  background-color:transparent;
+}
+.input_type_chaild {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(123, 119, 237);
+  border-radius: 5px;
+
+}
+.serch233223 {
+  width: 6%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(123, 119, 237);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.FaSearch12 {
+  font-size: 25px;
+  color: white;
+}
+
+.help {
+  width: 7%;
+  height: auto;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.IoIosHelpCircle {
+  font-size: 40px;
+  color: rgb(123, 119, 237);
+}
+.hamkorlar {
+  width: 7%;
+  height: auto;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.MdMenuBook {
+  font-size: 40px;
+  color: rgb(123, 119, 237);
+}
+.hr13 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hr121243 {
+  width: 100%;
+  height: auto;
+  /* color:black; */
+  background-color: black;
+  /* margin-top: 20px; */
+}

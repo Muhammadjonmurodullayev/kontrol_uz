@@ -76,7 +76,6 @@ export const App = () => {
 
       <Route  path='/category/:id'   element={<Products/>} />
           <Route path="/admin" element={<Admin/>} />
-          {/* <Route  path='/generatePDF'   element={<GeneratePDF/>} /> */}
 
            <Route path="products" element={<Homeadmin/>} >
                <Route path='home' element={<Home1/>} />
